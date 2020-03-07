@@ -4,18 +4,11 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
-from apps import index
-from apps import app1
-from apps import app2
-#from apps import app3
-from apps.index import index_page
-# git push origin master
+from apps import *
 from collections import deque
 import random
-import time
 import plotly
 import plotly.graph_objs as go
-from apps.index import *
 import pandas as pd
 import plotly.figure_factory as ff
 
