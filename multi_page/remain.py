@@ -7,7 +7,7 @@ from dash.dependencies import Input, Output, State
 from apps import index
 from apps import app1
 from apps import app2
-from apps import app3
+#from apps import app3
 from apps.index import index_page
 # git push origin master
 from collections import deque
