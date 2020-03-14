@@ -13,7 +13,7 @@ df = [dict(Task="Fasanara", Start='2020-01-26', Finish='2020-02-24'),
 fig = ff.create_gantt(df)
 
 
-page_2_layout = html.Div([
+page_3_layout = html.Div([
     html.Div([
         html.Div([
             html.H2("Waterbuffalo Micromanagement v2.01"),
@@ -38,19 +38,7 @@ html.Div([
         html.Div([
             dcc.Graph(figure=fig, id='gantt-id'),
             html.Div([html.H6('An ideal future')],style={"textAlign": "center"}),
-            "In the future I would like to be a person who lives the best life he can every day. "
-            "He would be deeply productive and creative, focusing on pursuits such as programming over television and games. "
-            "This person would be successful in the world in his personal career and in my work life."
-            "In the short-term, I would like to get my bases in check namely completing university and "
-            "getting a job as a data analyst. This allows me to be self-sufficient and affords me the "
-            "opportunity to make new friends, go on adventures and eventually work towards buying a house. \n"
-            "After gaining these essentials, the next stage is to place emphasis on making friends at work "
-            "and going on adventures. After that I would want to focus on building my skills in data analysis "
-            "which would include Python, R, SQL etc.",
-            "Alongside building my career skills, I would like to improve my knowledge of web/software development and Skyrim modding."
-            "I would like to continue working on WaterBuffalo Micromanagement "
-            "and making lots of important tools that I can use in my everyday life. "
-            "I would also like to be popular on social media."
+            "Big boi goes to school"
          ], className = "container"),
         dcc.RadioItems(
             id='page-2-radios',
