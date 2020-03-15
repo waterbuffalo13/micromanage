@@ -84,7 +84,7 @@ page_1_layout = html.Div([
                 # task_name
                 dcc.Input(id='task_content', type='text', value=None),html.Br(),
                 html.H6('Task Resource'),
-                dcc.Dropdown(id='task_nature', value=None, options = [{"label":"Work", "value" :"Work"}, {"label":"Recreation", "value" :"Recreation"}, {"label":"Sleep", "value" :"Sleep"}]),
+                dcc.Dropdown(id='task_nature', value=None, options = [{"label":"---", "value" :"---"}, {"label":"---", "value" :"---"}, {"label":"---", "value" :"---"}]),
                 html.H6('Deadline (Date)'),
                 # deadline
                 dcc.DatePickerSingle(
