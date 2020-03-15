@@ -59,9 +59,9 @@ page_1_layout = html.Div([
             html.A(html.Button('Todo list', className='three columns'),
                    href='/app1'),
             html.A(html.Button('Journal', className='three columns'),
-                   href='/app3'),
-            html.A(html.Button('EXT2', className='three columns'),
                    href='/app2'),
+            html.A(html.Button('EXT2', className='three columns'),
+                   href='/app3'),
         ], className="container", style={"textAlign": "center"})
 
     ], style={"background-color": "#f5f5f5"}),
