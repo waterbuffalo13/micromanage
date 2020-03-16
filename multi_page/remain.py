@@ -171,9 +171,9 @@ def add_to_wellbeinglist(n_clicks, journal_contents, emotional_states):
     created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     journal_data  = [[created, journal_contents, emotional_states]]
     updated = pd.DataFrame(journal_data, columns=['time_stamp', 'journal_contents', 'wellbeing_value'])
-    wellbeing_df = wellbeing_df.append(updated, sort=False)
-   # wellbeing_df = wellbeing_df[pd.notnull(updated["journal_contents"])]
-    wellbeing_df.to_csv("apps/wellbeing.csv", index=False)
+    updated = wellbeing_df.append(updated, sort=False)
+    updated = updated[pd.notnull(updated["journal_contents"])]
+    updated.to_csv("apps/wellbeing.csv", index=False)
 
     data = plotly.graph_objs.Scatter(
         x=updated["time_stamp"],
@@ -181,7 +181,8 @@ def add_to_wellbeinglist(n_clicks, journal_contents, emotional_states):
         name='Scatter',
         mode='lines',  # +markers',
     )
-    return {'data': [data], 'layout': go.Layout(title="Wellbeing over time", height=400, paper_bgcolor="#f7f7f7",
+    return {'data': [data], 'layout': go.Layout(title="Self-Actualization", xaxis=dict(range=[min(updated["time_stamp"]), max(updated["time_stamp"])]),
+                                                yaxis=dict(range=[min(updated["wellbeing_value"]), max(updated["wellbeing_value"])]), height=400, paper_bgcolor="#f7f7f7",
                                                 plot_bgcolor="#f7f7f7")}
 
 
