@@ -40,6 +40,7 @@ horizontal_bar_graph =dcc.Graph(id='a_graph',
                         orientation='h')]
     })
 
+
 curr_year = int(dt.now().strftime("%Y"))
 curr_month = int(dt.now().strftime("%m"))
 curr_day = int(dt.now().strftime("%d"))

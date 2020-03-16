@@ -90,7 +90,7 @@ def graph_update(n):
         mode='lines',  # +markers',
     )
 
-    return {'data': [data], 'layout': go.Layout(title="Self-Actualization", xaxis=dict(range=[min(X), max(X)]),
+    return {'data': [data], 'layout': go.Layout(xaxis=dict(range=[min(X), max(X)]),
                                                 yaxis=dict(range=[min(Y), max(Y)]), height=400, paper_bgcolor="#f7f7f7",
                                                 plot_bgcolor="#f7f7f7")}
 
@@ -133,7 +133,7 @@ def update_output(n_clicks, task_contents, date_pickers, start_task, stop_task, 
               [Input('table', 'data_previous'), Input("submit-button", "n_clicks"), Input("table", "data")],
               [State('table', 'data')])
 def showRemovedRows(previous, n_clicks, data, current, ):
-    current_df = pd.read_csv("apps/todolist.csv") 
+    current_df = pd.read_csv("apps/todolist.csv")
     x = None
     if previous is None:
         df_gantt = current_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
@@ -163,17 +163,38 @@ def showRemovedRows(previous, n_clicks, data, current, ):
                 
                 return add_or_remove
 
-@app.callback(Output("reading_list", "data"), [Input("add_book", "n_clicks")], [State("book_name", "value"), State("book_size", "value"), State("current_page","value")])
-def add_to_readinglist(n_clicks, book_names, book_sizes, current_pages):
-    df_reading_list = pd.read_csv("apps/readinglist.csv") 
-    book_data = [[book_names, book_sizes, current_pages, "N/A", "N/A", "N/A"]]
-    updated = pd.DataFrame(book_data, columns =["book_names", "length", "current_page", "end_timestamp", "initial_timestamp", "page_update"])
-    updated = df_reading_list.append(updated, sort=False)
-    updated = updated[pd.notnull(updated["book"])]
-    updated.to_csv("apps/readinglist.csv")
-    
-    return updated.to_dict('records') 
-    
+@app.callback(Output("journal_time_series", "figure"),
+              [Input('submit-journal', 'n_clicks')],
+              [State('journal_content', 'value'), State('emotional_state', 'value')])
+def add_to_wellbeinglist(n_clicks, journal_contents, emotional_states):
+    wellbeing_df = pd.read_csv("apps/wellbeing.csv")
+    created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    journal_data  = [[created, journal_contents, emotional_states]]
+    updated = pd.DataFrame(journal_data, columns=['time_stamp', 'journal_contents', 'wellbeing_value'])
+    wellbeing_df = wellbeing_df.append(updated, sort=False)
+   # wellbeing_df = wellbeing_df[pd.notnull(updated["journal_contents"])]
+    wellbeing_df.to_csv("apps/wellbeing.csv", index=False)
+
+    data = plotly.graph_objs.Scatter(
+        x=updated["time_stamp"],
+        y=updated["wellbeing_value"],
+        name='Scatter',
+        mode='lines',  # +markers',
+    )
+    return {'data': [data], 'layout': go.Layout(title="Wellbeing over time", height=400, paper_bgcolor="#f7f7f7",
+                                                plot_bgcolor="#f7f7f7")}
+
+
+# @app.callback(Output("reading_list", "data"), [Input("add_book", "n_clicks")], [State("book_name", "value"), State("book_size", "value"), State("current_page","value")])
+# def add_to_readinglist(n_clicks, book_names, book_sizes, current_pages):
+#     df_reading_list = pd.read_csv("apps/readinglist.csv")
+#     book_data = [[book_names, book_sizes, current_pages, "N/A", "N/A", "N/A"]]
+#     updated = pd.DataFrame(book_data, columns =["book_names", "length", "current_page", "end_timestamp", "initial_timestamp", "page_update"])
+#     updated = df_reading_list.append(updated, sort=False)
+#     updated = updated[pd.notnull(updated["book"])]
+#     updated.to_csv("apps/readinglist.csv")
+#     return updated.to_dict('records')
+#
     #return u'Input 1 is "{}" and Input 2 is "{}" and Input 3 is"{}"'.format(book_names, book_sizes, current_pages)
     
 if __name__ == '__main__':
