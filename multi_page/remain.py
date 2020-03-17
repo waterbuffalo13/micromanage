@@ -168,7 +168,7 @@ def showRemovedRows(previous, n_clicks, data, current, ):
               [State('journal_content', 'value'), State('emotional_state', 'value')])
 def add_to_wellbeinglist(n_clicks, journal_contents, emotional_states):
     wellbeing_df = pd.read_csv("apps/wellbeing.csv")
-    created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    created = str(datetime.datetime.now())#.strftime("%d/%m/%Y %H:%M:%S")
     journal_data  = [[created, journal_contents, emotional_states]]
     updated = pd.DataFrame(journal_data, columns=['time_stamp', 'journal_contents', 'wellbeing_value'])
     wellbeing_df = wellbeing_df.append(updated, sort=False)
