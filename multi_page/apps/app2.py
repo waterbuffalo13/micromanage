@@ -51,7 +51,7 @@ html.Div([
             # dcc.Graph(figure=fig, id='gantt-id'),
             # html.Div([html.H6('An ideal future')],style={"textAlign": "center"}),
             # "Big boi goes to school",
-            # productivity_time_series,
+            productivity_time_series,
             table,
             dcc.Textarea(
                 id = "journal_content",

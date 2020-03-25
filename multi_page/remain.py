@@ -77,22 +77,22 @@ def display_page(pathname):
         return '404'
 
 
-@app.callback(Output('live-graph', 'figure'),
-              [Input('graph-update', 'n_intervals')])
-def graph_update(n):
-    X.append(X[-1] + 1)
-    Y.append(Y[-1] + Y[-1] * random.uniform(-0.1, 0.1))
-
-    data = plotly.graph_objs.Scatter(
-        x=list(X),
-        y=list(Y),
-        name='Scatter',
-        mode='lines',  # +markers',
-    )
-
-    return {'data': [data], 'layout': go.Layout(xaxis=dict(range=[min(X), max(X)]),
-                                                yaxis=dict(range=[min(Y), max(Y)]), height=400, paper_bgcolor="#f7f7f7",
-                                                plot_bgcolor="#f7f7f7")}
+# @app.callback(Output('live-graph', 'figure'),
+#               [Input('graph-update', 'n_intervals')])
+# def graph_update(n):
+#     X.append(X[-1] + 1)
+#     Y.append(Y[-1] + Y[-1] * random.uniform(-0.1, 0.1))
+#
+#     data = plotly.graph_objs.Scatter(
+#         x=list(X),
+#         y=list(Y),
+#         name='Scatter',
+#         mode='lines',  # +markers',
+#     )
+#
+#     return {'data': [data], 'layout': go.Layout(xaxis=dict(range=[min(X), max(X)]),
+#                                                 yaxis=dict(range=[min(Y), max(Y)]), height=400, paper_bgcolor="#f7f7f7",
+#                                                 plot_bgcolor="#f7f7f7")}
 
 
 # callback for todolist
@@ -140,7 +140,7 @@ def showRemovedRows(previous, n_clicks, data, current, ):
         df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
         df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
         df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
-        
+
         nochanges = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks = True)
         dash.exceptions.PreventUpdate()
         return nochanges
@@ -160,8 +160,9 @@ def showRemovedRows(previous, n_clicks, data, current, ):
                 df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
                 df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
                 add_or_remove = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks = True)
-                
+
                 return add_or_remove
+
 @app.callback(Output("table_journal", "data"),
               [Input('submit-journal', 'n_clicks')],
               [State('journal_content', 'value'), State('emotional_state', 'value')])
@@ -176,12 +177,72 @@ def update_journal_output(n_clicks, journal_contents, emotional_states):
   #  str_created = created.strftime("%d/%m/%Y")
     #stor
     journal_data = [[created,journal_contents, emotional_states]]
-    updated = pd.DataFrame(journal_data, columns=['time_stamp,', 'journal_contents', 'wellbeing_value'])
+    updated = pd.DataFrame(journal_data, columns=['time_stamp', 'journal_contents', 'wellbeing_value'])
     updated = base.append(updated, sort=False)
     # updated = updated.dropna()
     updated = updated[pd.notnull(updated["journal_contents"])]
     updated.to_csv("apps/wellbeing.csv", index=False)
     return updated.to_dict('records')
+
+@app.callback(Output("journal_time_series", "figure"),
+              [Input('table_journal', 'data_previous'), Input("submit-journal", "n_clicks"), Input("table_journal", "data")],
+              [State('table_journal', 'data')])
+def showRemovedRowsJournal(previous, n_clicks, data, current, ):
+    wellbeing_df = pd.read_csv("apps/wellbeing.csv")
+    x = None
+    if previous is None:
+        # df_scatter = current_df[["created", "journal_contents", "emotional_states"]].copy()
+        # df_scatter.columns = ["Task", "Start", "Finish", "Resource"]
+        # df_scatter["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
+        # df_scatter["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
+        data = plotly.graph_objs.Scatter(
+            x=wellbeing_df["time_stamp"],
+            y=wellbeing_df["wellbeing_value"],
+            name='Scatter',
+            mode='lines',  # +markers',
+        )
+        journal_test = {'data': [data], 'layout': go.Layout(title="Self-Actualization",# xaxis=dict(range=[min(wellbeing_df["time_stamp"]), max(wellbeing_df["time_stamp"])]),
+                                                        yaxis=dict(range=[-3, 3]),
+                                                        height=400, paper_bgcolor="#f7f7f7",
+                                                        plot_bgcolor="#f7f7f7")}
+        dash.exceptions.PreventUpdate()
+        try:
+            return journal_test
+        except:
+            print("journal")
+    else:
+        for row in previous:
+            if row not in current:
+    #             # time.sleep(0.10)
+                x = row
+                x_df = pd.DataFrame.from_dict(x, orient="index", columns=["time_stamp"])
+    #             # this is probably not a good way of adding information
+                final_df = pd.merge(wellbeing_df, x_df, on=['time_stamp', 'time_stamp'], how="outer", indicator=True)
+                final_df = final_df[final_df['_merge'] == 'left_only']
+                final_df = final_df.drop(columns=["_merge"])
+                final_df.to_csv("apps/wellbeing.csv", index=False)
+
+                data = plotly.graph_objs.Scatter(
+                    x=wellbeing_df["time_stamp"],
+                    y=wellbeing_df["wellbeing_value"],
+                    name='Scatter',
+                    mode='lines',  # +markers',
+                )
+                dash.exceptions.PreventUpdate()
+                return {'data': [data], 'layout': go.Layout(title="Self-Actualization", xaxis=dict(
+                    range=[min(wellbeing_df["time_stamp"]), max(final_df["time_stamp"])]),
+                                                            yaxis=dict(range=[min(final_df["wellbeing_value"]),
+                                                                              max(final_df["wellbeing_value"])]),
+                                                            height=400, paper_bgcolor="#f7f7f7",
+                                                            plot_bgcolor="#f7f7f7")}
+
+    #             df_gantt = final_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
+    #             df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
+    #             df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
+    #             df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
+    #             add_or_remove = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks=True)
+    #
+    #             return add_or_remove
 
 # @app.callback(Output("journal_time_series", "figure"),
 #               [Input('submit-journal', 'n_clicks')],
