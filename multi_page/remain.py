@@ -162,29 +162,49 @@ def showRemovedRows(previous, n_clicks, data, current, ):
                 add_or_remove = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks = True)
                 
                 return add_or_remove
-
-@app.callback(Output("journal_time_series", "figure"),
+@app.callback(Output("table_journal", "data"),
               [Input('submit-journal', 'n_clicks')],
               [State('journal_content', 'value'), State('emotional_state', 'value')])
-def add_to_wellbeinglist(n_clicks, journal_contents, emotional_states):
-    wellbeing_df = pd.read_csv("apps/wellbeing.csv")
-    created = str(datetime.datetime.now())#.strftime("%d/%m/%Y %H:%M:%S")
-    journal_data  = [[created, journal_contents, emotional_states]]
-    updated = pd.DataFrame(journal_data, columns=['time_stamp', 'journal_contents', 'wellbeing_value'])
-    wellbeing_df = wellbeing_df.append(updated, sort=False)
-    wellbeing_df = wellbeing_df[pd.notnull(wellbeing_df["journal_contents"])]
-    wellbeing_df.to_csv("apps/wellbeing.csv", index=False)
+def update_journal_output(n_clicks, journal_contents, emotional_states):
+    #read from database
+    base = pd.read_csv("apps/wellbeing.csv")
+    #remove all redundant columns
+    base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
+    #convert the created data from the input into a specific datetime format
+    created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    #convert back into string
+  #  str_created = created.strftime("%d/%m/%Y")
+    #stor
+    journal_data = [[created,journal_contents, emotional_states]]
+    updated = pd.DataFrame(journal_data, columns=['time_stamp,', 'journal_contents', 'wellbeing_value'])
+    updated = base.append(updated, sort=False)
+    # updated = updated.dropna()
+    updated = updated[pd.notnull(updated["journal_contents"])]
+    updated.to_csv("apps/wellbeing.csv", index=False)
+    return updated.to_dict('records')
 
-    data = plotly.graph_objs.Scatter(
-        x=wellbeing_df["time_stamp"],
-        y=wellbeing_df["wellbeing_value"],
-        name='Scatter',
-        mode='lines',  # +markers',
-    )
-    return {'data': [data], 'layout': go.Layout(title="Self-Actualization", xaxis=dict(range=[min(wellbeing_df["time_stamp"]), max(wellbeing_df["time_stamp"])]),
-                                                yaxis=dict(range=[min(wellbeing_df["wellbeing_value"]), max(wellbeing_df["wellbeing_value"])]),
-                                                height=400, paper_bgcolor="#f7f7f7",
-                                                plot_bgcolor="#f7f7f7")}
+# @app.callback(Output("journal_time_series", "figure"),
+#               [Input('submit-journal', 'n_clicks')],
+#               [State('journal_content', 'value'), State('emotional_state', 'value')])
+# def add_to_wellbeinglist(n_clicks, journal_contents, emotional_states):
+#     wellbeing_df = pd.read_csv("apps/wellbeing.csv")
+#     created = str(datetime.datetime.now())#.strftime("%d/%m/%Y %H:%M:%S")
+#     journal_data  = [[created, journal_contents, emotional_states]]
+#     updated = pd.DataFrame(journal_data, columns=['time_stamp', 'journal_contents', 'wellbeing_value'])
+#     wellbeing_df = wellbeing_df.append(updated, sort=False)
+#     wellbeing_df = wellbeing_df[pd.notnull(wellbeing_df["journal_contents"])]
+#     wellbeing_df.to_csv("apps/wellbeing.csv", index=False)
+#
+#     data = plotly.graph_objs.Scatter(
+#         x=wellbeing_df["time_stamp"],
+#         y=wellbeing_df["wellbeing_value"],
+#         name='Scatter',
+#         mode='lines',  # +markers',
+#     )
+#     return {'data': [data], 'layout': go.Layout(title="Self-Actualization", xaxis=dict(range=[min(wellbeing_df["time_stamp"]), max(wellbeing_df["time_stamp"])]),
+#                                                 yaxis=dict(range=[min(wellbeing_df["wellbeing_value"]), max(wellbeing_df["wellbeing_value"])]),
+#                                                 height=400, paper_bgcolor="#f7f7f7",
+#                                                 plot_bgcolor="#f7f7f7")}
 
 
 # @app.callback(Output("reading_list", "data"), [Input("add_book", "n_clicks")], [State("book_name", "value"), State("book_size", "value"), State("current_page","value")])

@@ -18,7 +18,7 @@ df_wellbeing = pd.read_csv("apps/wellbeing.csv")
 productivity_time_series = dcc.Graph(id='journal_time_series', animate=True)
 
 table = dash_table.DataTable(
-    id='table',
+    id='table_journal',
     columns=[{"name": i, "id": i, "deletable":False} for i in df_wellbeing.columns],
     row_deletable=True,
     # editable=True,
@@ -51,7 +51,8 @@ html.Div([
             # dcc.Graph(figure=fig, id='gantt-id'),
             # html.Div([html.H6('An ideal future')],style={"textAlign": "center"}),
             # "Big boi goes to school",
-            productivity_time_series,
+            # productivity_time_series,
+            table,
             dcc.Textarea(
                 id = "journal_content",
                 placeholder="What's on your mind?",
