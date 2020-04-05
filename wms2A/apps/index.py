@@ -42,7 +42,7 @@ productivity_time_series = dcc.Graph(
     }
 )
 
-line_graph = dcc.Graph(id='live-graph', animate=False )
+line_graph = dcc.Graph(id='live-graph', animate=False)
 interval = dcc.Interval(id='graph-update',interval=1000,n_intervals=0)
 
 newpie = dcc.Graph(
