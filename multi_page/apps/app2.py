@@ -15,7 +15,7 @@ fig = ff.create_gantt(df)
 
 df_wellbeing = pd.read_csv("apps/wellbeing.csv")
 
-productivity_time_series = dcc.Graph(id='journal_time_series', animate=True)
+productivity_time_series = dcc.Graph(id='journal_time_series', animate=False)
 
 table = dash_table.DataTable(
     id='table_journal',

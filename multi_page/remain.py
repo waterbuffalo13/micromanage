@@ -1,5 +1,4 @@
 from datetime import datetime
-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -8,12 +7,7 @@ from apps import index
 from apps import app1
 from apps import app2
 from apps import app3
-#from apps import app3
-from apps.index import index_page
-# git push origin master
 from collections import deque
-import random
-import time
 import plotly
 import plotly.graph_objs as go
 from apps.index import *
@@ -77,22 +71,22 @@ def display_page(pathname):
         return '404'
 
 
-# @app.callback(Output('live-graph', 'figure'),
-#               [Input('graph-update', 'n_intervals')])
-# def graph_update(n):
-#     X.append(X[-1] + 1)
-#     Y.append(Y[-1] + Y[-1] * random.uniform(-0.1, 0.1))
-#
-#     data = plotly.graph_objs.Scatter(
-#         x=list(X),
-#         y=list(Y),
-#         name='Scatter',
-#         mode='lines',  # +markers',
-#     )
-#
-#     return {'data': [data], 'layout': go.Layout(xaxis=dict(range=[min(X), max(X)]),
-#                                                 yaxis=dict(range=[min(Y), max(Y)]), height=400, paper_bgcolor="#f7f7f7",
-#                                                 plot_bgcolor="#f7f7f7")}
+@app.callback(Output('live-graph', 'figure'),
+              [Input('graph-update', 'n_intervals')])
+def graph_update(n):
+    X.append(X[-1] + 1)
+    Y.append(Y[-1] + Y[-1] * random.uniform(-0.1, 0.1))
+
+    data = plotly.graph_objs.Scatter(
+        x=list(X),
+        y=list(Y),
+        name='Scatter',
+        mode='lines',  # +markers',
+    )
+
+    return {'data': [data], 'layout': go.Layout(xaxis=dict(range=[min(X), max(X)]),
+                                                yaxis=dict(range=[min(Y), max(Y)]), height=400, paper_bgcolor="#f7f7f7",
+                                                plot_bgcolor="#f7f7f7")}
 
 
 # callback for todolist
@@ -201,8 +195,8 @@ def showRemovedRowsJournal(previous, n_clicks, data, current, ):
             name='Scatter',
             mode='lines',  # +markers',
         )
-        journal_test = {'data': [data], 'layout': go.Layout(title="Self-Actualization",# xaxis=dict(range=[min(wellbeing_df["time_stamp"]), max(wellbeing_df["time_stamp"])]),
-                                                        yaxis=dict(range=[-3, 3]),
+        journal_test = {'data': [data], 'layout': go.Layout(title="Self-Actualization", xaxis=dict(range=[min(wellbeing_df["time_stamp"]), max(wellbeing_df["time_stamp"])]),
+                                                        yaxis=dict(range=[min(wellbeing_df["wellbeing_value"]), max(wellbeing_df["wellbeing_value"])]),
                                                         height=400, paper_bgcolor="#f7f7f7",
                                                         plot_bgcolor="#f7f7f7")}
         dash.exceptions.PreventUpdate()
