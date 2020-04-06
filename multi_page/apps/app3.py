@@ -19,21 +19,17 @@ fig = ff.create_gantt(df)
 page_3_layout = html.Div([
     html.Div([
         html.Div([
-        ], className="two columns",
-            style={"padding-left": "0", "margin-left": "0", "border-left": "0", "background": "white", "height": "100%",
-                   "position": "absolute", "background-image": "url(assets/sidebar.png)", "width": "15%",
-                   "background-repeat": "no-repeat", "border-style": "dotted", "background-position": "top-left"}),
-        html.Div([
-            html.H1('Dash Tabs component demo'),
-                dcc.Tabs(id="tabs-example", value='tab-1-example', children=[
-                    dcc.Tab(label='Tab One', value='tab-1-example'),
-                    dcc.Tab(label='Tab Two', value='tab-2-example'),
-                    dcc.Tab(label='Tab Three', value='tab-3-example')
-                ]),
-                html.Div(id='tabs-content-example')
-        ], className="ten columns", style={"border-style": "dotted", "width": "100%", "text-align":"center"})
 
-    ], className="twelve columns")
+
+        ], className="three columns",
+            style={"margin": "0px", "background": "#f4f4f4", "height": "98.5%",
+                   "position": "fixed", "background-image": "url(assets/sidebar1.png)", "background-size":"cover", "max-width":"16.25%",
+                   "background-repeat": "no-repeat", "border-style": "", "background-position": "top-left"}),
+        html.Div([
+
+        ], className="ten columns", style={"border-style": "", "width": "100%", "text-align":"center", "background-color":"gray"})
+
+    ])
 
 # html.Video(src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm")
 
