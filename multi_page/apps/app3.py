@@ -4,6 +4,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 from datetime import datetime as dt, datetime, timedelta
 import plotly.figure_factory as ff
+import dash_gif_component as Gif
 
 
 df = [dict(Task="Fasanara", Start='2020-01-26', Finish='2020-02-24'),
@@ -13,13 +14,28 @@ df = [dict(Task="Fasanara", Start='2020-01-26', Finish='2020-02-24'),
 
 fig = ff.create_gantt(df)
 
-#"border-style": "dotted",
+
+# "border-style": "dotted",
 page_3_layout = html.Div([
     html.Div([
-    ], className = "two columns", style = { "border-style": "dotted", "background": "green", "height": "100%", "position":"absolute", "background-image" : "url(assets/sidebar.png)", "width":"15%"}),
-    html.Div([
-        "Howdy ho"
-    ], className="ten columns", style={"border-style": "dotted", "background": "blue", "height": "100%"})
+        html.Div([
+        ], className="two columns",
+            style={"padding-left": "0", "margin-left": "0", "border-left": "0", "background": "white", "height": "100%",
+                   "position": "absolute", "background-image": "url(assets/sidebar.png)", "width": "15%",
+                   "background-repeat": "no-repeat", "border-style": "dotted", "background-position": "top-left"}),
+        html.Div([
+            html.H1('Dash Tabs component demo'),
+                dcc.Tabs(id="tabs-example", value='tab-1-example', children=[
+                    dcc.Tab(label='Tab One', value='tab-1-example'),
+                    dcc.Tab(label='Tab Two', value='tab-2-example'),
+                    dcc.Tab(label='Tab Three', value='tab-3-example')
+                ]),
+                html.Div(id='tabs-content-example')
+        ], className="ten columns", style={"border-style": "dotted", "width": "100%", "text-align":"center"})
+
+    ], className="twelve columns")
+
+# html.Video(src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm")
 
 #     html.Div([
 #         html.Div([

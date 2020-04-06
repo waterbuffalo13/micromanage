@@ -273,6 +273,38 @@ def showRemovedRowsJournal(previous, n_clicks, data, current, ):
 #     return updated.to_dict('records')
 #
     #return u'Input 1 is "{}" and Input 2 is "{}" and Input 3 is"{}"'.format(book_names, book_sizes, current_pages)
-    
+@app.callback(Output('tabs-content-example', 'children'),
+              [Input('tabs-example', 'value')])
+def render_content(tab):
+    if tab == 'tab-1-example':
+        return html.Div([
+            html.H3('Tab content 1'),
+            dcc.Graph(
+                id='graph-1-tabs',
+                figure={
+                    'data': [{
+                        'x': [1, 2, 3],
+                        'y': [3, 1, 2],
+                        'type': 'bar'
+                    }]
+                }
+            )
+        ], className = "container")
+    elif tab == 'tab-2-example':
+        return html.Div([
+            html.H3('Tab content 2'),
+            dcc.Graph(
+                id='graph-2-tabs',
+                figure={
+                    'data': [{
+                        'x': [1, 2, 3],
+                        'y': [5, 10, 6],
+                        'type': 'bar'
+                    }]
+                }
+            )
+        ], className = "container")
+
+
 if __name__ == '__main__':
     app.run_server(debug=True)
