@@ -4,17 +4,17 @@ index_page = html.Div([
 
         html.Div([
             html.H5("Waterbuffalo Micromanagement v2.01"),
-        ], className="banner", style={"textAlign": "center", "border-style": "dotted"}),
+        ], className="banner", style={"textAlign": "center"}),
 
-        # html.Div(["take it easy"],className = "four columns", style = {"background-color":"#f4f4f4"}),
-        # html.Div(["take it easy"],className = "four columns", style = {"background-color":"#f4f4f4"}),
-        # html.Div(["take it easy"],className = "four columns", style = {"background-color":"#f4f4f4"}),
-
-        html.Div(["take it easy"], className="two columns", style={"background-color": "#f4f4f4"}),
-        html.Div(["take it easy"], className="five columns", style={"background-color": "#f4f4f4"}),
-        html.Div(["take it easy"], className="two columns", style={"background-color": "#f4f4f4"}),
-        html.Div(["take it easy"], className="two columns", style={"background-color": "#f4f4f4"}),
-        html.Div(["easy"], className="one columns", style={"background-color": "#f4f4f4"}),
+        html.Div([
+            html.Div(["Box1"], className = "box1"),
+            html.Div(["Box2"], className = "box2"),
+            html.Div(["Box3"], className = "box3"),
+            html.Div(["Box4"], className = "box4"),
+        ], className="wrapper")
 
 
-    ],className = "twelve columns", style = {"border-style": "dotted"})
+
+
+
+    ],className = "twelve columns")
