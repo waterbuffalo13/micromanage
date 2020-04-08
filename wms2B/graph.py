@@ -10,7 +10,6 @@ pie = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
 pie.update_layout(
     autosize=True,
     # width=500,
-    height=300,
     margin=dict(
         l=50,
         r=50,
@@ -18,16 +17,18 @@ pie.update_layout(
         t=50,
 
     ),
+
     # paper_bgcolor="LightSteelBlue",
 )
 pie.update_layout(showlegend=False)
+pie.update_yaxes(automargin=True)
 
 df = [dict(Task="Job A", Start='2009-01-01', Finish='2009-02-28'),
       dict(Task="Job B", Start='2009-03-05', Finish='2009-04-15'),
       dict(Task="Job C", Start='2009-02-20', Finish='2009-05-30')]
 
 gantt_diagram = ff.create_gantt(df)
-# gantt_diagram["layout"].pop("height", None)
+gantt_diagram["layout"].pop("height", None)
 gantt_diagram["layout"].pop("width", None)
 
 sleep = go.Figure()

@@ -10,7 +10,7 @@ index_page = html.Div([
         html.Div([
 
             html.Div([
-                dcc.Graph(figure=pie)
+                dcc.Graph(figure=pie)#, style={'height': "80%"})
             ], className = "box1"),
 
             html.Div([
