@@ -4,6 +4,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from wms2B.index import index_page
 
+
 external_stylesheets = [
     'https://codepen.io/chriddyp/pen/bWLwgP.css',
     {
