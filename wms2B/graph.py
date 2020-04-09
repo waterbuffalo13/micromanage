@@ -11,15 +11,15 @@ pie.update_layout(
     autosize=True,
     # width=500,
     margin=dict(
-        l=50,
-        r=50,
-        b=50,
-        t=50,
+        l=0,
+        r=0,
+        b=0,
+        t=40,
     ),
 
-    # paper_bgcolor="LightSteelBlue",
+    paper_bgcolor="#ddd",
 )
-pie.update_layout(showlegend=False)
+# pie.update_layout(showlegend=False)
 pie.update_yaxes(automargin=True)
 
 df = [dict(Task="Job A", Start='2009-01-01', Finish='2009-02-28'),
@@ -53,7 +53,12 @@ sleep.add_trace(go.Bar(
     ),
 ))
 
-sleep.update_layout(barmode='stack')
+sleep.update_layout(barmode='stack', autosize=True,     margin=dict(
+        l=0,
+        r=0,
+        b=0,
+        t=0,
+    ), showlegend=False,)
 
 
 fig = go.Figure()

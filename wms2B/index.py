@@ -10,7 +10,7 @@ index_page = html.Div([
         html.Div([
 
             html.Div([
-                "Box1", dcc.Graph(figure=pie, style={'height': "30vh"})
+                "Box1", dcc.Graph(figure=pie, style={'height': "17.5vh"})
             ], className = "box1"),
 
             html.Div([
@@ -21,7 +21,7 @@ index_page = html.Div([
             html.Div(["Box4"], className = "box4"),
             html.Div(["Box5"], className = "box5"),
 
-            html.Div(["Box6"], className="box6"),
+            html.Div([dcc.Graph(figure=sleep, style={'height': "2vh"}), "Box 6"], className="box6"),
             html.Div([
                "Box7",# dcc.Graph(figure=sleep)
             ], className="box7"),

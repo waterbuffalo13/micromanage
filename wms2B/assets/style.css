@@ -30,14 +30,12 @@ body{
     display:grid;
     grid-template-columns: 1fr 2.25fr 1fr 1fr 0.5fr;
     grid-gap:1em;
-    justify-items:stretch;
+    /*justify-items:stretch;*/
 }
 
 .wrapper > div{
     background:#eeee;
     padding:1em;
-    /*height:13vh;*/
-    /*display: inline-block*/
 }
 
 .wrapper > div:nth-child(odd){
@@ -47,22 +45,14 @@ body{
 
 .box1{
     grid-column:1;
-    /*grid-row:1/4;*/
-    /*flex-flow: row wrap;*/
-    /*justify-items:stretch;*/
-    /*height:%;*/
-
-    /*padding-bottom: 100px;*/
-    /*grid-column:1/3;*/
+    grid-template-columns: fit-content(100%);
 
 }
 
 .box2{
-    /*align-self:start;*/
     grid-column:2;
     grid-row:1/4;
-    /*height:44vh;*/
-    justify-items:stretch;
+    /*justify-items:stretch;*/
 
 
 
