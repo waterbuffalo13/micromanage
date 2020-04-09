@@ -10,11 +10,11 @@ index_page = html.Div([
         html.Div([
 
             html.Div([
-                dcc.Graph(figure=pie)#, style={'height': "80%"})
+                "Box1", dcc.Graph(figure=pie, style={'height': "30vh"})
             ], className = "box1"),
 
             html.Div([
-                 dcc.Graph(figure = gantt_diagram)
+                 "Box2", dcc.Graph(figure = gantt_diagram, style={'height': "40vh"})
             ], className = "box2"),
 
             html.Div(["Box3"], className = "box3"),
@@ -23,14 +23,14 @@ index_page = html.Div([
 
             html.Div(["Box6"], className="box6"),
             html.Div([
-               # dcc.Graph(figure=sleep)
+               "Box7",# dcc.Graph(figure=sleep)
             ], className="box7"),
             html.Div(["Box8"], className="box8"),
             html.Div(["Box9"], className="box9"),
             html.Div(["Box10"], className="box10"),
 
             html.Div([
-                # dcc.Graph(figure=fig)
+                "Box11"# dcc.Graph(figure=fig)
             ], className="box11"),
             html.Div(["Box12"], className="box12"),
             html.Div(["Box13"], className="box13"),
@@ -42,6 +42,18 @@ index_page = html.Div([
             html.Div(["Box18"], className="box18"),
             html.Div(["Box19"], className="box19"),
             html.Div(["Box20"], className="box20"),
+
+            html.Div(["Box21"], className="box21"),
+            html.Div(["Box22"], className="box22"),
+            html.Div(["Box23"], className="box23"),
+            html.Div(["Box24"], className="box24"),
+            html.Div(["Box25"], className="box25"),
+
+            html.Div(["Box26"], className="box26"),
+            html.Div(["Box27"], className="box27"),
+            html.Div(["Box28"], className="box28"),
+            html.Div(["Box29"], className="box29"),
+            html.Div(["Box30"], className="box30"),
 
 
         ], className="wrapper")

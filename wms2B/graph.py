@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
 values = [4500, 2500, 1053, 500]
 
-pie = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
+pie = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4)])
 pie.update_layout(
     autosize=True,
     # width=500,
@@ -15,7 +15,6 @@ pie.update_layout(
         r=50,
         b=50,
         t=50,
-
     ),
 
     # paper_bgcolor="LightSteelBlue",
@@ -28,8 +27,9 @@ df = [dict(Task="Job A", Start='2009-01-01', Finish='2009-02-28'),
       dict(Task="Job C", Start='2009-02-20', Finish='2009-05-30')]
 
 gantt_diagram = ff.create_gantt(df)
-gantt_diagram["layout"].pop("height", None)
-gantt_diagram["layout"].pop("width", None)
+gantt_diagram.update_layout(autosize=True)
+# gantt_diagram["layout"].pop("height", None)
+# gantt_diagram["layout"].pop("width", None)
 
 sleep = go.Figure()
 sleep.add_trace(go.Bar(
