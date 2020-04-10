@@ -14,7 +14,7 @@ index_page = html.Div([
             ], className = "box1"),
 
             html.Div([
-                 "Box2", dcc.Graph(figure = gantt_diagram, style={'height': "40vh"})
+                 "Boax2", dcc.Graph(figure = gantt_diagram, style={'height': "40vh"})
             ], className = "box2"),
 
             html.Div(["Box3"], className = "box3"),
