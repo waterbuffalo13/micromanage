@@ -19,7 +19,7 @@ pie.update_layout(
 
     paper_bgcolor="#ddd",
 )
-# pie.update_layout(showlegend=False)
+pie.update_layout(showlegend=False)
 pie.update_yaxes(automargin=True)
 
 df = [dict(Task="Job A", Start='2009-01-01', Finish='2009-02-28'),

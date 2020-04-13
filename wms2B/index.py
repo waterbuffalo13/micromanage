@@ -10,18 +10,23 @@ index_page = html.Div([
         html.Div([
 
             html.Div([
-                "Box1", dcc.Graph(figure=pie, style={'height': "17.5vh"})
+                "Box1"
+                # "Box1", dcc.Graph(figure=pie, style={'height': "17.5vh"})
             ], className = "box1"),
 
             html.Div([
-                 "Boax2", dcc.Graph(figure = gantt_diagram, style={'height': "40vh"})
+                "Box2"
+                 # "Boax2", dcc.Graph(figure = gantt_diagram, style={'height': "40vh"})
             ], className = "box2"),
 
             html.Div(["Box3"], className = "box3"),
             html.Div(["Box4"], className = "box4"),
             html.Div(["Box5"], className = "box5"),
 
-            html.Div([dcc.Graph(figure=sleep, style={'height': "2vh"}), "Box 6"], className="box6"),
+            html.Div([
+                "Box6"
+                # dcc.Graph(figure=sleep, style={'height': "2vh"}), "Box 6"
+            ],className="box6"),
             html.Div([
                "Box7",# dcc.Graph(figure=sleep)
             ], className="box7"),
