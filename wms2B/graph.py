@@ -19,9 +19,9 @@ wellbeing.update_layout(
     # width=500,
     margin=dict(
         l=0,
-        r=10,
+        r=0,
         b=0,
-        t=10,
+        t=50,
     ))
 
 zanzibar = dash_table.DataTable(
@@ -38,10 +38,10 @@ pie.update_layout(
     autosize=True,
     # width=500,
     margin=dict(
-        l=0,
-        r=0,
-        b=0,
-        t=30,
+        l=10,
+        r=10,
+        b=10,
+        t=10,
     ),
     # paper_bgcolor="#ddd",
     showlegend=False,
@@ -114,6 +114,31 @@ fig = go.Figure(go.Indicator(
         'steps': [
             {'range': [0, 150], 'color': "lightgray"},
             {'range': [150, 250], 'color': "gray"}]}))
+
+task_name = dcc.Input(id='task_content', type='text', value=None)
+task_start = dcc.Input(id='task_start', type='text', value=None)
+task_stop = dcc.Input(id='task_stop', type='text', value=None)
+
+journal_content = dcc.Textarea(
+    id="journal_content",
+    placeholder="What's on your mind?",
+    # value='This is a TextArea component',
+    style={'width': '100%', 'height': '300px'}
+)
+
+horizontal_stats = go.Figure(go.Bar(
+            x=[20, 14, 23],
+            y=['giraffes', 'orangutans', 'monkeys'],
+            orientation='h'))
+horizontal_stats.update_layout(
+    margin=dict(
+        l=10,
+        r=10,
+        b=10,
+        t=10,
+    ),
+)
+
 # fig.update_layout(height = 250)
 # fig.update_layout(height = 400 , margin = {'t':0, 'b':0, 'l':0})
 

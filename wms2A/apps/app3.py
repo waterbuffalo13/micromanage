@@ -4,7 +4,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 from datetime import datetime as dt, datetime, timedelta
 import plotly.figure_factory as ff
-import dash_gif_component as Gif
+# import dash_gif_component as Gif
 
 
 df = [dict(Task="Fasanara", Start='2020-01-26', Finish='2020-02-24'),
