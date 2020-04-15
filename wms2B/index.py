@@ -58,7 +58,9 @@ index_page = html.Div([
             html.Div(["Box17"], className="box17"),
             html.Div(["Box18"], className="box18"),
             html.Div(["Box19", journal_content], className="box19"),
-            html.Div(["Box20",zanzibar], className="box20"),
+            html.Div(["Box20",
+                      #zanzibar
+                      ], className="box20"),
 
             html.Div([
                # "Box21", html.P(children = "", id="rolex"),

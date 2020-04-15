@@ -111,7 +111,7 @@ body{
 }
 
 .box20{
-    grid-column:3/7;
+    /*grid-column:3/7;*/
     /*grid-row:4/7;*/
     /*height:20vh;*/
     /*overflow: hidden;*/
