@@ -12,8 +12,8 @@ index_page = html.Div([
 
             html.Div([
                 "Box1"
-                , dcc.Graph(figure=pie, style={'height': "30vh"}, ),
-                dcc.Graph(figure=horizontal_stats, style={'height': "10vh"})
+                , dcc.Graph(figure=pie, style={'height': "20vh"}, ),
+                dcc.Graph(figure=horizontal_stats, style={'height': "9vh"})
                 # dcc.Graph(figure=sleep, style={'height': "4vh"}),
                 # dcc.Graph(figure=sleep, style={'height': "4vh"}),
                 # dcc.Graph(figure=sleep, style={'height': "4vh"})
@@ -30,42 +30,63 @@ index_page = html.Div([
             html.Div(["Box3 - Todo list",
                       zanzibar
                       ], className = "box3"),
-            html.Div(["Box4"], className = "box4"),
+            html.Div([
+                "Box4",
+            ], className = "box4"),
             html.Div(["Box5"], className = "box5"),
 
             html.Div([
                 "Box6",
             ],className="box6", ),
             html.Div([
-                # "Box7",
+                 "Box7",
+                dcc.Graph(figure=sleep, style={'height': "3vh"}), html.Br(),
+                dcc.Graph(figure=sleep, style={'height': "3vh"}),html.Br(),
 
-                 dcc.Graph(figure = horizontal_stats, style={'height': "10vh"})
+                # slider2,
+                # slider1, html.Br(), html.Br(), html.Br(), html.Br(), html.Br(),html.Br(),html.Br(),html.Br(),
+                # slider1, html.Br(), html.Br(), html.Br(), html.Br(),
+                # slider1,
             ], className="box7"),
             # html.Div(["Box8"], className="box8"),
             # html.Div(["Box9"], className="box9"),
             # html.Div(["Box10"], className="box10"),
 
-            html.Div([
-                "Box11"
-                # "Box11", dcc.Graph(figure =  wellbeing, style={'height': "20vh"})
-            ], className="box11"),
-            html.Div(["Box12"], className="box12"),
+            # html.Div([
+            #     "Box11",
+            #     todo_name
+            #     # "Box11", dcc.Graph(figure =  wellbeing, style={'height': "20vh"})
+            # ], className="box11"),
+            html.Div(["Box12",
+                      # html.P(children = "", id="rolex"), task_name, task_start, task_stop
+                      ], className="box12"),
             html.Div(["Box13"], className="box13"),
-            html.Div(["Box14"], className="box14"),
+            html.Div(["Box14",
+
+
+                      ], className="box14"),
             html.Div(["Box15"], className="box15"),
 
             html.Div(["Box16"], className="box16"),
-            html.Div(["Box17"], className="box17"),
-            html.Div(["Box18"], className="box18"),
-            html.Div(["Box19", journal_content], className="box19"),
+            html.Div(["Box17",
+zanzibar
+
+                      ], className="box17"),
+            html.Div(["Box18",
+                      task_name, task_start, task_stop, html.Button('Submit', id='submit-val', n_clicks=0)
+
+                      ], className="box18"),
+            html.Div(["Box19",
+                      # journal_content
+                      ], className="box19"),
             html.Div(["Box20",
                       #zanzibar
                       ], className="box20"),
 
             html.Div([
-               # "Box21", html.P(children = "", id="rolex"),
+               "Box21",
                #  task_name, task_start, task_stop
-task_name, task_start, task_stop
+
             ], className="box21"),
             html.Div(["Box22",
                       # zanzibar

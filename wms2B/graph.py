@@ -1,6 +1,8 @@
 import dash_core_components as dcc
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
+import dash_html_components as html
+import dash_daq as daq
 import dash_table
 import pandas as pd
 import numpy as np
@@ -21,7 +23,7 @@ wellbeing.update_layout(
         l=0,
         r=0,
         b=0,
-        t=50,
+        t=0,
     ))
 
 zanzibar = dash_table.DataTable(
@@ -43,7 +45,7 @@ pie.update_layout(
         b=10,
         t=10,
     ),
-    # paper_bgcolor="#ddd",
+    paper_bgcolor="#ddd",
     showlegend=False,
 
 
@@ -56,47 +58,58 @@ df = [dict(Task="Job A", Start='2009-01-01', Finish='2009-02-28'),
       dict(Task="Job C", Start='2009-02-20', Finish='2009-05-30')]
 
 gantt_diagram = ff.create_gantt(df)
-gantt_diagram.update_layout(autosize=True)
+gantt_diagram.update_layout(autosize=True,     margin=dict(
+        l=70,
+        r=70,
+        b=70,
+        t=70,
+    ),)
 gantt_diagram["layout"].pop("height", None)
 gantt_diagram["layout"].pop("width", None)
 
 sleep = go.Figure()
 sleep.add_trace(go.Bar(
-    y=['sleep'],
-    x=[3],
+    y=[''],
+    x=[8],
     name='SF Zoo',
     orientation='h',
     marker=dict(
-        color='rgba(246, 78, 139, 0.6)',
+        color='rgba(246, 78, 139, 1)',
         line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
     )
 ))
 sleep.add_trace(go.Bar(
-    y=['sleep'],
-    x=[4],
+    y=[''],
+    x=[8],
     name='LA Zoo',
     orientation='h',
     marker=dict(
-        color='rgba(58, 71, 80, 0.6)',
+        color='rgba(58, 71, 80, 1)',
         line=dict(color='rgba(58, 71, 80, 1.0)', width=3)
     ),
 ))
 sleep.add_trace(go.Bar(
-    y=['sleep'],
-    x=[3],
-    name='LA Zoo',
+    y=[''],
+    x=[8],
+    name='SF Zoo',
     orientation='h',
     marker=dict(
-        color='rgba(58, 71, 80, 0.6)',
-        line=dict(color='rgba(58, 71, 80, 1.0)', width=3)
-    ),
+        color='rgba(246, 78, 139, 1)',
+        line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
+    )
 ))
+
+
+
 sleep.update_layout(barmode='stack', autosize=True,     margin=dict(
         l=0,
         r=0,
         b=0,
         t=0,
-    ), showlegend=False,)
+    ), showlegend=False, title = "test",
+                    paper_bgcolor="#ddd",
+
+                    )
 
 
 fig = go.Figure(go.Indicator(
@@ -115,9 +128,14 @@ fig = go.Figure(go.Indicator(
             {'range': [0, 150], 'color': "lightgray"},
             {'range': [150, 250], 'color': "gray"}]}))
 
-task_name = dcc.Input(id='task_content', type='text', value=None)
-task_start = dcc.Input(id='task_start', type='text', value=None)
-task_stop = dcc.Input(id='task_stop', type='text', value=None)
+task_name = dcc.Input(id='task_content', type='text', value="name")
+task_start = dcc.Input(id='task_start', type='text', value="start")
+task_stop = dcc.Input(id='task_stop', type='text', value="stop")
+task_group = dcc.Input(id='task_stop', type='text', value="group")
+submit_tasks = html.Button('Submit', id='submit-val', n_clicks=0),
+
+todo_name = dcc.Input(id='task_content', type='text', value="name")
+submit_todo = html.Button('Submit', id='submit-val', n_clicks=0),
 
 journal_content = dcc.Textarea(
     id="journal_content",
@@ -128,17 +146,39 @@ journal_content = dcc.Textarea(
 
 horizontal_stats = go.Figure(go.Bar(
             x=[20, 14, 23],
-            y=['giraffes', 'orangutans', 'monkeys'],
-            orientation='h'))
+            y=['work', 'sleep', 'recr'],
+            orientation='h',
+
+))
 horizontal_stats.update_layout(
     margin=dict(
-        l=10,
+        l=0,
         r=10,
         b=10,
         t=10,
     ),
+    paper_bgcolor="#ddd",
+
 )
 
+slider1= daq.Slider(
+  id='my-daq-slider',
+  value=40,
+  min=0,
+  max=100,
+  step = 10,
+  color=dict(default="grey"),
+ size = 100
+  # targets={"25": {"label": "TARGET"}}
+)
+
+slider2= daq.Gauge(
+  id='my-daq-gauge',
+  min=0,
+  max=10,
+  value=6,
+  size=100
+)
 # fig.update_layout(height = 250)
 # fig.update_layout(height = 400 , margin = {'t':0, 'b':0, 'l':0})
 
