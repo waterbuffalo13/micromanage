@@ -6,8 +6,12 @@ import dash_daq as daq
 import dash_table
 import pandas as pd
 import numpy as np
+solar_data = {'Index':  ['timestamp', 'Second value'],
+        'Second Column Name': ['First value', 'Second value'],
+        }
 
-solar_df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
+
+solar_df = pd.DataFrame (solar_data)
 labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
 values = [4500, 2500, 1053, 500]
 
@@ -30,6 +34,7 @@ zanzibar = dash_table.DataTable(
     id='table',
     columns=[{"name": i, "id": i} for i in solar_df.columns],
     data=solar_df.to_dict('records'),
+    row_deletable=True,
 )
 
 def wrapiefigure(labels, values, holes):
