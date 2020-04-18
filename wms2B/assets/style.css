@@ -44,17 +44,26 @@ body{
 .wrapper > div{
     background:#eeee;
     padding:1em;
+    position:relative;
 }
 
 .wrapper > div:nth-child(odd){
     background:#ddd;
     padding:1em;
+    position:relative;
 }
 
-.nested{
+.nested {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+   /* grid-auto-rows:4vh; */
+   /* grid-auto-columns:12vh;*/
 
 }
 
+.nested > div {
+    border: #333 1px solid;
+}
 .box1{
     grid-column:1/3;
     grid-row:1/2;
@@ -121,9 +130,14 @@ body{
     /*grid-row:2/4;*/
 
 }
+
+.box15{
+    grid-column:1/3;
+
+}
 .box17{
     grid-column:3/6;
-    height:20vh;
+  /*  height:20vh;*/
     overflow-y:scroll;
     /*grid-row:2/4;*/
 

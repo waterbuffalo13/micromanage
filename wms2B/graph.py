@@ -184,6 +184,16 @@ slider2= daq.Gauge(
   value=6,
   size=100
 )
+
+interpolation_strats = dcc.Dropdown(
+    id='demo-dropdown',
+    options=[
+        {'label': 'New York City', 'value': 'NYC'},
+        {'label': 'Montreal', 'value': 'MTL'},
+        {'label': 'San Francisco', 'value': 'SF'}
+    ],
+    value='NYC'
+)
 # fig.update_layout(height = 250)
 # fig.update_layout(height = 400 , margin = {'t':0, 'b':0, 'l':0})
 
