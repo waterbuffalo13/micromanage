@@ -74,9 +74,17 @@ index_page = html.Div([
 html.Div([
             task_name, task_start, task_stop, html.Button('Submit', id='submit-val', n_clicks=0),
             ],className="nested4"),
-                  zanzibar
+            zanzibar], className="box17"),
 
-                  ], className="box17"),
+# html.Div(["Box16"]),
+#     html.Div(["Box16"]),
+#     html.Div(["Box16"]),
+#     html.Div(["Box16"]),
+#     html.Div(["Box16"]),
+#     html.Div(["Box16"]),
+#     html.Div(["Box16"]),
+#
+
 
 
 

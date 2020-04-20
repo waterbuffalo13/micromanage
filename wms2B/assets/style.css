@@ -38,6 +38,7 @@ body{
     grid-template-columns: repeat(12, 1fr);
     grid-gap:1em;
     grid-auto-flow: column;
+    border: #333 1px solid;
     /*grid-auto-rows:minmax(10px, auto)*/
     /*justify-items:stretch;*/
 }
@@ -65,7 +66,7 @@ body{
 
 .nested4 {
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(5,1fr);
     /*overflow: auto;*/
     padding-bottom:2em;
     grid-gap:1em;
