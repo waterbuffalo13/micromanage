@@ -107,6 +107,7 @@ body{
 
 }
 .box4{
+    /*align-self:start*/
     /*grid-column:9/11;*/
     /*grid-row:1/2;*/
 
