@@ -6,28 +6,27 @@ import dash_daq as daq
 import dash_table
 import pandas as pd
 import numpy as np
-schedule_data = {'Index':  ['timestamp', 'Second value'],
-        'content': ['First value', 'Second value'],
-        'start': ['First value', 'Second value'],
-        'stop': ['First value', 'Second value'],
+
+schedule_data = {'Index': ['timestamp', 'Second value'],
+                 'content': ['First value', 'Second value'],
+                 'start': ['First value', 'Second value'],
+                 'stop': ['First value', 'Second value'],
                  }
-schedule_df = pd.DataFrame (schedule_data)
 
-todo_data = {'Index':  ['1', '2'],
-        'content': ['Finish up waterbuffalo micromanagement', 'take up yoga'],
-                 }
-todo_df = pd.DataFrame (todo_data)
+schedule_df = pd.DataFrame(schedule_data)
 
+todo_data = {'Index': ['1', '2'],
+             'content': ['Finish up waterbuffalo micromanagement', 'take up yoga'],
+             }
 
+todo_df = pd.DataFrame(todo_data)
 
-labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
+labels = ['Oxygen', 'Hydrogen', 'Carbon_Dioxide', 'Nitrogen']
 values = [4500, 2500, 1053, 500]
-
-
 
 x = np.arange(10)
 
-wellbeing = go.Figure(data=go.Scatter(x=x, y=x**2))
+wellbeing = go.Figure(data=go.Scatter(x=x, y=x ** 2))
 wellbeing.update_layout(
     autosize=True,
     # width=500,
@@ -52,8 +51,10 @@ zanzibar_todo = dash_table.DataTable(
     row_deletable=True,
 )
 
+
 def wrapiefigure(labels, values, holes):
     return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4)])
+
 
 pie = wrapiefigure(labels, values, .4)
 pie.update_layout(
@@ -68,7 +69,6 @@ pie.update_layout(
     paper_bgcolor="#ddd",
     showlegend=False,
 
-
 )
 # pie.update_layout(legend=dict(x=0, y=0))
 pie.update_yaxes(automargin=True)
@@ -78,12 +78,12 @@ df = [dict(Task="Job A", Start='2009-01-01', Finish='2009-02-28'),
       dict(Task="Job C", Start='2009-02-20', Finish='2009-05-30')]
 
 gantt_diagram = ff.create_gantt(df)
-gantt_diagram.update_layout(autosize=True,     margin=dict(
-        l=70,
-        r=70,
-        b=70,
-        t=70,
-    ),)
+gantt_diagram.update_layout(autosize=True, margin=dict(
+    l=70,
+    r=70,
+    b=70,
+    t=70,
+), )
 gantt_diagram["layout"].pop("height", None)
 gantt_diagram["layout"].pop("width", None)
 
@@ -119,25 +119,22 @@ sleep.add_trace(go.Bar(
     )
 ))
 
-
-
-sleep.update_layout(barmode='stack', autosize=True,     margin=dict(
-        l=0,
-        r=0,
-        b=0,
-        t=0,
-    ), showlegend=False, title = "test",
+sleep.update_layout(barmode='stack', autosize=True, margin=dict(
+    l=0,
+    r=0,
+    b=0,
+    t=0,
+), showlegend=False, title="test",
                     paper_bgcolor="#ddd",
 
                     )
 
-
 fig = go.Figure(go.Indicator(
-    mode = "number+gauge+delta", value = 220,
-    domain = {'x': [0.1, 1], 'y': [0, 1]},
-    title = {'text' :"<b>Profit</b>"},
-    delta = {'reference': 200},
-    gauge = {
+    mode="number+gauge+delta", value=220,
+    domain={'x': [0.1, 1], 'y': [0, 1]},
+    title={'text': "<b>Profit</b>"},
+    delta={'reference': 200},
+    gauge={
         'shape': "bullet",
         'axis': {'range': [None, 300]},
         'threshold': {
@@ -165,9 +162,9 @@ journal_content = dcc.Textarea(
 )
 
 horizontal_stats = go.Figure(go.Bar(
-            x=[20, 14, 23],
-            y=['work', 'sleep', 'recr'],
-            orientation='h',
+    x=[20, 14, 23],
+    y=['work', 'sleep', 'recr'],
+    orientation='h',
 
 ))
 horizontal_stats.update_layout(
@@ -181,23 +178,23 @@ horizontal_stats.update_layout(
 
 )
 
-slider1= daq.Slider(
-  id='my-daq-slider',
-  value=40,
-  min=0,
-  max=100,
-  step = 10,
-  color=dict(default="grey"),
- size = 100
-  # targets={"25": {"label": "TARGET"}}
+slider1 = daq.Slider(
+    id='my-daq-slider',
+    value=40,
+    min=0,
+    max=100,
+    step=10,
+    color=dict(default="grey"),
+    size=100
+    # targets={"25": {"label": "TARGET"}}
 )
 
-slider2= daq.Gauge(
-  id='my-daq-gauge',
-  min=0,
-  max=10,
-  value=6,
-  size=100
+slider2 = daq.Gauge(
+    id='my-daq-gauge',
+    min=0,
+    max=10,
+    value=6,
+    size=100
 )
 
 interpolation_strats = dcc.Dropdown(
@@ -209,7 +206,16 @@ interpolation_strats = dcc.Dropdown(
     ],
     value='NYC'
 )
+
+mockup_gauge= daq.Gauge(
+    color={"gradient":False,"ranges":{"red":[0,6],"yellow":[6,8],"green":[8,10]}},
+    value=2,
+    label='Default2',
+    max=10,
+    min=0,
+    size=60,
+
+)
+
 # fig.update_layout(height = 250)
 # fig.update_layout(height = 400 , margin = {'t':0, 'b':0, 'l':0})
-
-

@@ -96,13 +96,13 @@ def graph_update(n):
               [State('task_content', 'value'), State('date-picker', 'date'), State('start_task', 'value'),
                State('stop_task', 'value'), State('task_nature', 'value')])
 def update_output(n_clicks, task_contents, date_pickers, start_task, stop_task, task_nature):
-    #read from database
+    # read from database
     base = pd.read_csv("apps/todolist.csv")
-    #remove all redundant columns
+    # remove all redundant columns
     base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
-    #convert the created data from the input into a specific datetime format
+    # convert the created data from the input into a specific datetime format
     created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    #attempt to parse the date picker as an input
+    # attempt to parse the date picker as an input
     try:
         date_pickers_obj = datetime.datetime.strptime(date_pickers, "%Y-%m-%d %H:%M:%S")
     except:
@@ -111,17 +111,19 @@ def update_output(n_clicks, task_contents, date_pickers, start_task, stop_task, 
         date_pickers_obj = datetime.datetime.strptime(date_pickers, "%Y-%m-%d")
     except:
         print("ripperino in pepperoni")
-    #convert back into string
+    # convert back into string
     date_pickers_str = date_pickers_obj.strftime("%d/%m/%Y")
-    #stor
+    # stor
     task_data = [[task_contents, created, date_pickers_str, start_task, stop_task, task_nature]]
-    updated = pd.DataFrame(task_data, columns=['task_name', 'created_date', 'deadline', 'start_task', 'stop_task', "task_nature"])
+    updated = pd.DataFrame(task_data,
+                           columns=['task_name', 'created_date', 'deadline', 'start_task', 'stop_task', "task_nature"])
     updated = base.append(updated, sort=False)
     # updated = updated.dropna()
     updated = updated[pd.notnull(updated["task_name"])]
     updated.to_csv("apps/todolist.csv", index=False)
     return updated.to_dict('records')
     # return task_contents
+
 
 @app.callback(Output("gantt-id", "figure"),
               [Input('table', 'data_previous'), Input("submit-button", "n_clicks"), Input("table", "data")],
@@ -135,7 +137,7 @@ def showRemovedRows(previous, n_clicks, data, current, ):
         df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
         df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
 
-        nochanges = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks = True)
+        nochanges = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks=True)
         dash.exceptions.PreventUpdate()
         return nochanges
     else:
@@ -144,33 +146,34 @@ def showRemovedRows(previous, n_clicks, data, current, ):
                 # time.sleep(0.10)
                 x = row
                 x_df = pd.DataFrame.from_dict(x, orient="index", columns=["task_name"])
-                #this is probably not a good way of adding information
+                # this is probably not a good way of adding information
                 final_df = pd.merge(current_df, x_df, on=['task_name', 'task_name'], how="outer", indicator=True)
                 final_df = final_df[final_df['_merge'] == 'left_only']
                 final_df = final_df.drop(columns=["_merge"])
                 final_df.to_csv("apps/todolist.csv", index=False)
-                df_gantt = final_df[["task_name", "start_task", "stop_task","task_nature"]].copy()
+                df_gantt = final_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
                 df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
                 df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
                 df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
-                add_or_remove = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks = True)
+                add_or_remove = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks=True)
 
                 return add_or_remove
+
 
 @app.callback(Output("table_journal", "data"),
               [Input('submit-journal', 'n_clicks')],
               [State('journal_content', 'value'), State('emotional_state', 'value')])
 def update_journal_output(n_clicks, journal_contents, emotional_states):
-    #read from database
+    # read from database
     base = pd.read_csv("apps/wellbeing.csv")
-    #remove all redundant columns
+    # remove all redundant columns
     base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
-    #convert the created data from the input into a specific datetime format
+    # convert the created data from the input into a specific datetime format
     created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    #convert back into string
-  #  str_created = created.strftime("%d/%m/%Y")
-    #stor
-    journal_data = [[created,journal_contents, emotional_states]]
+    # convert back into string
+    #  str_created = created.strftime("%d/%m/%Y")
+    # stor
+    journal_data = [[created, journal_contents, emotional_states]]
     updated = pd.DataFrame(journal_data, columns=['time_stamp', 'journal_contents', 'wellbeing_value'])
     updated = base.append(updated, sort=False)
     # updated = updated.dropna()
@@ -178,8 +181,10 @@ def update_journal_output(n_clicks, journal_contents, emotional_states):
     updated.to_csv("apps/wellbeing.csv", index=False)
     return updated.to_dict('records')
 
+
 @app.callback(Output("journal_time_series", "figure"),
-              [Input('table_journal', 'data_previous'), Input("submit-journal", "n_clicks"), Input("table_journal", "data")],
+              [Input('table_journal', 'data_previous'), Input("submit-journal", "n_clicks"),
+               Input("table_journal", "data")],
               [State('table_journal', 'data')])
 def showRemovedRowsJournal(previous, n_clicks, data, current, ):
     wellbeing_df = pd.read_csv("apps/wellbeing.csv")
@@ -195,10 +200,12 @@ def showRemovedRowsJournal(previous, n_clicks, data, current, ):
             name='Scatter',
             mode='lines',  # +markers',
         )
-        journal_test = {'data': [data], 'layout': go.Layout(title="Self-Actualization", xaxis=dict(range=[min(wellbeing_df["time_stamp"]), max(wellbeing_df["time_stamp"])]),
-                                                        yaxis=dict(range=[min(wellbeing_df["wellbeing_value"]), max(wellbeing_df["wellbeing_value"])]),
-                                                        height=400, paper_bgcolor="#f7f7f7",
-                                                        plot_bgcolor="#f7f7f7")}
+        journal_test = {'data': [data], 'layout': go.Layout(title="Self-Actualization", xaxis=dict(
+            range=[min(wellbeing_df["time_stamp"]), max(wellbeing_df["time_stamp"])]),
+                                                            yaxis=dict(range=[min(wellbeing_df["wellbeing_value"]),
+                                                                              max(wellbeing_df["wellbeing_value"])]),
+                                                            height=400, paper_bgcolor="#f7f7f7",
+                                                            plot_bgcolor="#f7f7f7")}
         dash.exceptions.PreventUpdate()
         try:
             return journal_test
@@ -207,10 +214,10 @@ def showRemovedRowsJournal(previous, n_clicks, data, current, ):
     else:
         for row in previous:
             if row not in current:
-    #             # time.sleep(0.10)
+                #             # time.sleep(0.10)
                 x = row
                 x_df = pd.DataFrame.from_dict(x, orient="index", columns=["time_stamp"])
-    #             # this is probably not a good way of adding information
+                #             # this is probably not a good way of adding information
                 final_df = pd.merge(wellbeing_df, x_df, on=['time_stamp', 'time_stamp'], how="outer", indicator=True)
                 final_df = final_df[final_df['_merge'] == 'left_only']
                 final_df = final_df.drop(columns=["_merge"])
@@ -237,6 +244,7 @@ def showRemovedRowsJournal(previous, n_clicks, data, current, ):
     #             add_or_remove = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks=True)
     #
     #             return add_or_remove
+
 
 # @app.callback(Output("journal_time_series", "figure"),
 #               [Input('submit-journal', 'n_clicks')],
@@ -272,7 +280,7 @@ def showRemovedRowsJournal(previous, n_clicks, data, current, ):
 #     updated.to_csv("apps/readinglist.csv")
 #     return updated.to_dict('records')
 #
-    #return u'Input 1 is "{}" and Input 2 is "{}" and Input 3 is"{}"'.format(book_names, book_sizes, current_pages)
+# return u'Input 1 is "{}" and Input 2 is "{}" and Input 3 is"{}"'.format(book_names, book_sizes, current_pages)
 @app.callback(Output('tabs-content-example', 'children'),
               [Input('tabs-example', 'value')])
 def render_content(tab):
@@ -289,7 +297,7 @@ def render_content(tab):
                     }]
                 }
             )
-        ], className = "container")
+        ], className="container")
     elif tab == 'tab-2-example':
         return html.Div([
             html.H3('Tab content 2'),
@@ -303,7 +311,7 @@ def render_content(tab):
                     }]
                 }
             )
-        ], className = "container")
+        ], className="container")
 
 
 if __name__ == '__main__':

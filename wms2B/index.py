@@ -10,84 +10,71 @@ index_page = html.Div([
     html.Div([
 
         html.Div([
-            "Box1"
-            , dcc.Graph(figure=pie, style={'height': "20vh"}, ),
+            "Box1",
+            dcc.Graph(figure=pie, style={'height': "20vh"}),
             dcc.Graph(figure=horizontal_stats, style={'height': "9vh"})
-            # dcc.Graph(figure=sleep, style={'height': "4vh"}),
-            # dcc.Graph(figure=sleep, style={'height': "4vh"}),
-            # dcc.Graph(figure=sleep, style={'height': "4vh"})
-            # horizontal_stats
-
-        ], className="box1"),
+        ], className="piechart"),
 
         html.Div([
-            "Box2", dcc.Graph(figure=gantt_diagram, style={'height': "40vh"}),
-
-        ], className="box2"),
-
-        html.Div([
-                zanzibar_todo
-        ], className="box4"),
-
-
+            "Box2",
+            dcc.Graph(figure=gantt_diagram, style={'height': "40vh"}),
+        ], className="ganttchart"),
 
         html.Div([
-            "Box7",
+            "To do list",
+            zanzibar_todo
+        ], className="todolist"),
+
+        html.Div([
+            "Box4",
             dcc.Graph(figure=sleep, style={'height': "3vh"}), html.Br(),
             dcc.Graph(figure=sleep, style={'height': "3vh"}), html.Br(),
 
-            # slider2,
-            # slider1, html.Br(), html.Br(), html.Br(), html.Br(), html.Br(),html.Br(),html.Br(),html.Br(),
-            # slider1, html.Br(), html.Br(), html.Br(), html.Br(),
-            # slider1,
-        ], className="box7"),
-        # html.Div(["Box8"], className="box8"),
-        # html.Div(["Box9"], className="box9"),
-        # html.Div(["Box10"], className="box10"),
-
-        # html.Div([
-        #     "Box11",
-        #     todo_name
-        #     # "Box11", dcc.Graph(figure =  wellbeing, style={'height': "20vh"})
-        # ], className="box11"),
-
+        ], className="sleepstats"),
 
         html.Div([
             "wellbeing index",
-                html.Div([
+            html.Div([
+                interpolation_strats,
+                interpolation_strats,
+            ], className="nested"),
+            html.Br(), html.Br(), html.Br(), html.Br(),
+            dcc.Graph(figure=wellbeing, style={'height': "20vh"}),
+        ], className="wellbeing"),
 
-                    interpolation_strats,
-
-                    interpolation_strats,
-
-                ],className = "nested"),
-                html.Br(),  html.Br(), html.Br(), html.Br(),
-
-
-
-                dcc.Graph(figure=wellbeing, style={'height': "20vh"}),
-
-                  ], className="box15"),
-
-        # html.Div(["Box16"], className="box16"),
         html.Div([
+            html.Div([
+                task_name,
+                task_start,
+                task_stop,
+                html.Button('Submit', id='submit-val', n_clicks=0),
+            ], className="addtoschedule"),
+            zanzibar], className="schedulelist"),
+        html.Div([
+            # "next box",
 html.Div([
-            task_name, task_start, task_stop, html.Button('Submit', id='submit-val', n_clicks=0),
-            ],className="nested4"),
-            zanzibar], className="box17"),
+            html.Div([mockup_gauge],className="three columns", style ={"border":"#333 1px solid"}),
+            html.Div([mockup_gauge], className="three columns", style={"border": "#333 1px solid"}),
+            html.Div([mockup_gauge], className="three columns", style={"border": "#333 1px solid"}),
+            html.Div([mockup_gauge], className="three columns", style={"border": "#333 1px solid"}),
+], className="twelve columns", style={"border": "#333 1px solid"}),
+html.Div([
+            html.Div([mockup_gauge], className="three columns", style={"border": "#333 1px solid"}),
+            html.Div([mockup_gauge], className="three columns", style={"border": "#333 1px solid"}),
+            html.Div([mockup_gauge], className="three columns", style={"border": "#333 1px solid"}),
+            html.Div([mockup_gauge], className="three columns", style={"border": "#333 1px solid"}),
+], className="twelve columns", style={"border": "#333 1px solid"}),
+        ], className="nextbox"),
+        html.Div([
+            "n2 box"
+        ], className="n2box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
 
-# html.Div(["Box16"]),
-#     html.Div(["Box16"]),
-#     html.Div(["Box16"]),
-#     html.Div(["Box16"]),
-#     html.Div(["Box16"]),
-#     html.Div(["Box16"]),
-#     html.Div(["Box16"]),
-#
+], className="wrapper"),
 
 
 
-
-    ], className="wrapper")
 
 ], className="twelve columns")
