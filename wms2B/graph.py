@@ -6,12 +6,20 @@ import dash_daq as daq
 import dash_table
 import pandas as pd
 import numpy as np
-solar_data = {'Index':  ['timestamp', 'Second value'],
-        'Second Column Name': ['First value', 'Second value'],
-        }
+schedule_data = {'Index':  ['timestamp', 'Second value'],
+        'content': ['First value', 'Second value'],
+        'start': ['First value', 'Second value'],
+        'stop': ['First value', 'Second value'],
+                 }
+schedule_df = pd.DataFrame (schedule_data)
+
+todo_data = {'Index':  ['1', '2'],
+        'content': ['Finish up waterbuffalo micromanagement', 'take up yoga'],
+                 }
+todo_df = pd.DataFrame (todo_data)
 
 
-solar_df = pd.DataFrame (solar_data)
+
 labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
 values = [4500, 2500, 1053, 500]
 
@@ -32,8 +40,15 @@ wellbeing.update_layout(
 
 zanzibar = dash_table.DataTable(
     id='table',
-    columns=[{"name": i, "id": i} for i in solar_df.columns],
-    data=solar_df.to_dict('records'),
+    columns=[{"name": i, "id": i} for i in schedule_df.columns],
+    data=schedule_df.to_dict('records'),
+    row_deletable=True,
+)
+
+zanzibar_todo = dash_table.DataTable(
+    id='table',
+    columns=[{"name": i, "id": i} for i in todo_df.columns],
+    data=todo_df.to_dict('records'),
     row_deletable=True,
 )
 
