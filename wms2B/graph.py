@@ -30,10 +30,14 @@ todo_df = pd.DataFrame(todo_data)
 virtue_data = {
     'Index': ["timestamp",    'wellbeing avg',  'wellbeing_stdv', 'prod_cap','rel-inter', 'domain', 'relex'], #, "third value", "fourth value",  "third value", "fourth value"],
     'row1': ['3.81','2.42','213','431','clunker','strat','dawg'], #, '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
-
                  }
 
 virtue_df = pd.DataFrame(virtue_data)
+
+auto_data = {
+    'Index': ["SLEEP",    'DIET',  'wellbeing_stdv', 'prod_cap','rel-inter', 'domain', 'relex'], #, "third value", "fourth value",  "third value", "fourth value"],
+    'row1': ['3.81','2.42','213','431','clunker','strat','dawg'], #, '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
+                 }
 
 labels = ['Oxygen', 'Hydrogen', 'Carbon_Dioxide', 'Nitrogen']
 values = [4500, 2500, 1053, 500]

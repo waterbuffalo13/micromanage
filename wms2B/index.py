@@ -27,10 +27,12 @@ index_page = html.Div([
         html.Div([
             # "Box2",
             dcc.Tabs(id='tabs-example', value='tab-1', children=[
-        dcc.Tab(label='Retro-Schedule',  value='Schedule', style = {"height":"1vh", "vertical-align":"10px"}, selected_style={"height":"1vh"}),
-        dcc.Tab(label='Mood and Energy', value='Performance', style = {"height":"1vh"}, selected_style={"height":"1vh"}),
-        dcc.Tab(label='Journal', value='Wisdom', style = {"height":"1vh"}, selected_style={"height":"1vh"}),
-        dcc.Tab(label='Wellbeing', value='Energy', style = {"height":"1vh"}, selected_style={"height":"1vh"}),
+        dcc.Tab(label='Schedule',  value='Schedule', style = {"height":"1vh", "vertical-align":"10px"}, selected_style={"height":"1vh"}),
+        dcc.Tab(label='Retro-Schedule', value='Performance', style = {"height":"1vh"}, selected_style={"height":"1vh"}),
+        dcc.Tab(label='Mood and Energy', value='Wisdom', style = {"height":"1vh"}, selected_style={"height":"1vh"}),
+        dcc.Tab(label='Journal', value='Energy', style = {"height":"1vh"}, selected_style={"height":"1vh"}),
+        dcc.Tab(label='Commitments', value='Energy', style = {"height":"1vh"}, selected_style={"height":"1vh"}),
+        dcc.Tab(label='Diet Planner', value='Energy', style = {"height":"1vh"}, selected_style={"height":"1vh"}),
     ]),
     html.Div(id='tabs-example-content'),
 
