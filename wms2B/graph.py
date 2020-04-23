@@ -7,10 +7,16 @@ import dash_table
 import pandas as pd
 import numpy as np
 
-schedule_data = {'Index': ['timestamp', 'Second value'],
-                 'content': ['First value', 'Second value'],
-                 'start': ['First value', 'Second value'],
-                 'stop': ['First value', 'Second value'],
+schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth value"], #, "third value", "fourth value",  "third value", "fourth value"],
+                 'content': ['First value', 'Second value',  "third value", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
+                 'start': ['First value', 'Second value',  "third value", "fourth value"],  #"third value", "fourth value",  "third value", "fourth value"],
+                 'stop': ['First value', 'Second value',  "third value", "fourth value"]  #"third value", "fourth value",  "third value", "fourth value"],
+                 }
+#
+schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth value", "third value", "fourth value",  "third value", "fourth value"],
+                 'content': ['First value', 'Second value',  "third value", "fourth value","third value", "fourth value",  "third value", "fourth value"],
+                 'start': ['First value', 'Second value',  "third value", "fourth value", "third value", "fourth value",  "third value", "fourth value"],
+                 'stop': ['First value', 'Second value',  "third value", "fourth value", "third value", "fourth value",  "third value", "fourth value"],
                  }
 
 schedule_df = pd.DataFrame(schedule_data)
@@ -20,6 +26,14 @@ todo_data = {'Index': ['1', '2'],
              }
 
 todo_df = pd.DataFrame(todo_data)
+
+virtue_data = {
+    'Index': ["timestamp",    'wellbeing avg',  'wellbeing_stdv', 'prod_cap','rel-inter', 'domain', 'relex'], #, "third value", "fourth value",  "third value", "fourth value"],
+    'row1': ['3.81','2.42','213','431','clunker','strat','dawg'], #, '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
+
+                 }
+
+virtue_df = pd.DataFrame(virtue_data)
 
 labels = ['Oxygen', 'Hydrogen', 'Carbon_Dioxide', 'Nitrogen']
 values = [4500, 2500, 1053, 500]
@@ -51,6 +65,13 @@ zanzibar_todo = dash_table.DataTable(
     row_deletable=True,
 )
 
+virtue_table = dash_table.DataTable(
+    id='table',
+    columns=[{"name": i, "id": i} for i in virtue_df.columns],
+    data=virtue_df.to_dict('records'),
+    # row_deletable=True,
+)
+
 
 def wrapiefigure(labels, values, holes):
     return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4)])
@@ -73,11 +94,21 @@ pie.update_layout(
 # pie.update_layout(legend=dict(x=0, y=0))
 pie.update_yaxes(automargin=True)
 
-df = [dict(Task="Job A", Start='2009-01-01', Finish='2009-02-28'),
-      dict(Task="Job B", Start='2009-03-05', Finish='2009-04-15'),
-      dict(Task="Job C", Start='2009-02-20', Finish='2009-05-30')]
+df = [
+    # dict(Task="Sleep", Start='2020-04-01 ', Finish='2020-04-01 09:30'),
+    dict(Task="Break", Start='2020-04-01 09:30', Finish='2020-04-01 10:30'),
+    dict(Task="Program", Start='2020-04-01 10:30', Finish='2020-04-01 12:30'),
+    dict(Task="Break", Start='2020-04-01 12:30', Finish='2020-04-01 13:30'),
+    dict(Task="Program", Start='2020-04-01 13:30', Finish='2020-04-01 15:30'),
+    dict(Task="Netflix", Start='2020-04-01 15:30', Finish='2020-04-01 18:00'),
+    dict(Task="Program", Start='2020-04-01 18:30', Finish='2020-04-01 20:00'),
+    dict(Task="Break", Start='2020-04-01 20:00', Finish='2020-04-01 23:00'),
 
-gantt_diagram = ff.create_gantt(df)
+
+      ]
+# df_new = pd.read_csv(r"C:\Users\Patrick\Desktop\wms2\wms2A\apps\todolist.csv")
+
+gantt_diagram = ff.create_gantt(df, group_tasks=True)
 gantt_diagram.update_layout(autosize=True, margin=dict(
     l=70,
     r=70,
@@ -208,13 +239,24 @@ interpolation_strats = dcc.Dropdown(
 )
 
 mockup_gauge= daq.Gauge(
-    color={"gradient":False,"ranges":{"red":[0,6],"yellow":[6,8],"green":[8,10]}},
+    color="#9B51E0",
     value=2,
     label='Default2',
     max=10,
     min=0,
     size=60,
 
+)
+
+
+tank = daq.Tank(
+    value=3,
+    width=20,
+    height= 200,
+    label='Index',
+    labelPosition='bottom',
+    style={'margin-left': '5%', "margin-top":"10%"},
+    color="red",
 )
 
 # fig.update_layout(height = 250)
