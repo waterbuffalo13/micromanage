@@ -97,16 +97,20 @@ body{
 
 .ganttchart{
     grid-column:3/8;
-    grid-row:1/2;
+    grid-row:1/3;
 }
 
 .todolist{
     display: flex;
     flex-direction: column;
-    grid-row:1/4;
-    flex-grow:1;
+    grid-row:1/6;
+    /*flex-grow:1;*/
     justify-content: space-between;
-    max-height:71vh;
+
+    /*max-height:71vh;*/
+
+
+    /*height:100%;*/
 
     border: #333 1px solid;
 }
@@ -128,13 +132,15 @@ body{
 
 .wellbeing{
     grid-column:1/3;
+    grid-row: 3/4;
+    max-height: 28vh;
 
 }
 
 .schedulelist{
     grid-column:4/8;
     /*max-height:50%;*/
-    max-height: 25vh;
+    max-height: 28vh;
     /*overflow: hidden;*/
     overflow-y:scroll;
     /*min-height:30vh;*/
@@ -143,7 +149,9 @@ body{
 }
 .nextbox{
     grid-column: 3/4;
-    grid-row:2/3;
+    grid-row:3/4;
+    max-height: 28vh;
+
 }
 
 .virtuegrid{
@@ -163,7 +171,8 @@ body{
 }
 
 .n2box{
-    grid-column: 9/10;
+    grid-column: 1/3;
+    grid-row:2/3;
 
     /*grid-row: 1/2;*/
     /*/*grid-row:3/6;*/
@@ -178,6 +187,8 @@ body{
 .habitsmonitor{
     display:inline-grid;
     align-items: center;
+        width: 100%;
+    height: 100%;
 
     grid-template-columns:repeat(6,1fr);
 
@@ -187,6 +198,7 @@ body{
 
 .habitsmonitor > div{
   height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;

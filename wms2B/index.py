@@ -13,19 +13,27 @@ index_page = html.Div([
     html.Div([
 
         html.Div([
+
             "Box1",
             dcc.Graph(figure=pie, style={'height': "20vh"}),
             dcc.Graph(figure=horizontal_stats, style={'height': "9vh"}),
             html.Br(),
             html.Div([
-                dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
-                dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
+
             ], style={"position": "relative", "bottom": "-2vh"})
 
         ], className="piechart", style={"position": "relative"}),
 
         html.Div([
-            "Box2",
+            # "Box2",
+            dcc.Tabs(id='tabs-example', value='tab-1', children=[
+        dcc.Tab(label='Gantt Chart',  value='Schedule'),
+        dcc.Tab(label='Wellbeing', value='Performance'),
+        dcc.Tab(label='Wellbeing', value='Performance'),
+        dcc.Tab(label='Wellbeing', value='Performance'),
+    ]),
+    html.Div(id='tabs-example-content'),
+
             dcc.Graph(figure=gantt_diagram, style={'height': "40vh"}),
         ], className="ganttchart"),
 
@@ -33,7 +41,7 @@ index_page = html.Div([
             # "To do list",
             # zanzibar_todo,
             html.Div(["Todolist ", zanzibar], className="test"),
-            html.Div(["Habits monitor",
+            html.Div([
                       html.Div([
                           html.Div([
                               ""
@@ -59,51 +67,51 @@ index_page = html.Div([
                               "CARD"
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
 
                           ]),
 
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
-                                  ,
+                                  width=15,
+                                  height=15,
+                                  # style={"width": "100%", "height":"100%"}
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
 
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
 
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
@@ -112,47 +120,47 @@ index_page = html.Div([
                           ]),
 
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
@@ -161,47 +169,47 @@ index_page = html.Div([
                           ]),
 
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
@@ -210,54 +218,54 @@ index_page = html.Div([
                           ]),
 
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                           html.Div([
-                              daq.Indicator(
+                                                  daq.Indicator(
                                   color="green",
                                   value=True,
-                                  width=10,
-                                  height=10
+                                  width=15,
+                                  height=15
                                   ,
                               )
                           ]),
                       ], className="habitsmonitor")
 
                       ], className="test"),
-            html.Div([zanzibar], className="test"),
+            html.Div(["Automated Feedback",zanzibar], className="test"),
             html.Div([zanzibar], className="test"),
 
         ], className="todolist"),
@@ -290,29 +298,68 @@ index_page = html.Div([
         html.Div([
             virtue_table,
         ], className="nextbox"),
-        # html.Div([
-        #     "n2 box"
-        # ], className="n2box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n3box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n3box"),
-        #
-        # html.Div([
-        #     "n3 box",
-        # ], className="n3box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n3box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n3box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n3box"),
+        html.Div([
+            html.Div(["n2 box"], style={"text-align":"center"}),
+            dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
+            dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
+        ], className="n2box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
 
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
+        html.Div([
+            "n3 box",
+        ], className="n3box"),
     ], className="wrapper"),
 
 ], className="twelve columns")
