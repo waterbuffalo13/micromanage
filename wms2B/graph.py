@@ -110,10 +110,10 @@ df = [
 
 gantt_diagram = ff.create_gantt(df, group_tasks=True)
 gantt_diagram.update_layout(autosize=True, margin=dict(
-    l=70,
-    r=70,
-    b=70,
-    t=70,
+    l=10,
+    r=10,
+    b=10,
+    t=10,
 ), )
 gantt_diagram["layout"].pop("height", None)
 gantt_diagram["layout"].pop("width", None)
@@ -156,14 +156,14 @@ sleep.update_layout(barmode='stack', autosize=True, margin=dict(
     b=0,
     t=0,
 ), showlegend=False, title="test",
-                    paper_bgcolor="#ddd",
+                 paper_bgcolor="#ddd",
 
                     )
 
 fig = go.Figure(go.Indicator(
     mode="number+gauge+delta", value=220,
     domain={'x': [0.1, 1], 'y': [0, 1]},
-    title={'text': "<b>Profit</b>"},
+    title={'text': "Day"},
     delta={'reference': 200},
     gauge={
         'shape': "bullet",
@@ -172,9 +172,20 @@ fig = go.Figure(go.Indicator(
             'line': {'color': "red", 'width': 2},
             'thickness': 0.75,
             'value': 280},
-        'steps': [
-            {'range': [0, 150], 'color': "lightgray"},
-            {'range': [150, 250], 'color': "gray"}]}))
+        # 'steps': [
+        #     {'range': [0, 150], 'color': "lightgray"},
+        #     {'range': [150, 250], 'color': "gray"}]
+    }))
+
+fig.update_layout(
+    autosize=True, margin=dict(
+    l=0,
+    r=0,
+    b=0,
+    t=0,
+)
+
+                    )
 
 task_name = dcc.Input(id='task_content', type='text', value="name")
 task_start = dcc.Input(id='task_start', type='text', value="start")
