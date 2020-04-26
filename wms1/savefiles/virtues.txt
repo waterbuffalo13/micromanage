@@ -1,0 +1,8 @@
+[{"virtue":"Production", "definition" : " to work ceaselessly to create one's values.", "value": 1},
+#{"virtue":"Pride", "definition" : " Related to confidence and self-esteem.", "value": 1},
+#{"virtue":"Ambition", "definition" : " to pursue one's own goals and desires.", "value": 1},
+#{"virtue":"Self-restraint", "definition" : "Moderation or voluntary self-control.", "value": 1}, 
+#{"virtue":"Wisdom", "definition" : " Used as tools to navigate life", "value": 1}, 
+#{"virtue":"Order/Aesthetics", "definition" : "is the commitment to beauty and harmony", "value": 1},
+#{"virtue":"Integrity", "definition" : "Consistent application of reason.", "value": 1},
+#{"virtue":"Rationality", "definition" : " To use reason (and reject emotions) when making choices", "value": 1}]

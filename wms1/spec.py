@@ -1,0 +1,23 @@
+import os
+def specification():
+	os.system('cls' if os.name == 'nt' else 'clear')
+	print("					|  ACHIEVEMENTS   |\n 	 			        ===================")
+	print("               PERSONAL PROJECTS")
+	print("----------------------------------------------")
+	print(" - WATERBUFFALO MICROMANAGEMENT SYSTEM")
+	print("==============================================")
+	print(" Main features")
+	print("  - Goals list (75%)")
+	print("  - Habits log (50%)")
+	print("  - Achievements log (50%)")
+	print(" Further micromanagement")
+	print("  - Dynamic timeline (0%)")
+	print("  - Profile - Statistics tracker (50%)")
+	print("  - Journal and wellbeing tracker (25%)")
+	print("  - Diet planner & Calorie counter (0%)")
+	print("  - Calendar (0%)")
+	print("  - Weight tracker (0%) \n")
+
+	print("----------------------------------------------")
+	print(" - WORLDBOOKS")
+	print("==============================================")

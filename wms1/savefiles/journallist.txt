@@ -1,0 +1,1 @@
+[{'timestamp': '25/3/2019', 'title': 'Testing', 'content': 'The first journal entry contents', 'wellbeing': '-3'}]

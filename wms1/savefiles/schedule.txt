@@ -1,0 +1,1 @@
+[{'timestamp': datetime.datetime(2018, 11, 13, 0, 0), 'schedule': 'Go for a walk', 'start time': '13:50', 'end time': '14:30'}, {'timestamp': datetime.datetime(2018, 11, 15, 0, 0), 'schedule': 'Meet carl', 'start time': '14:30', 'end time': '16:30'}, {'timestamp': datetime.datetime(2019, 3, 25, 0, 0), 'schedule': 'Nomos', 'start time': '10', 'end time': '12'}]

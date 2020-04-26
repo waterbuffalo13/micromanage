@@ -1,8 +1,9 @@
-# wms2 Personal Analytics
-
-This is the second version of Waterbuffalo Micromanagement that takes a more visualized approach to its predecessor. It is a WIP and as of 26/12/2019 looks like this:
+# Waterbuffalo Micromanagement: 
+# The Combinatorics of A: Investigating causal structures of wellbeing  
 
 ![alt text](https://raw.githubusercontent.com/waterbuffalo13/wms2/master/multi_page/assets/Capture.PNG)
+
+
 
 The purpose of this application is to view life as an optimization problem, where the user is encouraged to discover, choose and partake in the activities and hobbies that provide the most meaning and satisfaction. Positive behaviour is encouraged through a mixture of strategies derived from psychology including variable-ratio schedules and behavioural therapy. 
 
