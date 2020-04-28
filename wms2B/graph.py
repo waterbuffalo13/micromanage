@@ -9,7 +9,7 @@ import numpy as np
 import plotly.graph_objects as go
 
 personality = go.Figure(data=go.Scatterpolar(
-  r=[1, 3, 2, 2, 10],
+  r=[6, 3, 2, 3, 1],
   theta=['PROD','INTGR','SELF_R', 'AMB', 'WIS'],
   fill='toself'
 ))
@@ -44,8 +44,8 @@ schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth v
 
 schedule_df = pd.DataFrame(schedule_data)
 
-todo_data = {'Index': ['1', '2'],
-             'content': ['Finish up waterbuffalo micromanagement', 'take up yoga'],
+todo_data = {'Index': ['1', '2','3','4','5','6'],
+             'content': ['Finish up waterbuffalo micromanagement', 'take up yoga','go to the clubs','have a good time','develop relationships', 'write papers'],
              }
 
 todo_df = pd.DataFrame(todo_data)
@@ -62,8 +62,8 @@ auto_data = {
     'row1': ['3.81','2.42','213','431','clunker','strat','dawg'], #, '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
                  }
 
-labels = ['Oxygen', 'Hydrogen', 'Carbon_Dioxide', 'Nitrogen']
-values = [4500, 2500, 1053, 500]
+labels = ['Sleep', 'Recr', 'Work', 'Waste']
+values = [8*60, 4*60, 3*60, 9*60]
 
 x = np.arange(10)
 
@@ -101,7 +101,7 @@ virtue_table = dash_table.DataTable(
 
 
 def wrapiefigure(labels, values, holes):
-    return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4)])
+    return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent',  automargin=False)])
 
 
 pie = wrapiefigure(labels, values, .4)
@@ -114,7 +114,8 @@ pie.update_layout(
         b=10,
         t=10,
     ),
-    paper_bgcolor="#ddd",
+    # paper_bgcolor="#ddd",
+    paper_bgcolor="white",
     showlegend=False,
 
 )
