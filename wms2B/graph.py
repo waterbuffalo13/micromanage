@@ -6,6 +6,29 @@ import dash_daq as daq
 import dash_table
 import pandas as pd
 import numpy as np
+import plotly.graph_objects as go
+
+personality = go.Figure(data=go.Scatterpolar(
+  r=[1, 3, 2, 2, 10],
+  theta=['PROD','INTGR','SELF_R', 'AMB', 'WIS'],
+  fill='toself'
+))
+
+personality.update_layout(
+  polar=dict(
+    radialaxis=dict(
+      visible=True
+    ),
+  ),
+  showlegend=False,
+    margin = dict(
+        l=40,
+        r=40,
+        b=0,
+        t=0,
+    ),
+    autosize=True,
+)
 
 schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth value"], #, "third value", "fourth value",  "third value", "fourth value"],
                  'content': ['First value', 'Second value',  "third value", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
