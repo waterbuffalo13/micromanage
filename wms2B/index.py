@@ -16,7 +16,9 @@ index_page = html.Div([
 
     html.Div([
         html.Div([
-            html.Div([],className="new"),
+            html.Div([
+
+            ],className="new"),
             "Box1",
             dcc.Graph(figure=pie, style={'height': "20vh"}),
             # dcc.Graph(figure=personality, style={'height': "25vh"}),
@@ -24,7 +26,7 @@ index_page = html.Div([
             html.Br(),
             html.Div([
             ], style={"position": "relative", "bottom": "-2vh"}),
-            dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
+            # dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
             # dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
 
         ], className="piechart", style={"position": "relative"}),
@@ -70,384 +72,9 @@ index_page = html.Div([
         ], className="ganttchart"),
 
         html.Div([
-            # "Box4",
-            # html.Div([
-            #     html.Div([
-            #         html.Div([
-            #             "HABITS MONITOR"
-            #         ], style={"grid-column": "1/9"}),
-            #         html.Div([
-            #             ""
-            #         ]),
-            #         html.Div([
-            #             "MON"
-            #         ]),
-            #
-            #         html.Div([
-            #             "TUE"
-            #         ]),
-            #         html.Div([
-            #             "WED"
-            #         ]),
-            #         html.Div([
-            #             "THU"
-            #         ]),
-            #
-            #         html.Div([
-            #             "FRI"
-            #         ]),
-            #         html.Div([
-            #             "SAT"
-            #         ]),
-            #         html.Div([
-            #             "SUN"
-            #         ]),
-            #         html.Div([
-            #             "MIND"
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #
-            #             )
-            #         ], style={"color": "white"}),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind,
-            #                 # style={"width": "100%", "height":"100%"}
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             "GYM"
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             "CARDIO"
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             "GYM"
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             "CARDIO"
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #         html.Div([
-            #             daq.Indicator(
-            #                 color="green",
-            #                 value=True,
-            #                 width=width_ind,
-            #                 height=height_ind
-            #                 ,
-            #             )
-            #         ]),
-            #     ], className="habitsmonitor")
-            # ], className="test"),
 
-
-
+dcc.Graph(figure=task_distribution, style={'height': "30vh"}),
+        "gtest"
         ], className="sleepstats"),
 
         html.Div([
@@ -460,11 +87,28 @@ index_page = html.Div([
             zanzibar], className="schedulelist"),
 
         html.Div([
-            html.Div(["n2 box"], style={"text-align": "center"}),
+            html.Div([
+                daq.LEDDisplay(
+                    id='my-daq-leddisplay',
+                    value="3.14159",
+                    size=20
+                )
+            ],className = "six columns"),
+            html.Div([
+                daq.LEDDisplay(
+                    id='my-daq-leddisplay',
+                    value="3.14159",
+                    size=20
+                ),
+            ], className="six columns"),
+
+            html.Div(["n2 box", dcc.Graph(figure=sleep, style={'height': "5vh", "position": "bottom"}), html.Br(),], style={"text-align": "center"}),
+
 
         ], className="n2box"),
         html.Div([
             "n5 box",
+
 
 
         ], className="n5box"),
@@ -512,13 +156,13 @@ index_page = html.Div([
                         ]),
                         html.Div([
                             daq.Indicator(
-                                color="green",
+                                color="yellow",
                                 value=True,
-                                width=width_ind,
-                                height=height_ind
+                                # width=width_ind,
+                                # height=height_ind
 
                             )
-                        ], style={"color": "white"}),
+                        ], style={"color": "white", "height":"2em"}),
 
                         html.Div([
                             daq.Indicator(
@@ -857,7 +501,7 @@ index_page = html.Div([
                 daq.GraduatedBar(
                   id='my-daq-graduatedbar',
                     label=dict(
-        label="Percentage Adherance",
+        label="Overall Performance",
         style={"color":"black", "background-color":"#ddd"},
                     ),
                   value=4
@@ -874,9 +518,18 @@ index_page = html.Div([
             ], className="test")
 
         ], className="todolist"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
+        html.Div([
+            html.Div(["test"]),
+            html.Div(["test"]),
+            html.Div(["test"]),
+            html.Div(["test"]),
+            html.Div(["test"]),
+        ], className="todolist"),
+
+        html.Div([
+                        # dcc.Graph(figure=fig, style={'height': "4vh"}),
+            "take it easy"
+        ], className="n4box"),
         # html.Div([
         #     "n3 box",
         # ], className="n4box"),

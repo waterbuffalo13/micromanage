@@ -1,5 +1,5 @@
-# Waterbuffalo Micromanagement: 
-# The Combinatorics of A: Investigating causal structures of wellbeing  
+# Waterbuffalo Micromanagement
+# The Combinatorics of Human Schedules: Investigating Causal Structures of Wellbeing  
 
 ![alt text](https://raw.githubusercontent.com/waterbuffalo13/wms2/master/multi_page/assets/Capture.PNG)
 

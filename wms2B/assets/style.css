@@ -212,7 +212,9 @@ body{
 }
 .n4box{
     /*grid-column: 8/9;*/
-    grid-row: 2/3;
+    grid-column:3/8;
+    grid-row: 4/5;
+    align-self: self-start;
     /*height:10vh;*/
     /*width:1vh;*/
 
@@ -221,6 +223,7 @@ body{
 
 .n5box{
     grid-column: 7/8;
+    grid-row: 3/4;
         /*background-color: yellow;*/
     /*grid-row: 3/5;*/
     /*height:10vh;*/

@@ -8,6 +8,20 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 
+# Use `y` argument instead of `x` for horizontal histogram
+
+task_distribution = go.Figure(data=[go.Histogram(y=np.random.randn(500))])
+task_distribution.update_layout(
+
+    margin = dict(
+        l=0,
+        r=0,
+        b=0,
+        t=0,
+    ),
+    autosize=True,
+)
+
 personality = go.Figure(data=go.Scatterpolar(
   r=[6, 3, 2, 3, 1],
   theta=['PROD','INTGR','SELF_R', 'AMB', 'WIS'],
