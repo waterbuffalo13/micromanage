@@ -119,10 +119,18 @@ body{
 .todolist{
     display: flex;
     flex-direction: column;
+    /*align-content: flex-start;*/
     grid-row:1/5;
+    float:right;
     /*flex-grow:1;*/
     /*justify-content: space-between;*/
     background-color: white !important;
+    justify-content: stretch;
+    flex-grow: initial;
+
+    /*margin-right:-10px;*/
+    /*   align-items: flex-start;*/
+
 
 
     /*max-height:71vh;*/
@@ -134,8 +142,14 @@ body{
 }
 .todolist > div{
     /*height:20vh;*/
+    flex:1;
     border: #ddd 1em solid;
+
 }
+
+/*.listoftodo{*/
+/*    display: inline-block;*/
+/*}*/
 
 .test{
     /*border: #fff 1em solid;*/
@@ -198,6 +212,7 @@ body{
 .n2box{
     grid-column: 1/3;
     grid-row:2/3;
+    overflow:auto;
 
     /*grid-row: 1/2;*/
     /*/*grid-row:3/6;*/

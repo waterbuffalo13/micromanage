@@ -10,6 +10,21 @@ import plotly.graph_objects as go
 
 # Use `y` argument instead of `x` for horizontal histogram
 
+line_chart = go.Figure(data=[go.Scatter(x=[1, 2, 3,4,5,6,7,8,9,10,11,12], y=[4, 1, 6,4,7,9,8,7,12,15,14,12], mode='lines',  line=dict(color='royalblue', width=1))])
+line_chart.update_layout(
+    margin = dict(
+        l=0,
+        r=0,
+        b=0,
+        t=40,
+
+    ),
+    autosize=True,
+    title="Actualization Index",
+    # mode="lines",
+)
+
+
 task_distribution = go.Figure(data=[go.Histogram(y=np.random.randn(500))])
 task_distribution.update_layout(
 
@@ -203,17 +218,18 @@ sleep.update_layout(barmode='stack', autosize=True, margin=dict(
                     )
 
 fig = go.Figure(go.Indicator(
-    mode="number+gauge+delta", value=220,
+    mode="gauge", value=220,
     domain={'x': [0.1, 1], 'y': [0, 1]},
     title={'text': "Day"},
-    delta={'reference': 200},
+    # delta={'reference': 200},
     gauge={
         'shape': "bullet",
-        'axis': {'range': [None, 300]},
-        'threshold': {
-            'line': {'color': "red", 'width': 2},
-            'thickness': 0.75,
-            'value': 280},
+        'axis': {'range': [None, 300]}
+        # 'threshold': {
+        #     'line': {'color': "red", 'width': 2},
+        #     'thickness': 0.75,
+        #     'value': 280}
+        ,
         # 'steps': [
         #     {'range': [0, 150], 'color': "lightgray"},
         #     {'range': [150, 250], 'color': "gray"}]
