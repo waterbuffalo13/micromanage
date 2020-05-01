@@ -1,8 +1,7 @@
 # Waterbuffalo Micromanagement
-# The Combinatorics of Human Schedules: Investigating Causal Structures of Wellbeing  
+# Living Deliberatly: Investigating Causal Structures of Wellbeing  
 
-![alt text](https://raw.githubusercontent.com/waterbuffalo13/wms2/master/multi_page/assets/Capture.PNG)
-
+![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot.PNG)
 
 
 The purpose of this application is to view life as an optimization problem, where the user is encouraged to discover, choose and partake in the activities and hobbies that provide the most meaning and satisfaction. Positive behaviour is encouraged through a mixture of strategies derived from psychology including variable-ratio schedules and behavioural therapy. 

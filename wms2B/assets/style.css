@@ -95,6 +95,7 @@ body{
     /*overflow: auto;*/
     /*padding-bottom:2em;*/
     grid-gap:1em;
+
      /*border: #333 1px solid;*/
 
    /* grid-auto-rows:4vh; */
@@ -182,8 +183,6 @@ body{
 
 .schedulelist{
     grid-column:3/7;
-    /*max-height:50%;*/
-    max-height: 28vh;
     /*overflow: hidden;*/
     overflow-y:scroll;
     /*min-height:30vh;*/
