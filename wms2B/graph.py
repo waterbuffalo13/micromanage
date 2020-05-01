@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 
 # Use `y` argument instead of `x` for horizontal histogram
 
-line_chart = go.Figure(data=[go.Scatter(x=[1, 2, 3,4,5,6,7,8,9,10,11,12], y=[4, 1, 6,4,7,9,8,7,12,15,14,12], mode='lines',  line=dict(color='royalblue', width=1))])
+line_chart = go.Figure(data=[go.Scatter(x=[1, 2, 3,4,5,6,7,8,9,10,11,12], y=[1, 2, 5,8,10,11,13,16,18,19,20,19], mode='lines',  line=dict(color='royalblue', width=1))])
 line_chart.update_layout(
     margin = dict(
         l=0,
@@ -170,7 +170,7 @@ gantt_diagram.update_layout(autosize=True, margin=dict(
     l=10,
     r=10,
     b=10,
-    t=10,
+    t=0,
 ), )
 gantt_diagram["layout"].pop("height", None)
 gantt_diagram["layout"].pop("width", None)
@@ -218,13 +218,13 @@ sleep.update_layout(barmode='stack', autosize=True, margin=dict(
                     )
 
 fig = go.Figure(go.Indicator(
-    mode="gauge", value=220,
-    domain={'x': [0.1, 1], 'y': [0, 1]},
+    mode="gauge", value=7,
+    domain={'x': [0.1, 1], 'y': [0.5, 1]},
     title={'text': "Day"},
     # delta={'reference': 200},
     gauge={
         'shape': "bullet",
-        'axis': {'range': [None, 300]}
+        'axis': {'range': [None, 24]}
         # 'threshold': {
         #     'line': {'color': "red", 'width': 2},
         #     'thickness': 0.75,
@@ -239,7 +239,7 @@ fig.update_layout(
     autosize=True, margin=dict(
     l=0,
     r=0,
-    b=0,
+    b=10,
     t=0,
 )
 

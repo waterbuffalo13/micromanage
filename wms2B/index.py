@@ -69,6 +69,14 @@ index_page = html.Div([
 
             dcc.Graph(figure=gantt_diagram, style={'height': "40vh"}),
             dcc.Graph(figure=fig, style={'height': "4vh"}),
+            html.Br(),
+            html.Div([
+
+                task_name,
+                task_start,
+                task_stop,
+                html.Button('Submit', id='submit-val', n_clicks=0),
+            ], className="addtoschedule"),
         ], className="ganttchart"),
 
         html.Div([
@@ -78,12 +86,12 @@ index_page = html.Div([
         ], className="sleepstats"),
 
         html.Div([
-            html.Div([
-                task_name,
-                task_start,
-                task_stop,
-                html.Button('Submit', id='submit-val', n_clicks=0),
-            ], className="addtoschedule"),
+            # html.Div([
+            #     task_name,
+            #     task_start,
+            #     task_stop,
+            #     html.Button('Submit', id='submit-val', n_clicks=0),
+            # ], className="addtoschedule"),
             zanzibar], className="schedulelist"),
 
         html.Div([
@@ -116,7 +124,7 @@ index_page = html.Div([
         # html.Div([
             html.Div([
                 # "n4 box",
-                html.Div(["\"Resilience in Uncertainity, Resignation in Inevitability\""], className="test"),
+                # html.Div(["\"Resilience in Uncertainity, Resignation in Inevitability\""], className="test"),
                 html.Div([
                     zanzibar_todo
                 ], className="test"),
@@ -528,16 +536,24 @@ index_page = html.Div([
                               style={"width": "25vh", "height": "20vh"},
                           )
                           ], className="test"),
-                html.Div(["RECENT ACHIEVEMENTS", html.Br(), "- Implemented fourth column", html.Br(),
-                          "- Watched a lecture on statistics", html.Br(), "- Maintained a google schedule"],
+                html.Div([
+
+
+                    "RECENT ACHIEVEMENTS", html.Br(), "- Implemented fourth column", html.Br(),
+                          "- Watched a lecture on statistics", html.Br(), "- Maintained a google schedule"
+
+                ],
                          className="test"),
                 html.Div(
-                    ["SHORT TERM STRATEGY", html.Br(), " - Design Waterbuffalo", html.Br(), " - Develop Waterbuffalo",
-                     html.Br(), " - Become a Data Analyst", html.Br(), " - Become a Data Analyst", html.Br(), ],
+                    ["LONG TERM STRATEGY", html.Br(), " - Develop Waterbuffalo Micromanagement", html.Br(), " - Create Waterbuffalo Analytics",
+                     html.Br(), " - Become a Data Analyst", html.Br(), " - WRI", html.Br(), ],
                     className="test"),
                 html.Div(["KPI REPORT", html.Br(), "SLEEP : CONSISTENT GOOD", html.Br(), "NUTRITION : GOOD", html.Br(),
                           "SCHEDULE QUALITY : CONSISTENT LOW", html.Br(), "VIRTUE SCORE : HIGH", html.Br(),
                           "OVERALL WELLBEING: FLUCTUATING HIGH"], className="test"),
+            html.Div(["KPI REPORT", html.Br(), "SLEEP : CONSISTENT GOOD", html.Br(), "NUTRITION : GOOD", html.Br(),
+                      "SCHEDULE QUALITY : CONSISTENT LOW", html.Br(), "VIRTUE SCORE : HIGH", html.Br(),
+                      "OVERALL WELLBEING: FLUCTUATING HIGH"], className="test"),
 
             ], className="todolist"),
 
@@ -546,51 +562,51 @@ index_page = html.Div([
         html.Div([
             # dcc.Graph(figure=fig, style={'height': "4vh"}),
             "take it easy"
-        ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        #
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        #
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
-        # html.Div([
-        #     "n3 box",
-        # ], className="n4box"),
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
+        html.Div([
+            "n3 box",
+        ]),
     ], className="wrapper"),
 
 ], className="twelve columns")

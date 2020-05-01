@@ -93,8 +93,9 @@ body{
     display:grid;
     grid-template-columns:repeat(5,1fr);
     /*overflow: auto;*/
-    padding-bottom:2em;
+    /*padding-bottom:2em;*/
     grid-gap:1em;
+     /*border: #333 1px solid;*/
 
    /* grid-auto-rows:4vh; */
    /* grid-auto-columns:12vh;*/
@@ -126,8 +127,8 @@ body{
     /*justify-content: space-between;*/
     background-color: white !important;
     justify-content: stretch;
-    flex-grow: initial;
-
+    /*flex-grow: initial;*/
+    /*flex-flow: column;*/
     /*margin-right:-10px;*/
     /*   align-items: flex-start;*/
 
@@ -138,15 +139,19 @@ body{
 
     /*height:100%;*/
 
-    border: #333 1px solid;
+    border: #ddd 2px solid;
 }
-.todolist > div{
+.todolist > div {
     /*height:20vh;*/
-    flex:1;
+    /*flex:1;*/
     border: #ddd 1em solid;
 
 }
+/*}*/
+/*.todolist > div:nth-child(1) {*/
+/*    flex:1;*/
 
+/*}*/
 /*.listoftodo{*/
 /*    display: inline-block;*/
 /*}*/
@@ -239,9 +244,11 @@ body{
 .n5box{
     grid-column: 7/8;
     grid-row: 3/4;
+    /*max-height: 28vh;*/
         /*background-color: yellow;*/
     /*grid-row: 3/5;*/
     /*height:10vh;*/
+
     /*width:1vh;*/
 
     /*/*grid-row:3/6;*/
@@ -256,6 +263,7 @@ body{
     /*padding-left:0.25em;*/
     /*padding-right:0.25em;*/
     background-color: darkgrey;
+        background-color: #ccc;
     /*padding-bottom:2em;*/
 
     grid-template-columns:repeat(8,1fr);
