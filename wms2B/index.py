@@ -8,12 +8,13 @@ width_ind = 20
 # session controller - logging in/out
 index_page = html.Div([
 
-    html.Div([
+html.Div([
         html.H5(
             "Waterbuffalo Micromanagement v2.01 ~ Success is commemorated; Failure merely remembered.  "),
     ], className="banner", style={"textAlign": "center"}),
-
+    html.Div(["take it easy"]),
     html.Div([
+
         html.Div([
             html.Div([
 
@@ -67,7 +68,7 @@ index_page = html.Div([
             ]),
             html.Div(id='tabs-example-content'),
 
-            dcc.Graph(figure=gantt_diagram, style={'height': "40vh"}),
+            dcc.Graph(figure=gantt_diagram, style={'height': "35vh"}),
             dcc.Graph(figure=fig, style={'height': "4vh"}),
             html.Br(),
             html.Div([
@@ -530,14 +531,14 @@ index_page = html.Div([
             ], className="todolist"), html.Div([
 
                 html.Div(["test",
-                          dcc.Graph(
-                              id='example-graph-2',
-                              figure=line_chart,
-                              style={"width": "25vh", "height": "20vh"},
-                          )
+
                           ], className="test"),
                 html.Div([
-
+                    dcc.Graph(
+                        id='example-graph-2',
+                        figure=line_chart,
+                        style={"width": "25vh", "height": "20vh"},
+                    ),
 
                     "RECENT ACHIEVEMENTS", html.Br(), "- Implemented fourth column", html.Br(),
                           "- Watched a lecture on statistics", html.Br(), "- Maintained a google schedule"
@@ -557,56 +558,59 @@ index_page = html.Div([
 
             ], className="todolist"),
 
+
         # ],className="listoftodo"),
 
-        html.Div([
-            # dcc.Graph(figure=fig, style={'height': "4vh"}),
-            "take it easy"
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
+        # html.Div([
+        #     # dcc.Graph(figure=fig, style={'height': "4vh"}),
+        #     "take it easy"
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        #
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        #
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
+        # html.Div([
+        #     "n3 box",
+        # ]),
 
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
-        html.Div([
-            "n3 box",
-        ]),
     ], className="wrapper"),
+
 
 ], className="twelve columns")

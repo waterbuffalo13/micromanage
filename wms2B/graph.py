@@ -156,10 +156,10 @@ df = [
     dict(Task="Break", Start='2020-04-01 09:30', Finish='2020-04-01 10:30'),
     dict(Task="Program", Start='2020-04-01 10:30', Finish='2020-04-01 12:30'),
     dict(Task="Break", Start='2020-04-01 12:30', Finish='2020-04-01 13:30'),
-    dict(Task="Program", Start='2020-04-01 13:30', Finish='2020-04-01 15:30'),
+    dict(Task="Timex", Start='2020-04-01 13:30', Finish='2020-04-01 15:30'),
     dict(Task="Netflix", Start='2020-04-01 15:30', Finish='2020-04-01 18:00'),
     dict(Task="Program", Start='2020-04-01 18:30', Finish='2020-04-01 20:00'),
-    dict(Task="Break", Start='2020-04-01 20:00', Finish='2020-04-01 23:00'),
+    dict(Task="Treat", Start='2020-04-01 20:00', Finish='2020-04-01 23:00'),
 
 
       ]
