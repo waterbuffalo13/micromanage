@@ -10,18 +10,41 @@ import plotly.graph_objects as go
 
 # Use `y` argument instead of `x` for horizontal histogram
 
+sankey = go.Figure(go.Sankey(
+    arrangement = "snap",
+    node = {
+        "label": ["A", "B", "C", "D", "E", "F"],
+        "x": [0.2, 0.1, 0.5, 0.7, 0.3, 0.5],
+        "y": [0.7, 0.5, 0.2, 0.4, 0.2, 0.3],
+        'pad':10},  # 10 Pixels
+    link = {
+        "source": [0, 0, 1, 2, 5, 4, 3, 5],
+        "target": [5, 3, 4, 3, 0, 2, 2, 3],
+        "value": [1, 2, 1, 1, 1, 1, 1, 2]}))
+
+sankey.update_layout(title_text="Basic Sankey Diagram", font_size=10,
+
+                     margin=dict(
+                         l=0,
+                         r=0,
+                         b=0,
+                         t=0,
+
+                     )
+                     )
+
 line_chart = go.Figure(data=[go.Scatter(x=[1, 2, 3,4,5,6,7,8,9,10,11,12], y=[1, 2, 5,8,10,11,13,16,18,19,20,19], mode='lines',  line=dict(color='royalblue', width=1))])
 line_chart.update_layout(
-    margin = dict(
+    autosize=True,
+    title="Actualization Index",
+    # mode="lines",
+    margin=dict(
         l=0,
         r=0,
         b=0,
         t=40,
 
-    ),
-    autosize=True,
-    title="Actualization Index",
-    # mode="lines",
+    )
 )
 
 
