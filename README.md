@@ -1,26 +1,12 @@
 # Waterbuffalo Micromanagement
-# Living Deliberatly: Investigating Causal Structures of Wellbeing  
-
-![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot.PNG)
 
 
-The purpose of this application is to view life as an optimization problem, where the user is encouraged to discover, choose and partake in the activities and hobbies that provide the most meaning and satisfaction. Positive behaviour is encouraged through a mixture of strategies derived from psychology including variable-ratio schedules and behavioural therapy. 
+![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot1.png)
 
-1. Organization:
-   - to-do list & scheduler
-      - Create a task (done)
-     - Delete a task (done)
-     - Add an element to the schedule
-     - Delete elements from a schedule
-   - Measurement & Tracking
-     - Log bucket list
-     - Reading
-2.  Reinforce:
-        - Proactively identify potential obstacles for completing tasks and preemptively come up with solutions
-        - Specify and recognize the importance of each task and how it contributes towards a greater goal
-      And if you do not complete the task by the deadline: 
-        - Textbox on failure of tasks (e.g. what would happen if you continued failing this task)
-3. Catalogue: 
-4. Insight: 
-1
--
+Waterbuffalo Micromanagement is an ambitious project with a large, interdisplinary scope that is currently a work in progress. The aim of this project was to use complex data analysis and data science techniques to identify, investigate and understand implicit causal factors of wellbeing and optimize my life against these factors. 
+
+Whilst it's purpose and design philosophy has changed over time ultimatey the project can be summarized as an attempt to solve a very important and fundamental question: What precisely should I be doing with my time? Should I be working on this project? Should I be applying for new jobs? Should I spend all of my time at home playing video games? An example could be going to the gym. Is going more often and for longer frequencies always increase my short-term wellbeing or is their a certain optimium? The question of time allocation needs to be solved in four parts, namely organization, reinforcement, cataloguing and insight production.
+
+To answer this question requires some methodology to quantify wellbeing. Which is a relatively difficult thing to do considering it's largely subjective thing that is not well understood. The quantification strategy in this instance requires on applying a sentiment analysis to the journal entries and inferring wellbeing from the nature of your mood.
+
+

@@ -2,7 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
-from wms2B.index import index_page
+from wms2B.index_old import index_page
 
 
 external_stylesheets = [

@@ -341,14 +341,41 @@ mockup_gauge= daq.Gauge(
 )
 
 
-tank = daq.Tank(
+tank1 = daq.Tank(
     value=3,
     width=20,
     height= 200,
     label='Index',
     labelPosition='bottom',
+    style={'margin-left': '50%', "margin-top":"10%",},
+    color="blue",
+)
+tank2 = daq.Tank(
+    value=5,
+    width=20,
+    height= 200,
+    label='Index',
+    labelPosition='bottom',
     style={'margin-left': '5%', "margin-top":"10%"},
-    color="red",
+    color="blue",
+)
+tank3 = daq.Tank(
+    value=2,
+    width=20,
+    height= 200,
+    label='Index',
+    labelPosition='bottom',
+    style={'margin-left': '5%', "margin-top":"10%"},
+    color="blue",
+)
+tank4 = daq.Tank(
+    value=8,
+    width=20,
+    height= 200,
+    label='Index',
+    labelPosition='bottom',
+    style={'margin-left': '5%', "margin-top":"10%"},
+    color="orange",
 )
 
 # fig.update_layout(height = 250)
