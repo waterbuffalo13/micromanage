@@ -155,7 +155,13 @@ virtue_table = dash_table.DataTable(
 def wrapiefigure(labels, values, holes):
     return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent',  automargin=False)])
 
+pie2=go.Figure(go.Sunburst(
+    labels=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+    parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
+    values=[10, 14, 12, 10, 2, 6, 6, 4, 4],
+))
 
+pie2.update_layout(margin = dict(t=0, l=0, r=0, b=0))
 pie = wrapiefigure(labels, values, .4)
 pie.update_layout(
     autosize=True,
@@ -268,7 +274,7 @@ fig.update_layout(
 
                     )
 
-task_name = dcc.Input(id='task_content', type='text', value="name")
+task_name = dcc.Input(id='task_content', type='text', value="name", style = {"box-shadow":"0 0 5px #666"})
 task_start = dcc.Input(id='task_start', type='text', value="start")
 task_stop = dcc.Input(id='task_stop', type='text', value="stop")
 task_group = dcc.Input(id='task_stop', type='text', value="group")
