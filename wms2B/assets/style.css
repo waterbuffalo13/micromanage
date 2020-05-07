@@ -43,7 +43,7 @@
     background-color: white/*rgb(66, 196, 247)*/;
     border-radius: 2px;
     text-align: center;
-    background:#ddd;
+    background:white;
                 box-shadow: 0 0 5px 1px  #bbb;
 }
 
@@ -54,7 +54,7 @@
     margin-left: 2%;
     display: inline-block;
     font-size: 15px;
-    background:#ddd;
+    /*background:#ddd;*/
 }
 
 .banner Img{

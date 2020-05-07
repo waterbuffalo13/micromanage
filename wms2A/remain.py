@@ -160,26 +160,26 @@ def showRemovedRows(previous, n_clicks, data, current, ):
                 return add_or_remove
 
 
-@app.callback(Output("table_journal", "data"),
-              [Input('submit-journal', 'n_clicks')],
-              [State('journal_content', 'value'), State('emotional_state', 'value')])
-def update_journal_output(n_clicks, journal_contents, emotional_states):
-    # read from database
-    base = pd.read_csv("apps/wellbeing.csv")
-    # remove all redundant columns
-    base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
-    # convert the created data from the input into a specific datetime format
-    created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    # convert back into string
-    #  str_created = created.strftime("%d/%m/%Y")
-    # stor
-    journal_data = [[created, journal_contents, emotional_states]]
-    updated = pd.DataFrame(journal_data, columns=['time_stamp', 'journal_contents', 'wellbeing_value'])
-    updated = base.append(updated, sort=False)
-    # updated = updated.dropna()
-    updated = updated[pd.notnull(updated["journal_contents"])]
-    updated.to_csv("apps/wellbeing.csv", index=False)
-    return updated.to_dict('records')
+# @app.callback(Output("table_journal", "data"),
+#               [Input('submit-journal', 'n_clicks')],
+#               [State('journal_content', 'value'), State('emotional_state', 'value')])
+# def update_journal_output(n_clicks, journal_contents, emotional_states):
+#     # read from database
+#     base = pd.read_csv("apps/wellbeing.csv")
+#     # remove all redundant columns
+#     base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
+#     # convert the created data from the input into a specific datetime format
+#     created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+#     # convert back into string
+#     #  str_created = created.strftime("%d/%m/%Y")
+#     # stor
+#     journal_data = [[created, journal_contents, emotional_states]]
+#     updated = pd.DataFrame(journal_data, columns=['time_stamp', 'journal_contents', 'wellbeing_value'])
+#     updated = base.append(updated, sort=False)
+#     # updated = updated.dropna()
+#     updated = updated[pd.notnull(updated["journal_contents"])]
+#     updated.to_csv("apps/wellbeing.csv", index=False)
+#     return updated.to_dict('records')
 
 
 @app.callback(Output("journal_time_series", "figure"),

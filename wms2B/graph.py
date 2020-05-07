@@ -96,11 +96,11 @@ schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth v
 
 schedule_df = pd.DataFrame(schedule_data)
 
-todo_data = {'Index': ['1', '2','3','4','5','6'],
-             'content': ['Finish up waterbuffalo micromanagement', 'take up yoga','go to the clubs','have a good time','develop relationships', 'write papers'],
-             }
-
-todo_df = pd.DataFrame(todo_data)
+# todo_data = {'Index': ['1', '2','3','4','5','6'],
+#              'content': ['Finish up waterbuffalo micromanagement', 'take up yoga','go to the clubs','have a good time','develop relationships', 'write papers'],
+#              }
+#
+# todo_df = pd.DataFrame(todo_data)
 
 virtue_data = {
     'Index': ["timestamp",    'wellbeing avg',  'wellbeing_stdv', 'prod_cap','rel-inter', 'domain', 'relex'], #, "third value", "fourth value",  "third value", "fourth value"],
@@ -136,13 +136,13 @@ zanzibar = dash_table.DataTable(
     data=schedule_df.to_dict('records'),
     row_deletable=True,
 )
-
-zanzibar_todo = dash_table.DataTable(
-    id='table',
-    columns=[{"name": i, "id": i} for i in todo_df.columns],
-    data=todo_df.to_dict('records'),
-    row_deletable=True,
-)
+#
+# zanzibar_todo = dash_table.DataTable(
+#     id='table',
+#     columns=[{"name": i, "id": i} for i in todo_df.columns],
+#     # data=todo_df.to_dict('records'),
+#     row_deletable=True,
+# )
 
 virtue_table = dash_table.DataTable(
     id='table',
@@ -274,10 +274,10 @@ fig.update_layout(
 
                     )
 
-task_name = dcc.Input(id='task_content', type='text', value="name", style = {"box-shadow":"0 0 5px #666"})
-task_start = dcc.Input(id='task_start', type='text', value="start")
-task_stop = dcc.Input(id='task_stop', type='text', value="stop")
-task_group = dcc.Input(id='task_stop', type='text', value="group")
+task_name = dcc.Input(id='task_content', type='text', value="name", style = {"box-shadow":"0 0 2px 1px #666"})
+task_start = dcc.Input(id='task_start', type='text', value="start", style = {"box-shadow":"0 0 2px 1px #666"})
+task_stop = dcc.Input(id='task_stop', type='text', value="stop", style = {"box-shadow":"0 0 2px 1px #666"})
+task_group = dcc.Input(id='task_stop', type='text', value="group", style = {"box-shadow":"0 0 2px 1px #666"})
 submit_tasks = html.Button('Submit', id='submit-val', n_clicks=0),
 
 todo_name = dcc.Input(id='task_content', type='text', value="name")
