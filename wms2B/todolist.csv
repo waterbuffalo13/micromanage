@@ -1,5 +1,4 @@
-created_date,task_contents
-07/05/2020 20:45:10,tr
-07/05/2020 20:45:13,die
-07/05/2020 20:45:17,fly
-07/05/2020 20:45:19,
+task_contents,created_date
+Do a stats lecture,07/05/2020 22:33:10
+Implement the Gantt Chart,07/05/2020 22:33:32
+Read a book on Python,07/05/2020 22:33:43

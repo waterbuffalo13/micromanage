@@ -1,10 +1,8 @@
 from datetime import datetime
 from dash.dependencies import Input, Output, State
-from wms2B.index import index_page
-from wms2B.main import app
 import pandas as pd
-from wms2B.main import *
-
+import dash
+from wms2B.old_stuff.app import app
 
 # @app.callback(Output('page-content', 'children'),
 #               [Input('url', 'pathname')])
@@ -21,22 +19,42 @@ from wms2B.main import *
 #         return '404'
 
 @app.callback(Output("table", "data"),
-                [Input('todo_submit', 'n_clicks')],
-                [State('todo_content', 'value')])
-
+              [Input('todo_submit', 'n_clicks')],
+              [State('todo_content', 'value')])
 def update_output(n_clicks, task_contents):
-    # read from database
-    base = pd.read_csv("../todolist.csv")
-    # remove all redundant columns
-    base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
-    # convert the created data from the input into a specific datetime format
-    created = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    # attempt to parse the date picker as an input
-    # stor
-    task_data = [[created, task_contents]]
-    updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
-    updated = base.append(updated, sort=False)
-    # updated = updated.dropna()
-    updated = updated[pd.notnull(updated["task_contents"])]
-    updated.to_csv("todolist.csv", index=False)
-    return updated.to_dict('records')
+        base = pd.read_csv("../todolist.csv")
+        bool = task_contents== ""
+        if bool == True:
+            dash.exceptions.PreventUpdate()
+            return base.to_dict('records')
+        else:
+            base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
+            created = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+            task_data = [[created, task_contents]]
+
+            updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
+            updated = base.append(updated, sort=False)
+            updated = updated[pd.notnull(updated["task_contents"])]
+            updated.to_csv("todolist.csv", index=False)
+
+
+            return updated.to_dict('records')
+
+@app.callback(Output("hidden_div", "figure"),
+              [Input('table', 'data_previous'), Input("table", "data")],
+              [State('table', 'data')])
+def delete_from_todo(previous, data, current):
+    current_df = pd.read_csv("../todolist.csv")
+    if previous is None:
+        dash.exceptions.PreventUpdate()
+        return current_df.to_dict('records')
+    else:
+        for row in previous:
+            if row not in current:
+                x = row
+                x_df = pd.DataFrame.from_dict(x, orient="index", columns=["created_date"])
+                final_df = pd.merge(current_df, x_df, on=['created_date', 'created_date'], how="outer", indicator=True)
+                final_df = final_df[final_df['_merge'] == 'left_only']
+                final_df = final_df.drop(columns=["_merge"])
+                final_df.to_csv("todolist.csv", index=False)
+                return final_df.to_dict('records')

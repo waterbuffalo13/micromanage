@@ -1,10 +1,9 @@
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
 from dash.dependencies import Input, Output, State
-from wms2B.index import index_page
-
 import pandas as pd
+import dash_html_components as html
+import dash_core_components as dcc
+from wms2B.index import index_page
+import dash
 from datetime import datetime
 
 external_stylesheets = [
@@ -48,15 +47,22 @@ def display_page(pathname):
               [State('todo_content', 'value')])
 def update_output(n_clicks, task_contents):
         base = pd.read_csv("todolist.csv")
-        base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
-        created = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        task_data = [[created, task_contents]]
+        bool = task_contents== ""
+        if bool == True:
+            dash.exceptions.PreventUpdate()
+            return base.to_dict('records')
+        else:
+            base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
+            created = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+            task_data = [[created, task_contents]]
 
-        updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
-        updated = base.append(updated, sort=False)
-        updated = updated[pd.notnull(updated["task_contents"])]
-        updated.to_csv("todolist.csv", index=False)
-        return updated.to_dict('records')
+            updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
+            updated = base.append(updated, sort=False)
+            updated = updated[pd.notnull(updated["task_contents"])]
+            updated.to_csv("todolist.csv", index=False)
+
+
+            return updated.to_dict('records')
 
 @app.callback(Output("hidden_div", "figure"),
               [Input('table', 'data_previous'), Input("table", "data")],
