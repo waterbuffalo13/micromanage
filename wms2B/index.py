@@ -7,6 +7,30 @@ width_ind = 18
 # user-controller class - handles all the main functions related to user (CRUD)
 # session controller - logging in/out
 todo_df = pd.read_csv("todolist.csv")
+schedule_df = pd.read_csv("gantt.csv")
+
+
+df = pd.read_csv("gantt.csv")
+df_gantt = df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
+df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
+
+df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format = "%d/%m/%Y %H:%M")
+df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format = "%d/%m/%Y %H:%M")
+
+
+gantt_diagram = ff.create_gantt(df_gantt, group_tasks=True)
+gantt_diagram.update_layout(autosize=True,
+                            margin=dict(
+    l=10,
+    r=10,
+    b=10,
+    t=0,)
+)
+
+gantt_diagram["layout"].pop("height", None)
+gantt_diagram["layout"].pop("width", None)
+
+
 index_page = html.Div([
 
     html.Div([
@@ -70,15 +94,16 @@ index_page = html.Div([
                 ]),
                 html.Div(id='tabs-example-content'),
 
-                dcc.Graph(figure=gantt_diagram, style={'height': "35vh"}),
+
+                dcc.Graph(id = "gantt_chart",figure=gantt_diagram, style={'height': "35vh"}),
                 dcc.Graph(figure=fig, style={'height': "4vh"}),
                 html.Br(),
                 html.Div([
 
-                    task_name,
-                    task_start,
-                    task_stop,
-                    html.Button('Submit', id='submit-val', n_clicks=0),
+                    dcc.Input(id='task_content', type='text', value= "name", style = {"box-shadow":"0 0 2px 1px #666"}),
+                    dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"), style = {"box-shadow":"0 0 2px 1px #666"}),
+                    dcc.Input(id='task_stop', type='text',value=(datetime.now() + timedelta(hours=3)).strftime("%d/%m/%Y %H:%M"),style={"box-shadow": "0 0 2px 1px #666"}),
+                    html.Button('Submit', id='submit-schedule', n_clicks=0),
                 ], className="addtoschedule"),
             ], className="ganttchart"),
 
@@ -95,7 +120,18 @@ index_page = html.Div([
                 #     task_stop,
                 #     html.Button('Submit', id='submit-val', n_clicks=0),
                 # ], className="addtoschedule"),
-                zanzibar], className="schedulelist"),
+                dash_table.DataTable(
+                    id='schedule-table',
+                    columns=[{"name": i, "id": i} for i in schedule_df.columns],
+                    # data=schedule_df.to_dict('records'),
+                    row_deletable=True,
+                )
+
+
+
+
+
+            ], className="schedulelist"),
 
             html.Div([
                 html.Div([

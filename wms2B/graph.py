@@ -7,6 +7,7 @@ import dash_table
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
+from datetime import datetime as dt, datetime, timedelta
 
 # Use `y` argument instead of `x` for horizontal histogram
 
@@ -94,7 +95,7 @@ schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth v
                  'stop': ['First value', 'Second value',  "third value", "fourth value", "third value", "fourth value",  "third value", "fourth value"],
                  }
 
-schedule_df = pd.DataFrame(schedule_data)
+# schedule_df = pd.DataFrame(schedule_data)
 
 # todo_data = {'Index': ['1', '2','3','4','5','6'],
 #              'content': ['Finish up waterbuffalo micromanagement', 'take up yoga','go to the clubs','have a good time','develop relationships', 'write papers'],
@@ -130,12 +131,12 @@ wellbeing.update_layout(
         t=0,
     ))
 
-zanzibar = dash_table.DataTable(
-    id='table',
-    columns=[{"name": i, "id": i} for i in schedule_df.columns],
-    data=schedule_df.to_dict('records'),
-    row_deletable=True,
-)
+# zanzibar = dash_table.DataTable(
+#     id='schedule-table',
+#     columns=[{"name": i, "id": i} for i in schedule_df.columns],
+#     # data=schedule_df.to_dict('records'),
+#     row_deletable=True,
+# )
 #
 # zanzibar_todo = dash_table.DataTable(
 #     id='table',
@@ -180,29 +181,36 @@ pie.update_layout(
 # pie.update_layout(legend=dict(x=0, y=0))
 pie.update_yaxes(automargin=True)
 
-df = [
-    # dict(Task="Sleep", Start='2020-04-01 ', Finish='2020-04-01 09:30'),
-    dict(Task="Break", Start='2020-04-01 09:30', Finish='2020-04-01 10:30'),
-    dict(Task="Program", Start='2020-04-01 10:30', Finish='2020-04-01 12:30'),
-    dict(Task="Break", Start='2020-04-01 12:30', Finish='2020-04-01 13:30'),
-    dict(Task="Timex", Start='2020-04-01 13:30', Finish='2020-04-01 15:30'),
-    dict(Task="Netflix", Start='2020-04-01 15:30', Finish='2020-04-01 18:00'),
-    dict(Task="Program", Start='2020-04-01 18:30', Finish='2020-04-01 20:00'),
-    dict(Task="Treat", Start='2020-04-01 20:00', Finish='2020-04-01 23:00'),
+# df = [
+#     # dict(Task="Sleep", Start='2020-04-01 ', Finish='2020-04-01 09:30'),
+#     dict(Task="Break", Start='2020-04-01 09:30', Finish='2020-04-01 10:30'),
+#     dict(Task="Program", Start='2020-04-01 10:30', Finish='2020-04-01 12:30'),
+#     dict(Task="Break", Start='2020-04-01 12:30', Finish='2020-04-01 13:30'),
+#     dict(Task="Timex", Start='2020-04-01 13:30', Finish='2020-04-01 15:30'),
+#     dict(Task="Netflix", Start='2020-04-01 15:30', Finish='2020-04-01 18:00'),
+#     dict(Task="Program", Start='2020-04-01 18:30', Finish='2020-04-01 20:00'),
+#     dict(Task="Treat", Start='2020-04-01 20:00', Finish='2020-04-01 23:00'),
+#
+#
+#       ]
 
-
-      ]
-# df_new = pd.read_csv(r"C:\Users\Patrick\Desktop\wms2\wms2A\apps\todolist.csv")
-
-gantt_diagram = ff.create_gantt(df, group_tasks=True)
-gantt_diagram.update_layout(autosize=True, margin=dict(
-    l=10,
-    r=10,
-    b=10,
-    t=0,
-), )
-gantt_diagram["layout"].pop("height", None)
-gantt_diagram["layout"].pop("width", None)
+# df = pd.read_csv("gantt.csv")
+# df_gantt = df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
+# df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
+#
+# df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format = "%d/%m/%Y %H:%M")
+# df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format = "%d/%m/%Y %H:%M")
+#
+#
+# gantt_diagram = ff.create_gantt(df_gantt, group_tasks=True)
+# gantt_diagram.update_layout(autosize=True, margin=dict(
+#     l=10,
+#     r=10,
+#     b=10,
+#     t=0,
+# ), )
+# gantt_diagram["layout"].pop("height", None)
+# gantt_diagram["layout"].pop("width", None)
 
 sleep = go.Figure()
 sleep.add_trace(go.Bar(
@@ -274,9 +282,9 @@ fig.update_layout(
 
                     )
 
-task_name = dcc.Input(id='task_content', type='text', value="name", style = {"box-shadow":"0 0 2px 1px #666"})
-task_start = dcc.Input(id='task_start', type='text', value="start", style = {"box-shadow":"0 0 2px 1px #666"})
-task_stop = dcc.Input(id='task_stop', type='text', value="stop", style = {"box-shadow":"0 0 2px 1px #666"})
+task_name = dcc.Input(id='task_content', type='text', value= "name", style = {"box-shadow":"0 0 2px 1px #666"})
+task_start = dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"), style = {"box-shadow":"0 0 2px 1px #666"})
+task_stop = dcc.Input(id='task_stop', type='text', value=(datetime.now()+ timedelta(hours=3)).strftime("%d/%m/%Y %H:%M"), style = {"box-shadow":"0 0 2px 1px #666"})
 task_group = dcc.Input(id='task_stop', type='text', value="group", style = {"box-shadow":"0 0 2px 1px #666"})
 submit_tasks = html.Button('Submit', id='submit-val', n_clicks=0),
 
