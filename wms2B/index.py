@@ -100,7 +100,7 @@ index_page = html.Div([
                 html.Br(),
                 html.Div([
 
-                    dcc.Input(id='task_content', type='text', value= "name", style = {"box-shadow":"0 0 2px 1px #666"}),
+                    dcc.Input(id='task_content', type='text', value= "", style = {"box-shadow":"0 0 2px 1px #666"}),
                     dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"), style = {"box-shadow":"0 0 2px 1px #666"}),
                     dcc.Input(id='task_stop', type='text',value=(datetime.now() + timedelta(hours=3)).strftime("%d/%m/%Y %H:%M"),style={"box-shadow": "0 0 2px 1px #666"}),
                     html.Button('Submit', id='submit-schedule', n_clicks=0),

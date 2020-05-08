@@ -91,7 +91,7 @@ def delete_from_todo(previous, data, current):
 def update_output(n_clicks, task_contents, start_task, stop_task):
     # read from database
     base = pd.read_csv("gantt.csv")
-    bool = task_contents == "name"
+    bool = task_contents == ""
     if bool == True:
         dash.exceptions.PreventUpdate()
         return base.to_dict('records')
