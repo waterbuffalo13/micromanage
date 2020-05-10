@@ -7,9 +7,11 @@ import plotly.figure_factory as ff
 import plotly.graph_objects as go
 import pandas as pd
 #
-df = [dict(Task="Waterbuffalo Micromanagement", Start='2020-04-26', Finish='2009-02-28'),
-      dict(Task="Job B", Start='2009-03-05', Finish='2009-04-15'),
-      dict(Task="Job C", Start='2009-02-20', Finish='2009-05-30')]
+df = [
+    dict(Task="Waterbuffalo Micromanagement", Start='2020-05-10', Finish='2020-09-01'),
+    dict(Task="Waterbuffalo Treasury", Start='2020-09-01', Finish='2021-09-01'),
+    dict(Task="Job search", Start='2020-06-01', Finish='2021-01-01')
+]
 
 # df = pd.read_csv(r"C:\Users\Patrick\Desktop\wms2\multi_page\apps\todolist.csv")
 # df_gantt = df[["task_name", "start_task", "stop_task"]].copy()
@@ -21,7 +23,7 @@ gantt = ff.create_gantt(df)
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
-    dcc.Graph(figure=gantt, id='gantt', title = "WMS Micro"),
+    dcc.Graph(figure=gantt, id='gantt'),
 
 
 

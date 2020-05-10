@@ -1,6 +1,7 @@
-.tabs-example{
-    height: 30px;
-}
+/*.tabs-example{*/
+/*    height: 30px;*/
+/*    */
+/*}*/
 .new{
     grid-column:1/3;
     grid-row:0;

@@ -1,7 +1,7 @@
 # Waterbuffalo Micromanagement
 
 
-![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot1.png)
+![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot.PNG)
 
 Waterbuffalo Micromanagement is an ambitious project with a large, interdisplinary scope that is currently a work in progress. The aim of this project was to use complex data analysis and data science techniques to identify, investigate and understand implicit causal factors of wellbeing and optimize my life against these factors. 
 

@@ -12,13 +12,13 @@ from datetime import datetime as dt, datetime, timedelta
 # Use `y` argument instead of `x` for horizontal histogram
 
 sankey = go.Figure(go.Sankey(
-    arrangement = "snap",
-    node = {
+    arrangement="snap",
+    node={
         "label": ["A", "B", "C", "D", "E", "F"],
         "x": [0.2, 0.1, 0.5, 0.7, 0.3, 0.5],
         "y": [0.7, 0.5, 0.2, 0.4, 0.2, 0.3],
-        'pad':10},  # 10 Pixels
-    link = {
+        'pad': 10},  # 10 Pixels
+    link={
         "source": [0, 0, 1, 2, 5, 4, 3, 5],
         "target": [5, 3, 4, 3, 0, 2, 2, 3],
         "value": [1, 2, 1, 1, 1, 1, 1, 2]}))
@@ -34,9 +34,11 @@ sankey.update_layout(title_text="Basic Sankey Diagram", font_size=10,
                      )
                      )
 
-line_chart = go.Figure(data=[go.Scatter(x=[1, 2, 3,4,5,6,7,8,9,10,11,12], y=[1, 2, 5,10,6,15,13,18,14,19,25,42], mode='lines',  line=dict(
-    # color='royalblue',
-    width=4), fill= "tozeroy")])
+line_chart = go.Figure(data=[
+    go.Scatter(x=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], y=[1, 2, 5, 10, 6, 15, 13, 18, 14, 19, 25, 42], mode='lines',
+               line=dict(
+                   # color='royalblue',
+                   width=4), fill="tozeroy")])
 line_chart.update_layout(
     autosize=True,
     title="Actualization Index",
@@ -51,11 +53,10 @@ line_chart.update_layout(
 
 )
 
-
 task_distribution = go.Figure(data=[go.Histogram(y=np.random.randn(500))])
 task_distribution.update_layout(
 
-    margin = dict(
+    margin=dict(
         l=0,
         r=0,
         b=0,
@@ -65,19 +66,19 @@ task_distribution.update_layout(
 )
 
 personality = go.Figure(data=go.Scatterpolar(
-  r=[6, 3, 2, 3, 1],
-  theta=['PROD','INTGR','SELF_R', 'AMB', 'WIS'],
-  fill='toself'
+    r=[6, 3, 2, 3, 1],
+    theta=['PROD', 'INTGR', 'SELF_R', 'AMB', 'WIS'],
+    fill='toself'
 ))
 
 personality.update_layout(
-  polar=dict(
-    radialaxis=dict(
-      visible=True
+    polar=dict(
+        radialaxis=dict(
+            visible=True
+        ),
     ),
-  ),
-  showlegend=False,
-    margin = dict(
+    showlegend=False,
+    margin=dict(
         l=40,
         r=40,
         b=0,
@@ -86,17 +87,26 @@ personality.update_layout(
     autosize=True,
 )
 
-schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth value"], #, "third value", "fourth value",  "third value", "fourth value"],
-                 'content': ['First value', 'Second value',  "third value", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
-                 'start': ['First value', 'Second value',  "third value", "fourth value"],  #"third value", "fourth value",  "third value", "fourth value"],
-                 'stop': ['First value', 'Second value',  "third value", "fourth value"]  #"third value", "fourth value",  "third value", "fourth value"],
+schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth value"],
+                 # , "third value", "fourth value",  "third value", "fourth value"],
+                 'content': ['First value', 'Second value', "third value", "fourth value"],
+                 # "third value", "fourth value",  "third value", "fourth value"],
+                 'start': ['First value', 'Second value', "third value", "fourth value"],
+                 # "third value", "fourth value",  "third value", "fourth value"],
+                 'stop': ['First value', 'Second value', "third value", "fourth value"]
+                 # "third value", "fourth value",  "third value", "fourth value"],
                  }
 #
-schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth value", "third value", "fourth value",  "third value", "fourth value"],
-                 'content': ['First value', 'Second value',  "third value", "fourth value","third value", "fourth value",  "third value", "fourth value"],
-                 'start': ['First value', 'Second value',  "third value", "fourth value", "third value", "fourth value",  "third value", "fourth value"],
-                 'stop': ['First value', 'Second value',  "third value", "fourth value", "third value", "fourth value",  "third value", "fourth value"],
-                 }
+schedule_data = {
+    'Index': ['timestamp', 'Second value', "third value", "fourth value", "third value", "fourth value", "third value",
+              "fourth value"],
+    'content': ['First value', 'Second value', "third value", "fourth value", "third value", "fourth value",
+                "third value", "fourth value"],
+    'start': ['First value', 'Second value', "third value", "fourth value", "third value", "fourth value",
+              "third value", "fourth value"],
+    'stop': ['First value', 'Second value', "third value", "fourth value", "third value", "fourth value", "third value",
+             "fourth value"],
+    }
 
 # schedule_df = pd.DataFrame(schedule_data)
 
@@ -107,19 +117,23 @@ schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth v
 # todo_df = pd.DataFrame(todo_data)
 
 virtue_data = {
-    'Index': ["timestamp",    'wellbeing avg',  'wellbeing_stdv', 'prod_cap','rel-inter', 'domain', 'relex'], #, "third value", "fourth value",  "third value", "fourth value"],
-    'row1': ['3.81','2.42','213','431','clunker','strat','dawg'], #, '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
-                 }
+    'Index': ["timestamp", 'wellbeing avg', 'wellbeing_stdv', 'prod_cap', 'rel-inter', 'domain', 'relex'],
+    # , "third value", "fourth value",  "third value", "fourth value"],
+    'row1': ['3.81', '2.42', '213', '431', 'clunker', 'strat', 'dawg'],
+    # , '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
+}
 
 virtue_df = pd.DataFrame(virtue_data)
 
 auto_data = {
-    'Index': ["SLEEP",    'DIET',  'wellbeing_stdv', 'prod_cap','rel-inter', 'domain', 'relex'], #, "third value", "fourth value",  "third value", "fourth value"],
-    'row1': ['3.81','2.42','213','431','clunker','strat','dawg'], #, '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
-                 }
+    'Index': ["SLEEP", 'DIET', 'wellbeing_stdv', 'prod_cap', 'rel-inter', 'domain', 'relex'],
+    # , "third value", "fourth value",  "third value", "fourth value"],
+    'row1': ['3.81', '2.42', '213', '431', 'clunker', 'strat', 'dawg'],
+    # , '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
+}
 
 labels = ['Sleep', 'Recr', 'Work', 'Waste']
-values = [8*60, 4*60, 3*60, 9*60]
+values = [8 * 60, 4 * 60, 3 * 60, 9 * 60]
 
 x = np.arange(10)
 
@@ -157,15 +171,16 @@ virtue_table = dash_table.DataTable(
 
 
 def wrapiefigure(labels, values, holes):
-    return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent',  automargin=False)])
+    return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent', automargin=False)])
 
-pie2=go.Figure(go.Sunburst(
+
+pie2 = go.Figure(go.Sunburst(
     labels=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
-    parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
+    parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"],
     values=[10, 14, 12, 10, 2, 6, 6, 4, 4],
 ))
 
-pie2.update_layout(margin = dict(t=0, l=0, r=0, b=0))
+pie2.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 pie = wrapiefigure(labels, values, .4)
 pie.update_layout(
     autosize=True,
@@ -253,7 +268,7 @@ sleep.update_layout(barmode='stack', autosize=True, margin=dict(
     b=0,
     t=0,
 ), showlegend=False, title="test",
-                 paper_bgcolor="#ddd",
+                    paper_bgcolor="#ddd",
 
                     )
 
@@ -277,18 +292,20 @@ fig = go.Figure(go.Indicator(
 
 fig.update_layout(
     autosize=True, margin=dict(
-    l=0,
-    r=0,
-    b=10,
-    t=0,
+        l=0,
+        r=0,
+        b=10,
+        t=0,
+    )
 )
 
-                    )
-
-task_name = dcc.Input(id='task_content', type='text', value= "name", style = {"box-shadow":"0 0 2px 1px #666"})
-task_start = dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"), style = {"box-shadow":"0 0 2px 1px #666"})
-task_stop = dcc.Input(id='task_stop', type='text', value=(datetime.now()+ timedelta(hours=3)).strftime("%d/%m/%Y %H:%M"), style = {"box-shadow":"0 0 2px 1px #666"})
-task_group = dcc.Input(id='task_stop', type='text', value="group", style = {"box-shadow":"0 0 2px 1px #666"})
+task_name = dcc.Input(id='task_content', type='text', value="name", style={"box-shadow": "0 0 2px 1px #666"})
+task_start = dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"),
+                       style={"box-shadow": "0 0 2px 1px #666"})
+task_stop = dcc.Input(id='task_stop', type='text',
+                      value=(datetime.now() + timedelta(hours=3)).strftime("%d/%m/%Y %H:%M"),
+                      style={"box-shadow": "0 0 2px 1px #666"})
+task_group = dcc.Input(id='task_stop', type='text', value="group", style={"box-shadow": "0 0 2px 1px #666"})
 submit_tasks = html.Button('Submit', id='submit-val', n_clicks=0),
 
 todo_name = dcc.Input(id='task_content', type='text', value="name")
@@ -347,7 +364,7 @@ interpolation_strats = dcc.Dropdown(
     value='NYC'
 )
 
-mockup_gauge= daq.Gauge(
+mockup_gauge = daq.Gauge(
     color="#9B51E0",
     value=2,
     label='Default2',
@@ -357,41 +374,40 @@ mockup_gauge= daq.Gauge(
 
 )
 
-
 tank1 = daq.Tank(
     value=3,
     width=20,
-    height= 200,
+    height=200,
     label='Index',
     labelPosition='bottom',
-    style={'margin-left': '50%', "margin-top":"10%",},
+    style={'margin-left': '50%', "margin-top": "10%", },
     color="blue",
 )
 tank2 = daq.Tank(
     value=5,
     width=20,
-    height= 200,
+    height=200,
     label='Index',
     labelPosition='bottom',
-    style={'margin-left': '5%', "margin-top":"10%"},
+    style={'margin-left': '5%', "margin-top": "10%"},
     color="blue",
 )
 tank3 = daq.Tank(
     value=2,
     width=20,
-    height= 200,
+    height=200,
     label='Index',
     labelPosition='bottom',
-    style={'margin-left': '5%', "margin-top":"10%"},
+    style={'margin-left': '5%', "margin-top": "10%"},
     color="blue",
 )
 tank4 = daq.Tank(
     value=8,
     width=20,
-    height= 200,
+    height=200,
     label='Index',
     labelPosition='bottom',
-    style={'margin-left': '5%', "margin-top":"10%"},
+    style={'margin-left': '5%', "margin-top": "10%"},
     color="orange",
 )
 
