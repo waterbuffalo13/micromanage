@@ -199,36 +199,6 @@ pie.update_layout(
 # pie.update_layout(legend=dict(x=0, y=0))
 pie.update_yaxes(automargin=True)
 
-# df = [
-#     # dict(Task="Sleep", Start='2020-04-01 ', Finish='2020-04-01 09:30'),
-#     dict(Task="Break", Start='2020-04-01 09:30', Finish='2020-04-01 10:30'),
-#     dict(Task="Program", Start='2020-04-01 10:30', Finish='2020-04-01 12:30'),
-#     dict(Task="Break", Start='2020-04-01 12:30', Finish='2020-04-01 13:30'),
-#     dict(Task="Timex", Start='2020-04-01 13:30', Finish='2020-04-01 15:30'),
-#     dict(Task="Netflix", Start='2020-04-01 15:30', Finish='2020-04-01 18:00'),
-#     dict(Task="Program", Start='2020-04-01 18:30', Finish='2020-04-01 20:00'),
-#     dict(Task="Treat", Start='2020-04-01 20:00', Finish='2020-04-01 23:00'),
-#
-#
-#       ]
-
-# df = pd.read_csv("gantt.csv")
-# df_gantt = df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
-# df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
-#
-# df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format = "%d/%m/%Y %H:%M")
-# df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format = "%d/%m/%Y %H:%M")
-#
-#
-# gantt_diagram = ff.create_gantt(df_gantt, group_tasks=True)
-# gantt_diagram.update_layout(autosize=True, margin=dict(
-#     l=10,
-#     r=10,
-#     b=10,
-#     t=0,
-# ), )
-# gantt_diagram["layout"].pop("height", None)
-# gantt_diagram["layout"].pop("width", None)
 
 sleep = go.Figure()
 sleep.add_trace(go.Bar(

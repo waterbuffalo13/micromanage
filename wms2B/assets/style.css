@@ -31,11 +31,12 @@
   width: 85%;
 
 }
-/*.tabs-individual{*/
-/*    borderBottom: 1px solid #d6d6d6;*/
-/*    padding: 6px;*/
-/*    fontWeight: bold;*/
-/*}*/
+.tabs-individual{
+    borderBottom: 1px solid #d6d6d6;
+    padding: 6px;
+    fontWeight: bold;
+/*    */
+}
 
 
 .banner {
