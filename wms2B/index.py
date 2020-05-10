@@ -9,6 +9,12 @@ width_ind = 18
 todo_df = pd.read_csv("todolist.csv")
 schedule_df = pd.read_csv("gantt.csv")
 
+curr_year = int(dt.now().strftime("%Y"))
+curr_month = int(dt.now().strftime("%m"))
+curr_day = int(dt.now().strftime("%d"))
+curr_hour = int(dt.now().strftime("%H"))
+curr_minute = int(dt.now().strftime("%M"))
+curr_second = int(dt.now().strftime("%S"))
 
 df = pd.read_csv("gantt.csv")
 df_gantt = df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
@@ -16,7 +22,6 @@ df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
 
 df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format = "%d/%m/%Y %H:%M")
 df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format = "%d/%m/%Y %H:%M")
-
 
 gantt_diagram = ff.create_gantt(df_gantt, group_tasks=True)
 gantt_diagram.update_layout(autosize=True,
@@ -101,8 +106,46 @@ index_page = html.Div([
                 html.Div([
 
                     dcc.Input(id='task_content', type='text', value= "", style = {"box-shadow":"0 0 2px 1px #666"}),
+                    # dcc.DatePickerSingle(
+                    #     id='date-picker',
+                    #     min_date_allowed=dt(curr_year, curr_month, curr_day),
+                    #     max_date_allowed=dt(curr_year + 1, 1, 1),
+                    #     initial_visible_month=dt(2017, 8, 5),
+                    #     date=str(dt(curr_year, curr_month, curr_day))
+                    # ),
+                    # dcc.Dropdown(
+                    #     id='demo-dropdown',
+                    #     options=[
+                    #         {'label': '1', 'value': 1},
+                    #         {'label': '2', 'value': 2},
+                    #         {'label': '3', 'value': 3},
+                    #         {'label': '4', 'value': 4},
+                    #         {'label': '5', 'value': 5},
+                    #         {'label': '6', 'value': 6},
+                    #         {'label': '7', 'value': 7},
+                    #         {'label': '8', 'value': 8},
+                    #         {'label': '9', 'value': 9},
+                    #         {'label': '10', 'value': 10},
+                    #         {'label': '11', 'value': 11},
+                    #         {'label': '12', 'value': 12},
+                    #         {'label': '13', 'value': 13},
+                    #         {'label': '14', 'value': 14},
+                    #         {'label': '15', 'value': 15},
+                    #         {'label': '16', 'value': 16},
+                    #         {'label': '17', 'value': 17},
+                    #         {'label': '18', 'value': 18},
+                    #         {'label': '19', 'value': 19},
+                    #         {'label': '20', 'value': 20},
+                    #         {'label': '21', 'value': 21},
+                    #         {'label': '22', 'value': 22},
+                    #         {'label': '23', 'value': 23},
+                    #         {'label': '24', 'value': 24}
+                    #     ],
+                    #     value=''
+                    # ),
                     dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"), style = {"box-shadow":"0 0 2px 1px #666"}),
                     dcc.Input(id='task_stop', type='text',value=(datetime.now() + timedelta(hours=3)).strftime("%d/%m/%Y %H:%M"),style={"box-shadow": "0 0 2px 1px #666"}),
+
                     html.Button('Submit', id='submit-schedule', n_clicks=0),
                 ], className="addtoschedule"),
             ], className="ganttchart"),
@@ -183,6 +226,7 @@ index_page = html.Div([
                         id='table',
                         columns=[{"name": i, "id": i} for i in todo_df.columns],
                         # data=todo_df.to_dict('records'),
+                        editable= True,
                         row_deletable=True,
                     ),
                     html.Div(id="hidden_div", style={"display":"none"}),

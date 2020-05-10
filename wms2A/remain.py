@@ -129,7 +129,7 @@ def update_output(n_clicks, task_contents, date_pickers, start_task, stop_task, 
               [Input('table', 'data_previous'), Input("submit-button", "n_clicks"), Input("table", "data")],
               [State('table', 'data')])
 def showRemovedRows(previous, n_clicks, data, current, ):
-    current_df = pd.read_csv("apps/gantt.csv")
+    current_df = pd.read_csv("apps/todolist.csv")
     x = None
     if previous is None:
         df_gantt = current_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()

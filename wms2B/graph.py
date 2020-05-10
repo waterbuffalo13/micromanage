@@ -34,7 +34,9 @@ sankey.update_layout(title_text="Basic Sankey Diagram", font_size=10,
                      )
                      )
 
-line_chart = go.Figure(data=[go.Scatter(x=[1, 2, 3,4,5,6,7,8,9,10,11,12], y=[1, 2, 5,8,10,11,13,16,18,19,20,19], mode='lines',  line=dict(color='royalblue', width=1))])
+line_chart = go.Figure(data=[go.Scatter(x=[1, 2, 3,4,5,6,7,8,9,10,11,12], y=[1, 2, 5,10,6,15,13,18,14,19,25,42], mode='lines',  line=dict(
+    # color='royalblue',
+    width=4), fill= "tozeroy")])
 line_chart.update_layout(
     autosize=True,
     title="Actualization Index",
@@ -45,7 +47,8 @@ line_chart.update_layout(
         b=0,
         t=40,
 
-    )
+    ),
+
 )
 
 
@@ -255,9 +258,9 @@ sleep.update_layout(barmode='stack', autosize=True, margin=dict(
                     )
 
 fig = go.Figure(go.Indicator(
-    mode="gauge", value=7,
+    mode="gauge", value=int(dt.now().strftime("%H")),
     domain={'x': [0.1, 1], 'y': [0.5, 1]},
-    title={'text': "Day"},
+    # title={'text': "Day"},
     # delta={'reference': 200},
     gauge={
         'shape': "bullet",

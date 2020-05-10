@@ -94,7 +94,8 @@ page_1_layout = html.Div([
                     max_date_allowed=dt(curr_year+1, 1, 1),
                     initial_visible_month=dt(2017, 8, 5),
                     date=str(dt(curr_year, curr_month, curr_day))
-                ),
+                )
+                ,
                 html.Div([
                     html.H6('Start Time'),
                     dcc.Input(id='start_task', type='text', value = datetime.now().strftime("%d/%m/%Y %H:%M")),

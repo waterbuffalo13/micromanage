@@ -42,28 +42,27 @@ def display_page(pathname):
         return '404'
 
 
-
 @app.callback(Output("table", "data"),
               [Input('todo_submit', 'n_clicks')],
               [State('todo_content', 'value')])
 def update_output(n_clicks, task_contents):
-        base = pd.read_csv("todolist.csv")
-        bool = task_contents== ""
-        if bool == True:
-            dash.exceptions.PreventUpdate()
-            return base.to_dict('records')
-        else:
-            base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
-            created = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-            task_data = [[created, task_contents]]
+    base = pd.read_csv("todolist.csv")
+    bool = task_contents == ""
+    if bool == True:
+        dash.exceptions.PreventUpdate()
+        return base.to_dict('records')
+    else:
+        base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
+        created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        task_data = [[created, task_contents]]
 
-            updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
-            updated = base.append(updated, sort=False)
-            updated = updated[pd.notnull(updated["task_contents"])]
-            updated.to_csv("todolist.csv", index=False)
+        updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
+        updated = base.append(updated, sort=False)
+        updated = updated[pd.notnull(updated["task_contents"])]
+        updated.to_csv("todolist.csv", index=False)
 
+        return updated.to_dict('records')
 
-            return updated.to_dict('records')
 
 @app.callback(Output("hidden_div", "figure"),
               [Input('table', 'data_previous'), Input("table", "data")],
@@ -84,6 +83,7 @@ def delete_from_todo(previous, data, current):
                 final_df.to_csv("todolist.csv", index=False)
                 return final_df.to_dict('records')
 
+
 @app.callback(Output("schedule-table", "data"),
               [Input('submit-schedule', 'n_clicks')],
               [State('task_content', 'value'), State('task_start', 'value'),
@@ -100,7 +100,7 @@ def update_output(n_clicks, task_contents, start_task, stop_task):
     base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
     # convert the created data from the input into a specific datetime format
     created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    task_nature= "---"
+    task_nature = "---"
     # stor
     task_data = [[task_contents, created, start_task, stop_task, task_nature]]
     updated = pd.DataFrame(task_data,
@@ -111,8 +111,10 @@ def update_output(n_clicks, task_contents, start_task, stop_task):
     updated.to_csv("gantt.csv", index=False)
     return updated.to_dict('records')
 
+
 @app.callback(Output("gantt_chart", "figure"),
-              [Input('schedule-table', 'data_previous'), Input("submit-schedule", "n_clicks"), Input("schedule-table", "data")],
+              [Input('schedule-table', 'data_previous'), Input("submit-schedule", "n_clicks"),
+               Input("schedule-table", "data")],
               [State('schedule-table', 'data')])
 def showRemovedRows(previous, n_clicks, data, current, ):
     current_df = pd.read_csv("gantt.csv")
@@ -124,13 +126,12 @@ def showRemovedRows(previous, n_clicks, data, current, ):
         df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
 
         nochanges = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks=True)
-        nochanges.update_layout(autosize=True,
-                                    margin=dict(
-                                        l=10,
-                                        r=10,
-                                        b=10,
-                                        t=0, )
-                                    )
+        nochanges.update_layout(autosize=True,margin=dict(
+                                    l=10,
+                                    r=10,
+                                    b=10,
+                                    t=0, )
+                                )
 
         nochanges["layout"].pop("height", None)
         nochanges["layout"].pop("width", None)
