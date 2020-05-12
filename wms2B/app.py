@@ -1,4 +1,6 @@
 import dash
+import dash_html_components as html
+import dash_core_components as dcc
 
 external_stylesheets = [
     'https://codepen.io/chriddyp/pen/bWLwgP.css',
@@ -12,3 +14,10 @@ external_stylesheets = [
 app = dash.Dash(external_stylesheets=external_stylesheets)
 
 app.config.suppress_callback_exceptions = True
+
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
+
+

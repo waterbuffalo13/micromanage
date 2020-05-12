@@ -1,7 +1,7 @@
-from wms2B.graph import *
-from wms2B.graphs.habitsmonitor import habitsmonitor
-from wms2B.graphs.gantt import *
-from datetime import datetime
+from wms2B.complex_graphs.other import *
+from wms2B.complex_graphs.habitsmonitor import habitsmonitor
+from wms2B.complex_graphs.gantt.ganttFigure import *
+from datetime import datetime as dt, datetime, timedelta
 
 # from wms2B.app import app
 
@@ -19,8 +19,6 @@ curr_hour = int(dt.now().strftime("%H"))
 curr_minute = int(dt.now().strftime("%M"))
 curr_second = int(dt.now().strftime("%S"))
 
-
-
 index_page = html.Div([
 
     html.Div([
@@ -34,12 +32,16 @@ index_page = html.Div([
             html.Div([
                 html.Div([], className="new"),
                 "Box1",
-                dcc.Graph(figure=pie, style={'height': "20vh"}),
+                dcc.Graph(figure=pie,
+                          style={'height': "20vh"}
+                          ),
                 # dcc.Graph(figure=personality, style={'height': "25vh"}),
                 dcc.Graph(figure=horizontal_stats, style={'height': "9vh"}),
                 html.Br(),
                 html.Div([
-                ], style={"position": "relative", "bottom": "-2vh"}),
+                ]
+                    # , style={"position": "relative", "bottom": "-2vh"}
+                ),
                 # dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
                 # dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
 
@@ -123,7 +125,7 @@ index_page = html.Div([
                     #     value=''
                     # ),
                     dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"),),
-                    dcc.Input(id='task_stop', type='text', value=(datetime.now() + timedelta(hours=3)).strftime("%d/%m/%Y %H:%M")),
+                    dcc.Input(id='task_stop', type='text', value=(datetime.now() + timedelta(hours=1)).strftime("%d/%m/%Y %H:%M")),
                     html.Button('Submit', id='submit-schedule', n_clicks=0),
                 ], className="addtoschedule"),
             ], className="ganttchart"),
@@ -235,7 +237,9 @@ index_page = html.Div([
                     dcc.Graph(
                         id='example-graph-2',
                         figure=line_chart,
-                        style={"width": "25vh", "height": "20vh"},
+                        style={
+                            # "width": "25vh,"
+                            "height": "20vh"},
                     ),
 
                     "test",

@@ -134,6 +134,25 @@ auto_data = {
 
 labels = ['Sleep', 'Recr', 'Work', 'Waste']
 values = [8 * 60, 4 * 60, 3 * 60, 9 * 60]
+def wrapiefigure(labels, values, holes):
+    return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent', automargin=False)])
+pie = wrapiefigure(labels, values, .4)
+pie.update_layout(
+    autosize=True,
+    # width=500,
+    margin=dict(
+        l=10,
+        r=10,
+        b=10,
+        t=10,
+    ),
+    # paper_bgcolor="#ddd",
+    paper_bgcolor="white",
+    showlegend=False,
+
+)
+# pie.update_layout(legend=dict(x=0, y=0))
+pie.update_yaxes(automargin=True)
 
 x = np.arange(10)
 
@@ -170,8 +189,6 @@ virtue_table = dash_table.DataTable(
 )
 
 
-def wrapiefigure(labels, values, holes):
-    return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent', automargin=False)])
 
 
 pie2 = go.Figure(go.Sunburst(
@@ -180,24 +197,9 @@ pie2 = go.Figure(go.Sunburst(
     values=[10, 14, 12, 10, 2, 6, 6, 4, 4],
 ))
 
-pie2.update_layout(margin=dict(t=0, l=0, r=0, b=0))
-pie = wrapiefigure(labels, values, .4)
-pie.update_layout(
-    autosize=True,
-    # width=500,
-    margin=dict(
-        l=10,
-        r=10,
-        b=10,
-        t=10,
-    ),
-    # paper_bgcolor="#ddd",
-    paper_bgcolor="white",
-    showlegend=False,
 
-)
-# pie.update_layout(legend=dict(x=0, y=0))
-pie.update_yaxes(automargin=True)
+
+pie2.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 
 
 sleep = go.Figure()

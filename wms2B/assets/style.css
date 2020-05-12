@@ -163,6 +163,8 @@ body{
 .todolist{
     display: flex;
     flex-direction: column;
+    width:30vh;
+
     /*align-content: flex-start;*/
     grid-row:1/5;
     float:right;

@@ -10,8 +10,8 @@ habitsmonitor = html.Div([
     html.Div([ "MIND"]),
                     html.Div([
                         daq.Indicator(
-                            color="yellow",
-                            value=True,
+                            # color="green",
+                            value=False,
                             width=width_ind,
                             height=height_ind
                         )
