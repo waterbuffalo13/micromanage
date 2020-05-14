@@ -22,8 +22,8 @@ curr_second = int(dt.now().strftime("%S"))
 index_page = html.Div([
 
     html.Div([
-        html.H5(
-            "Waterbuffalo Micromanagement v2.01 ~ Success is commemorated; Failure merely remembered.  "),
+        html.H5("Waterbuffalo Micromanagement v2.01 ~ Success is commemorated; Failure merely remembered.  "),
+            # html.Img(src="/assets/test.png"),
     ], className="banner", style={"textAlign": "center"}),
     html.Div([
 

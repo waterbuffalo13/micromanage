@@ -61,9 +61,10 @@
 
 .banner Img{
     position: relative;
-    float: right;
-    right: 10px;
-    height: 75px;
+    float: left;
+    /*right: 10px;*/
+    left:30px;
+    height: 5vw;
 }
 
 br {

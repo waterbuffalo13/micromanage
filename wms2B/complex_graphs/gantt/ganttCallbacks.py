@@ -14,8 +14,8 @@ def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task):
     base = pd.read_csv("data/gantt.csv")
     if n_clicks is not None and n_clicks > 0:
         #updated = \
-        add_to_csv(base, start_task, stop_task, task_contents, "---")
-        updated = pd.read_csv("data/gantt.csv")
+        updated = add_to_csv(base, start_task, stop_task, task_contents, "---")
+        # updated = pd.read_csv("data/gantt.csv")
         start_task = stop_task
         stop_task = (datetime.strptime(start_task, "%d/%m/%Y %H:%M") + timedelta(hours=1)).strftime("%d/%m/%Y %H:%M")
         print("update_gantt_datatable")
@@ -60,7 +60,6 @@ def update_gantt_figure(old_table, n_clicks, data, new_table, ):
                 final_df = remove_from_csv(gantt_df, row)
                 ganttChart = convert_to_gantt_format(final_df)
                 set_gantt_layout(ganttChart)
-                print("old_table_exists")
                 return ganttChart
 
 
@@ -77,7 +76,6 @@ def convert_to_gantt_format(final_df):
     df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
 
     add_or_remove = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks=True)
-    print("convert_to_gantt_format")
     return add_or_remove
 
 
@@ -91,7 +89,6 @@ def remove_from_csv(current_df, row):
     final_df = final_df.drop(columns=["_merge"])
     final_df = final_df.reset_index(drop=True)
     final_df.to_csv("data/gantt.csv", index=False)
-    print("remove_from_csv")
     return final_df
 
 
