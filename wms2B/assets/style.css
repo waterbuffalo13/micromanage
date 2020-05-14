@@ -2,6 +2,12 @@
 /*    height: 30px;*/
 /*    */
 /*}*/
+
+/*.modebar{*/
+/*      display: none !important;*/
+/*}*/
+html { overflow-y: scroll; }
+
 .new{
     grid-column:1/3;
     grid-row:0;

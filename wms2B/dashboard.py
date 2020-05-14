@@ -232,7 +232,9 @@ index_page = html.Div([
                           ], className="test"),
 
             ], className="todolist"), html.Div([
-                html.Div(["takeiteasy"], className="test"),
+                html.Div([ html.Img(src="/assets/test.png", style ={"height":"10vh"}), "Waterbuffalo",
+
+                          ], className="test"),
                 html.Div([
                     dcc.Graph(
                         id='example-graph-2',

@@ -13,7 +13,7 @@ df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
 df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
 df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
 
-gantt_diagram = ff.create_gantt(df_gantt, group_tasks=True)
+gantt_diagram = ff.create_gantt(df_gantt, group_tasks=True, showgrid_x=True, showgrid_y=True)
 gantt_diagram.update_layout(autosize=True,
                             margin=dict(
                                 l=10,
