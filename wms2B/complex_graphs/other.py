@@ -8,9 +8,8 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 from datetime import datetime as dt, datetime, timedelta
-
+piecolours =  ['#171717', '#1c7813', '#193c12', '#990000']
 # Use `y` argument instead of `x` for horizontal histogram
-
 sankey = go.Figure(go.Sankey(
     arrangement="snap",
     node={
@@ -53,7 +52,13 @@ line_chart.update_layout(
 
 )
 
-task_distribution = go.Figure(data=[go.Histogram(y=np.random.randn(500))])
+line_chart.update_traces(
+    marker_color=piecolours[3],
+    marker_line_color='rgb(0,0,0)',
+    marker_line_width=0.5
+                                  )
+
+task_distribution = go.Figure(data=[go.Histogram(y=np.random.randn(500))], )
 task_distribution.update_layout(
 
     margin=dict(
@@ -65,10 +70,17 @@ task_distribution.update_layout(
     autosize=True,
 )
 
+task_distribution.update_traces(
+    marker_color=piecolours[1],
+    marker_line_color='rgb(0,0,0)',
+    marker_line_width=0.5
+                                  )
+
+
 personality = go.Figure(data=go.Scatterpolar(
     r=[6, 3, 2, 3, 1],
     theta=['PROD', 'INTGR', 'SELF_R', 'AMB', 'WIS'],
-    fill='toself'
+    fill='toself',
 ))
 
 personality.update_layout(
@@ -86,6 +98,12 @@ personality.update_layout(
     ),
     autosize=True,
 )
+
+personality.update_traces(
+    marker_color="green",
+    marker_line_color='rgb(0,0,0)',
+    marker_line_width=0.5,
+                                  )
 
 schedule_data = {'Index': ['timestamp', 'Second value', "third value", "fourth value"],
                  # , "third value", "fourth value",  "third value", "fourth value"],
@@ -133,7 +151,9 @@ auto_data = {
 }
 
 labels = ['Sleep', 'Recr', 'Work', 'Waste']
-values = [8 * 60, 4 * 60, 3 * 60, 9 * 60]
+values = [8 * 60, 4 * 60, 8 * 60, 9 * 60]
+
+
 def wrapiefigure(labels, values, holes):
     return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent', automargin=False)])
 pie = wrapiefigure(labels, values, .4)
@@ -153,6 +173,12 @@ pie.update_layout(
 )
 # pie.update_layout(legend=dict(x=0, y=0))
 pie.update_yaxes(automargin=True)
+
+pie.update_traces(hoverinfo='label+percent',
+                  marker=dict(colors=piecolours,
+                              # line=dict(color='#000000', width=1))
+                  ))
+
 
 x = np.arange(10)
 
@@ -294,6 +320,8 @@ horizontal_stats = go.Figure(go.Bar(
     x=[20, 14, 23],
     y=['work', 'sleep', 'recr'],
     orientation='h',
+    marker_color= piecolours[1:],
+
 
 ))
 horizontal_stats.update_layout(
@@ -306,6 +334,13 @@ horizontal_stats.update_layout(
     paper_bgcolor="#ddd",
 
 )
+horizontal_stats.update_traces(
+    # marker_color='rgb(158,202,225)',
+    marker_line_color='rgb(0,0,0)',
+                  marker_line_width=1,
+)
+# horizontal_stats.update_traces(
+#                   marker=dict(colors="#f000", line=dict(color='#000000', width=1)))
 
 slider1 = daq.Slider(
     id='my-daq-slider',
@@ -353,7 +388,7 @@ tank1 = daq.Tank(
     label='Index',
     labelPosition='bottom',
     style={'margin-left': '50%', "margin-top": "10%", },
-    color="blue",
+    color="red",
 )
 tank2 = daq.Tank(
     value=5,
@@ -362,7 +397,7 @@ tank2 = daq.Tank(
     label='Index',
     labelPosition='bottom',
     style={'margin-left': '5%', "margin-top": "10%"},
-    color="blue",
+    color="red",
 )
 tank3 = daq.Tank(
     value=2,
@@ -371,7 +406,7 @@ tank3 = daq.Tank(
     label='Index',
     labelPosition='bottom',
     style={'margin-left': '5%', "margin-top": "10%"},
-    color="blue",
+    color="red",
 )
 tank4 = daq.Tank(
     value=8,
@@ -380,7 +415,7 @@ tank4 = daq.Tank(
     label='Index',
     labelPosition='bottom',
     style={'margin-left': '5%', "margin-top": "10%"},
-    color="orange",
+    color=piecolours[3],
 )
 
 # fig.update_layout(height = 250)

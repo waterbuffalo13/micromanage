@@ -216,11 +216,14 @@ index_page = html.Div([
                 html.Div([
                     daq.GraduatedBar(
                         id='my-daq-graduatedbar',
+                        color={"ranges": {piecolours[3]: [0, 2], piecolours[2]: [2, 5], piecolours[1]: [5, 10]}},
                         label=dict(
                             label="Overall Performance",
                             style={"color": "black", "background-color": "#ddd"},
                         ),
-                        value=4
+
+                        value=10,
+
                     ),
 
                 ], className="test"),
@@ -232,7 +235,7 @@ index_page = html.Div([
                           ], className="test"),
 
             ], className="todolist"), html.Div([
-                html.Div([ html.Img(src="/assets/test.png", style ={"height":"10vh"}), "Waterbuffalo",
+                html.Div([ html.Img(src="/assets/test.png", style ={"height":"13vh"}), "Waterbuffalo says", html.Br(),"The question isn't who is going to let me; it's who is going to stop me. ~ Howard Roark",
 
                           ], className="test"),
                 html.Div([

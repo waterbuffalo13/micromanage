@@ -6,6 +6,12 @@ from datetime import datetime, timedelta
 import plotly.figure_factory as ff
 import time
 
+colors = dict(Meal = '#00ba03',
+              Work = '#1c7813',
+              Recreation = '#193c12',
+              Exercise = '#000000',
+              Rest = 'rgb(107, 127, 135)')
+
 @app.callback([Output("schedule-table", "data"), Output('task_start', 'value'), Output('task_stop', 'value')],
               [Input('submit-schedule', 'n_clicks')],
               [State('task_content', 'value'), State('task_start', 'value'),
@@ -75,7 +81,8 @@ def convert_to_gantt_format(final_df):
     df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
     df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
 
-    add_or_remove = ff.create_gantt(df_gantt, show_colorbar=True, group_tasks=True)
+    add_or_remove = ff.create_gantt(df_gantt, group_tasks=True, showgrid_x=True, showgrid_y=True, colors=colors, index_col='Task', title ="Today's Schedule")
+
     return add_or_remove
 
 
