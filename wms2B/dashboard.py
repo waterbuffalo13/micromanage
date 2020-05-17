@@ -2,6 +2,7 @@ from wms2B.complex_graphs.other import *
 from wms2B.complex_graphs.habitsmonitor import habitsmonitor
 from wms2B.complex_graphs.gantt.ganttFigure import *
 from datetime import datetime as dt, datetime, timedelta
+from wms2B.complex_graphs.tabs import tabs
 
 # from wms2B.app import app
 
@@ -31,7 +32,10 @@ index_page = html.Div([
 
             html.Div([
                 html.Div([], className="new"),
-                "Box1",
+                    html.Div(
+                    ["Activity Breakdown"],
+                    style={"text-align": "center", "font-size": "150%"}),
+
                 dcc.Graph(figure=pie,
                           style={'height': "20vh"}
                           ),
@@ -49,94 +53,58 @@ index_page = html.Div([
 
             html.Div([
                 # "Box2",
-                dcc.Tabs(id='tabs-example', value='tab-1', children=[
-                    dcc.Tab(className="tabs-individual", label='Schedule', value='Schedule', style={'borderBottom': '1px solid #d6d6d6','padding': '6px','fontWeight': 'bold'},
-                            selected_style={'borderBottom': '1px solid #d6d6d6',
-                                            'padding': '6px',
-                                            'fontWeight': 'bold'}),
-                    dcc.Tab(label='Retro-Schedule', value='Performance', style={'borderBottom': '1px solid #d6d6d6',
-                                                                                'padding': '6px',
-                                                                                'fontWeight': 'bold'},
-                            selected_style={'borderBottom': '1px solid #d6d6d6',
-                                            'padding': '6px',
-                                            'fontWeight': 'bold'}),
-                    dcc.Tab(label='Mood and Energy', value='Wisdom', style={'borderBottom': '1px solid #d6d6d6',
-                                                                            'padding': '6px',
-                                                                            'fontWeight': 'bold'},
-                            selected_style={'borderBottom': '1px solid #d6d6d6',
-                                            'padding': '6px',
-                                            'fontWeight': 'bold'}),
-                    dcc.Tab(label='Journal', value='Energy', style={'borderBottom': '1px solid #d6d6d6',
-                                                                    'padding': '6px',
-                                                                    'fontWeight': 'bold'},
-                            selected_style={'borderBottom': '1px solid #d6d6d6',
-                                            'padding': '6px',
-                                            'fontWeight': 'bold'}),
-                    dcc.Tab(label='Diet Planner', value='Weight', style={'borderBottom': '1px solid #d6d6d6',
-                                                                         'padding': '6px',
-                                                                         'fontWeight': 'bold'},
-                            selected_style={'borderBottom': '1px solid #d6d6d6',
-                                            'padding': '6px',
-                                            'fontWeight': 'bold'}),
-                ]),
+                # html.Div([
+                # dcc.Tabs(id='tabs-example', value='tab-1', children=[
+                #
+                #     dcc.Tab(className="tabs-individual", label='Schedule', value='Schedule', style={'borderBottom': '1px solid #d6d6d6','padding': '6px','fontWeight': 'bold'},
+                #             selected_style={'borderBottom': '1px solid #d6d6d6',
+                #                             'padding': '6px',
+                #                             'fontWeight': 'bold'}),
+                #     dcc.Tab(label='Retro-Schedule', value='Performance', style={'borderBottom': '1px solid #d6d6d6',
+                #                                                                 'padding': '6px',
+                #                                                                 'fontWeight': 'bold'},
+                #             selected_style={'borderBottom': '1px solid #d6d6d6',
+                #                             'padding': '6px',
+                #                             'fontWeight': 'bold'}),
+                #     dcc.Tab(label='Mood and Energy', value='Wisdom', style={'borderBottom': '1px solid #d6d6d6',
+                #                                                             'padding': '6px',
+                #                                                             'fontWeight': 'bold'},
+                #             selected_style={'borderBottom': '1px solid #d6d6d6',
+                #                             'padding': '6px',
+                #                             'fontWeight': 'bold'}),
+                #     dcc.Tab(label='Journal', value='Energy', style={'borderBottom': '1px solid #d6d6d6',
+                #                                                     'padding': '6px',
+                #                                                     'fontWeight': 'bold'},
+                #             selected_style={'borderBottom': '1px solid #d6d6d6',
+                #                             'padding': '6px',
+                #                             'fontWeight': 'bold'}),
+                #     dcc.Tab(label='Diet Planner', value='Weight', style={'borderBottom': '1px solid #d6d6d6',
+                #                                                          'padding': '6px',
+                #                                                          'fontWeight': 'bold'},
+                #             selected_style={'borderBottom': '1px solid #d6d6d6',
+                #                             'padding': '6px',
+                #                             'fontWeight': 'bold'}),
+                #
+                # ]),
+                #
+                # ]),
+                tabs,
                 html.Div(id='tabs-example-content'),
 
-                dcc.Graph(id="gantt_chart", figure=gantt_diagram, style={'height': "35vh"}),
-                dcc.Graph(figure=fig, style={'height': "4vh"}),
-                html.Br(),
-                html.Div([
-
-                    dcc.Input(id='task_content', type='text', value="", style={"box-shadow": "0 0 2px 1px #666"}),
-                    # dcc.DatePickerSingle(
-                    #     id='date-picker',
-                    #     min_date_allowed=dt(curr_year, curr_month, curr_day),
-                    #     max_date_allowed=dt(curr_year + 1, 1, 1),
-                    #     initial_visible_month=dt(2017, 8, 5),
-                    #     date=str(dt(curr_year, curr_month, curr_day))
-                    # ),
-                    # dcc.Dropdown(
-                    #     id='demo-dropdown',
-                    #     options=[
-                    #         {'label': '1', 'value': 1},
-                    #         {'label': '2', 'value': 2},
-                    #         {'label': '3', 'value': 3},
-                    #         {'label': '4', 'value': 4},
-                    #         {'label': '5', 'value': 5},
-                    #         {'label': '6', 'value': 6},
-                    #         {'label': '7', 'value': 7},
-                    #         {'label': '8', 'value': 8},
-                    #         {'label': '9', 'value': 9},
-                    #         {'label': '10', 'value': 10},
-                    #         {'label': '11', 'value': 11},
-                    #         {'label': '12', 'value': 12},
-                    #         {'label': '13', 'value': 13},
-                    #         {'label': '14', 'value': 14},
-                    #         {'label': '15', 'value': 15},
-                    #         {'label': '16', 'value': 16},
-                    #         {'label': '17', 'value': 17},
-                    #         {'label': '18', 'value': 18},
-                    #         {'label': '19', 'value': 19},
-                    #         {'label': '20', 'value': 20},
-                    #         {'label': '21', 'value': 21},
-                    #         {'label': '22', 'value': 22},
-                    #         {'label': '23', 'value': 23},
-                    #         {'label': '24', 'value': 24}
-                    #     ],
-                    #     value=''
-                    # ),
-                    dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"),),
-                    dcc.Input(id='task_stop', type='text', value=(datetime.now() + timedelta(hours=1)).strftime("%d/%m/%Y %H:%M")),
-                    html.Button('Submit', id='submit-schedule', n_clicks=0),
-                ], className="addtoschedule"),
             ], className="ganttchart"),
 
             html.Div([
-
+                html.Div(
+                    ["Wellbeing & Energy Distribution"],
+                    style={"text-align": "center", "font-size": "150%"}),
                 dcc.Graph(figure=task_distribution, style={'height': "30vh"}),
                 "gtest"
             ], className="sleepstats"),
 
             html.Div([
+                html.Div(
+                    ["Schedule Log"],
+                    style={"text-align": "center", "font-size": "150%"}),
                 dash_table.DataTable(
                     id='schedule-table',
                     columns=[{"name": i, "id": i} for i in schedule_df.columns],
@@ -146,22 +114,60 @@ index_page = html.Div([
 
             html.Div([
                 html.Div([
-                    daq.LEDDisplay(
-                        id='my-daq-leddisplay',
-                        value="3.14159",
-                        size=15
-                    )
-                ], className="six columns"),
-                html.Div([
-                    daq.LEDDisplay(
-                        id='my-daq-leddisplay',
-                        value="3.14159",
-                        size=15
-                    ),
-                ], className="six columns"),
+                    html.Div([
+                        daq.LEDDisplay(
+                            label="SLEEP",
+                            labelPosition='bottom',
+                            id='my-daq-leddisplay',
+                            value="6.43",
+                            size=10,
+                            backgroundColor = "#f5f5f5",
+                            color="red"
+                        ),
+
+                    ], className="three columns"),
+                    html.Div([
+                        daq.LEDDisplay(
+                            label="EAT",
+                            labelPosition='bottom',
+                            id='my-daq-leddisplay',
+                            value="3000",
+                            size=10,
+                            backgroundColor = "#f5f5f5",
+                            color="green"
+                        ),
+
+                    ], className="three columns"),
+                    html.Div([
+                        daq.LEDDisplay(
+                            label="WORK",
+                            labelPosition='bottom',
+                            id='my-daq-leddisplay',
+                            value="5.14",
+                            size=10,
+                            backgroundColor = "#f5f5f5",
+                            color="green"
+                        ),
+
+                    ], className="three columns"),
+                    html.Div([
+                        daq.LEDDisplay(
+                            label="",
+                            labelPosition='bottom',
+                            id='my-daq-leddisplay',
+                            value="3.14159",
+                            size=10,
+                            backgroundColor = "#f5f5f5",
+                            color="green"
+                        ),
+
+                    ], className="three columns"),
+
+                ], className="twelve columns"),
+
 
                 html.Div(
-                    ["n2 box", dcc.Graph(figure=sleep, style={'height': "5vh", "position": "bottom"}), html.Br(), ],
+                    ["-", dcc.Graph(figure=sleep, style={'height': "5vh", "position": "bottom"}), html.Br(), ],
                     style={"text-align": "center"}),
 
             ], className="n2box"),
@@ -188,6 +194,9 @@ index_page = html.Div([
                 # "n4 box",
                 # html.Div(["\"Resilience in Uncertainity, Resignation in Inevitability\""], className="test"),
                 html.Div([
+                    html.Div(
+                        ["To-do list"],
+                        style={"text-align": "center", "font-size": "150%"}),
                     dash_table.DataTable(
                         id='table',
                         columns=[{"name": i, "id": i} for i in todo_df.columns],
@@ -210,13 +219,14 @@ index_page = html.Div([
 
                 html.Div([
                     html.Div([
+
                         habitsmonitor
                     ], className="test"),
                 ], className="test"),
                 html.Div([
                     daq.GraduatedBar(
                         id='my-daq-graduatedbar',
-                        color={"ranges": {piecolours[3]: [0, 2], piecolours[2]: [2, 5], piecolours[1]: [5, 10]}},
+                        color={"ranges": {piecolours[3]: [0, 2], piecolours[1]: [2, 5], piecolours[2]: [5, 10]}},
                         label=dict(
                             label="Overall Performance",
                             style={"color": "black", "background-color": "#ddd"},
@@ -229,6 +239,9 @@ index_page = html.Div([
                 ], className="test"),
 
                 html.Div([
+                    html.Div(
+                        ["Virtue Radar"],
+                        style={"text-align": "center", "font-size": "150%"}),
                     dcc.Graph(figure=personality, style={'height': "25vh"}),
                 ], className="test"),
                 html.Div(["RECENT ACHIEVEMENTS", html.Br(), "- Implemented fourth column", html.Br(),

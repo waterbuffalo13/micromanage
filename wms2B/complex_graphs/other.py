@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 from datetime import datetime as dt, datetime, timedelta
-piecolours =  ['#171717', '#1c7813', '#193c12', '#990000']
+piecolours =  ['#171717', '#193c12', '#1c7813', '#990000']
 # Use `y` argument instead of `x` for horizontal histogram
 sankey = go.Figure(go.Sankey(
     arrangement="snap",
@@ -37,7 +37,11 @@ line_chart = go.Figure(data=[
     go.Scatter(x=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], y=[1, 2, 5, 10, 6, 15, 13, 18, 14, 19, 25, 42], mode='lines',
                line=dict(
                    # color='royalblue',
-                   width=4), fill="tozeroy")])
+                   width=4),
+               # fill="tozeroy"
+               )
+
+])
 line_chart.update_layout(
     autosize=True,
     title="Actualization Index",
@@ -231,22 +235,22 @@ pie2.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 sleep = go.Figure()
 sleep.add_trace(go.Bar(
     y=[''],
-    x=[8],
+    x=[6],
     name='SF Zoo',
     orientation='h',
     marker=dict(
-        color='rgba(246, 78, 139, 1)',
-        line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
+        color=piecolours[3],
+        # line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
     )
 ))
 sleep.add_trace(go.Bar(
     y=[''],
-    x=[8],
+    x=[10],
     name='LA Zoo',
     orientation='h',
     marker=dict(
-        color='rgba(58, 71, 80, 1)',
-        line=dict(color='rgba(58, 71, 80, 1.0)', width=3)
+        color=piecolours[1],
+        # line=dict(color='rgba(58, 71, 80, 1.0)', width=3)
     ),
 ))
 sleep.add_trace(go.Bar(
@@ -255,8 +259,8 @@ sleep.add_trace(go.Bar(
     name='SF Zoo',
     orientation='h',
     marker=dict(
-        color='rgba(246, 78, 139, 1)',
-        line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
+        color=piecolours[2],
+        # line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
     )
 ))
 
@@ -388,7 +392,7 @@ tank1 = daq.Tank(
     label='Index',
     labelPosition='bottom',
     style={'margin-left': '50%', "margin-top": "10%", },
-    color="red",
+    color=piecolours[3],
 )
 tank2 = daq.Tank(
     value=5,
@@ -397,7 +401,7 @@ tank2 = daq.Tank(
     label='Index',
     labelPosition='bottom',
     style={'margin-left': '5%', "margin-top": "10%"},
-    color="red",
+    color=piecolours[3],
 )
 tank3 = daq.Tank(
     value=2,
@@ -406,7 +410,7 @@ tank3 = daq.Tank(
     label='Index',
     labelPosition='bottom',
     style={'margin-left': '5%', "margin-top": "10%"},
-    color="red",
+    color=piecolours[3],
 )
 tank4 = daq.Tank(
     value=8,
@@ -415,7 +419,7 @@ tank4 = daq.Tank(
     label='Index',
     labelPosition='bottom',
     style={'margin-left': '5%', "margin-top": "10%"},
-    color=piecolours[3],
+    color="green",
 )
 
 # fig.update_layout(height = 250)
