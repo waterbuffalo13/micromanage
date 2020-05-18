@@ -100,7 +100,7 @@ def remove_from_csv(current_df, row):
 
 
 def set_gantt_layout(ganttChart):
-    ganttChart.update_layout(autosize=True, margin=dict(l=10, r=10, b=10, t=0))
+    ganttChart.update_layout(autosize=True, margin=dict(l=10, r=10, b=10, t=0), plot_bgcolor="lightgrey")
     ganttChart["layout"].pop("height", None)
     ganttChart["layout"].pop("width", None)
     print("set_gantt_layout")

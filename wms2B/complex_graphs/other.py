@@ -89,8 +89,12 @@ personality = go.Figure(data=go.Scatterpolar(
 
 personality.update_layout(
     polar=dict(
+# bgcolor = "rgb(223, 223, 223)",
         radialaxis=dict(
-            visible=True
+            visible=True,
+            # linecolor = "lightgrey",
+            # gridcolor="green",
+
         ),
     ),
     showlegend=False,
@@ -101,6 +105,7 @@ personality.update_layout(
         t=0,
     ),
     autosize=True,
+    # paper_bgcolor="rgb(223, 223, 223)"
 )
 
 personality.update_traces(
