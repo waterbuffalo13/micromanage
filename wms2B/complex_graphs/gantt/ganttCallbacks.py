@@ -81,7 +81,7 @@ def convert_to_gantt_format(final_df):
     df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
     df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
 
-    add_or_remove = ff.create_gantt(df_gantt, group_tasks=True, showgrid_x=True, showgrid_y=True, colors=colors, index_col='Task', title ="Today's Schedule")
+    add_or_remove = ff.create_gantt(df_gantt, group_tasks=True, showgrid_x=True, showgrid_y=True)
 
     return add_or_remove
 
