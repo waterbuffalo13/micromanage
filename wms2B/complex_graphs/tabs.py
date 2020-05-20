@@ -3,6 +3,9 @@ import dash_html_components as html
 from wms2B.complex_graphs.gantt.ganttFigure import *
 from wms2B.complex_graphs.other import fig
 from datetime import datetime, timedelta
+optionsList = {'Sleep': ['Sleep'], 'Work': ['Domestic', 'Paid', 'Job-Seeking'] , 'Study': ['Programming', 'Lectures', 'Books'], 'Exercise': ['Cardio', 'Resistance', "Stretch"], 'Routine': ['Breakfast', 'Lunch', 'Dinner', 'Commute'], 'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'], 'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
+names = list(optionsList.keys())
+nestedOptions = optionsList[names[0]]
 
 tabs = html.Div([
     dcc.Tabs(id='tabs-example', value='Schedule', children=[
@@ -21,7 +24,7 @@ tabs = html.Div([
                     html.Br(),
                     html.Div([
 
-                        dcc.Input(id='task_content', type='text', value="", style={"box-shadow": "0 0 2px 1px #666",'width': 100}),
+                        # dcc.Input(id='task_content', type='text', value="", style={"box-shadow": "0 0 2px 1px #666",'width': 100}),
                         # dcc.DatePickerSingle(
                         #     id='date-picker',
                         #     min_date_allowed=dt(curr_year, curr_month, curr_day),
@@ -29,36 +32,21 @@ tabs = html.Div([
                         #     initial_visible_month=dt(2017, 8, 5),
                         #     date=str(dt(curr_year, curr_month, curr_day))
                         # ),
-                        # dcc.Dropdown(
-                        #     id='demo-dropdown',
-                        #     options=[
-                        #         {'label': '1', 'value': 1},
-                        #         {'label': '2', 'value': 2},
-                        #         {'label': '3', 'value': 3},
-                        #         {'label': '4', 'value': 4},
-                        #         {'label': '5', 'value': 5},
-                        #         {'label': '6', 'value': 6},
-                        #         {'label': '7', 'value': 7},
-                        #         {'label': '8', 'value': 8},
-                        #         {'label': '9', 'value': 9},
-                        #         {'label': '10', 'value': 10},
-                        #         {'label': '11', 'value': 11},
-                        #         {'label': '12', 'value': 12},
-                        #         {'label': '13', 'value': 13},
-                        #         {'label': '14', 'value': 14},
-                        #         {'label': '15', 'value': 15},
-                        #         {'label': '16', 'value': 16},
-                        #         {'label': '17', 'value': 17},
-                        #         {'label': '18', 'value': 18},
-                        #         {'label': '19', 'value': 19},
-                        #         {'label': '20', 'value': 20},
-                        #         {'label': '21', 'value': 21},
-                        #         {'label': '22', 'value': 22},
-                        #         {'label': '23', 'value': 23},
-                        #         {'label': '24', 'value': 24}
-                        #     ],
-                        #     value=''
-                        # ),
+                        dcc.Dropdown(
+                            id='task_content',
+                            options=[
+                                {"label":name, "value":name} for name in names
+                            ],
+                            clearable=False,
+                            value= list(optionsList.keys())[0],
+                        style={'width': 120}),
+                        dcc.Dropdown(
+                            id='task_type',
+                            options=[{'label': opt, 'value': opt} for opt in nestedOptions],
+                            clearable=False,
+                            value= nestedOptions[0],
+                            # value= nestedOptions[0],
+                            style={'width': 120}),
                         dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"), style={'width': 100}),
                         dcc.Input(id='task_stop', type='text',
                                   value=(datetime.now() + timedelta(hours=1)).strftime("%d/%m/%Y %H:%M"), style={'width': 100}),

@@ -5,13 +5,16 @@ import pandas as pd
 import dash
 import datetime
 from wms2B.dashboard import index_page
+from wms2B.complex_graphs.tabs import optionsList, names
 
-
-import_gantt_callbacks
+optionsList = {'Sleep': ['Sleep'], 'Work': ['Domestic', 'Paid', 'Job-Seeking'] , 'Study': ['Programming', 'Lectures', 'Books'], 'Exercise': ['Cardio', 'Resistance', "Stretch"], 'Routine': ['Breakfast', 'Lunch', 'Dinner', 'Commute'], 'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'], 'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
+names = list(optionsList.keys())
+nestedOptions = optionsList[names[0]]
 
 ################################################
 ###TO-DO LIST
 ################################################
+import_gantt_callbacks
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 
@@ -60,3 +63,9 @@ def delete_from_todo(previous, data, current):
                 final_df.to_csv("data/todolist.csv", index=False)
                 return final_df.to_dict('records')
 
+@app.callback(
+    [dash.dependencies.Output('task_type', 'options'), dash.dependencies.Output('task_type', 'value'),],
+    [dash.dependencies.Input('task_content', 'value')]
+)
+def update_date_dropdown(name):
+    return [{'label': i, 'value': i} for i in optionsList[name]], optionsList[name][0]

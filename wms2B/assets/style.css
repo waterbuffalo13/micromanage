@@ -143,12 +143,12 @@ body{
 
 .addtoschedule {
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(5,1fr);
     grid-gap:2em;
     /*overflow: auto;*/
     /*padding-bottom:2em;*/
     grid-gap:1em;
-    width:50%;
+    width:75%;
     float:right;
 
      border: #333 1px solid;

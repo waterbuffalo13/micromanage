@@ -15,12 +15,12 @@ colors = dict(Meal = '#00ba03',
 @app.callback([Output("schedule-table", "data"), Output('task_start', 'value'), Output('task_stop', 'value')],
               [Input('submit-schedule', 'n_clicks')],
               [State('task_content', 'value'), State('task_start', 'value'),
-               State('task_stop', 'value')])
-def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task):
+               State('task_stop', 'value'), State('task_type','value')])
+def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task, subtype_task):
     base = pd.read_csv("data/gantt.csv")
     if n_clicks is not None and n_clicks > 0:
         #updated = \
-        updated = add_to_csv(base, start_task, stop_task, task_contents, "---")
+        updated = add_to_csv(base, start_task, stop_task, task_contents, "---", subtype_task)
         # updated = pd.read_csv("data/gantt.csv")
         start_task = stop_task
         stop_task = (datetime.strptime(start_task, "%d/%m/%Y %H:%M") + timedelta(hours=1)).strftime("%d/%m/%Y %H:%M")
@@ -32,12 +32,12 @@ def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task):
         return base.to_dict('records'), start_task, stop_task
 
 
-def add_to_csv(base, start_task, stop_task, task_contents, task_nature):
+def add_to_csv(base, start_task, stop_task, task_contents, task_nature, subtype_task):
     # base = pd.read_csv("data/gantt.csv")
     base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
     created = datetime.now().strftime("%d/%m/%Y %H:%M:%S:%f")
-    task_data = [[task_contents, created, start_task, stop_task, task_nature]]
-    updated = pd.DataFrame(task_data, columns=['task_name', 'created_date', 'start_task', 'stop_task', "task_nature"])
+    task_data = [[task_contents, created, start_task, stop_task, task_nature, subtype_task]]
+    updated = pd.DataFrame(task_data, columns=['task_name', 'created_date', 'start_task', 'stop_task', "task_nature", 'task_subtype'])
     # updated = base.append(updated, ignore_index=True)
     updated = pd.concat([base, updated])
     updated = updated[pd.notnull(updated["task_name"])]
