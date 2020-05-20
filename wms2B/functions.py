@@ -7,7 +7,7 @@ import datetime
 from wms2B.dashboard import index_page
 from wms2B.complex_graphs.tabs import optionsList, names
 
-optionsList = {'Sleep': ['Sleep'], 'Work': ['Domestic', 'Paid', 'Job-Seeking'] , 'Study': ['Programming', 'Lectures', 'Books'], 'Exercise': ['Cardio', 'Resistance', "Stretch"], 'Routine': ['Breakfast', 'Lunch', 'Dinner', 'Commute'], 'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'], 'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
+optionsList = {'Sleep': ['Sleep'], 'Work': ['Domestic', 'Paid', 'Job-Seeking'] , 'Study': ['Programming', 'Lectures', 'Books'], 'Exercise': ['Cardio', 'Resistance', "Stretch"], 'Routine': ['Morning', 'Lunchtime', 'Dinner', 'Commute'], 'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'], 'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
 names = list(optionsList.keys())
 nestedOptions = optionsList[names[0]]
 

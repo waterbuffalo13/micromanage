@@ -11,13 +11,27 @@ Organization:
 I have attempted to categorize all of life's unique experiences into 7 distinct categories: Sleep, Work, Study, Exercise, Routine, Recreation and Indulgence.
 
 Sleep: Approximately one third of a human life is in this unconcious state. It is indivisible.
+
 Work: This encompasses all activities with a high potential either life maintenance or revenue generation. Can roughly be subdivided into three meaningful categories: domestic, paid and job hunting. 
+
 Study: These are self-improvement activities designed to expand my knowledge and skillset. Examples would be programming, lectures and reading.
+
 Exercise: Exercise is a long-term investment designed to add value to the daily activities of existing, including improved energy, vigour and wellbeing. Cardio, Resistance, Yoga, Sports etc.
+
 Routine: Mandatory breaks for breakfast lunch and dinner
+
 Recreation: Travel, unique, high value or novel experiences 
+
 Indulgence: Games, Movies, Music etc
- 
+
+a.	What activities do I do on days that make me happiest or saddest?
+b.	What activities are associated with productive days?
+c.	How does yesterday’s activity affect the current days’ work?
+d.	How does reading/calorie counting/meditation/workout records effect my wellbeing
+e.	How should I structure my days to maximise wellbeing?
+f.	What percentage of my day are leisure, work and commitment?
+g.	What activities satisfy me the most?
+h.	What kinds of activities are closely related together?
 
 
 To answer this question requires some methodology to quantify wellbeing. The quantification strategy in this instance requires inferring wellbeing from the journal entries using a sentiment analysis

@@ -3,7 +3,8 @@ import dash_html_components as html
 from wms2B.complex_graphs.gantt.ganttFigure import *
 from wms2B.complex_graphs.other import fig
 from datetime import datetime, timedelta
-optionsList = {'Sleep': ['Sleep'], 'Work': ['Domestic', 'Paid', 'Job-Seeking'] , 'Study': ['Programming', 'Lectures', 'Books'], 'Exercise': ['Cardio', 'Resistance', "Stretch"], 'Routine': ['Breakfast', 'Lunch', 'Dinner', 'Commute'], 'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'], 'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
+
+optionsList = {'Sleep': ['Sleep'], 'Work': ['Domestic', 'Paid', 'Job-Seeking'] , 'Study': ['Programming', 'Lectures', 'Books'], 'Exercise': ['Cardio', 'Resistance', "Stretch"], 'Routine': ['Morning', 'Lunchtime', 'Dinner', 'Commute'], 'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'], 'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
 names = list(optionsList.keys())
 nestedOptions = optionsList[names[0]]
 
