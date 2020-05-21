@@ -10,6 +10,14 @@ from wms2B.complex_graphs.tabs import tabs
 # user class
 # user-controller class - handles all the main functions related to user (CRUD)
 # session controller - logging in/out
+
+suggested_data = {'Index': ['1', '2','3','4','5','6'],
+             'content': ['Draw a picture', 'Listen to a podcast','Watch a movie','Read a book','Work on game design', 'write papers'],
+             }
+
+suggested_df = pd.DataFrame(suggested_data)
+
+
 todo_df = pd.read_csv("data/todolist.csv")
 schedule_df = pd.read_csv("data/gantt.csv")
 
@@ -24,7 +32,7 @@ index_page = html.Div([
 
     html.Div([
         html.H5("Waterbuffalo Micromanagement v2.01 ~ Success is commemorated; Failure merely remembered.  "),
-            # html.Img(src="/assets/test.png"),
+        # html.Img(src="/assets/test.png"),
     ], className="banner", style={"textAlign": "center"}),
     html.Div([
 
@@ -32,7 +40,7 @@ index_page = html.Div([
 
             html.Div([
                 html.Div([], className="new"),
-                    html.Div(
+                html.Div(
                     ["Activity Breakdown"],
                     style={"text-align": "center", "font-size": "150%"}),
 
@@ -121,7 +129,7 @@ index_page = html.Div([
                             id='my-daq-leddisplay',
                             value="6.43",
                             size=10,
-                            backgroundColor = "#f5f5f5",
+                            backgroundColor="#f5f5f5",
                             color="red"
                         ),
 
@@ -133,7 +141,7 @@ index_page = html.Div([
                             id='my-daq-leddisplay',
                             value="3000",
                             size=10,
-                            backgroundColor = "#f5f5f5",
+                            backgroundColor="#f5f5f5",
                             color="green"
                         ),
 
@@ -145,7 +153,7 @@ index_page = html.Div([
                             id='my-daq-leddisplay',
                             value="5.14",
                             size=10,
-                            backgroundColor = "#f5f5f5",
+                            backgroundColor="#f5f5f5",
                             color="green"
                         ),
 
@@ -157,14 +165,13 @@ index_page = html.Div([
                             id='my-daq-leddisplay',
                             value="3.14159",
                             size=10,
-                            backgroundColor = "#f5f5f5",
+                            backgroundColor="#f5f5f5",
                             color="green"
                         ),
 
                     ], className="three columns"),
 
                 ], className="twelve columns"),
-
 
                 html.Div(
                     ["-", dcc.Graph(figure=sleep, style={'height': "5vh", "position": "bottom"}), html.Br(), ],
@@ -244,11 +251,19 @@ index_page = html.Div([
                         style={"text-align": "center", "font-size": "150%"}),
                     dcc.Graph(figure=personality, style={'height': "25vh"}),
                 ], className="test"),
-                html.Div(["RECENT ACHIEVEMENTS", html.Br(), "- Implemented fourth column", html.Br(),
+                html.Div(["SUGGESTED ACTIVITIES", html.Br(),
+                          dash_table.DataTable(
+                              id='suggested',
+                              columns=[{"name": i, "id": i} for i in suggested_df.columns],
+                              data=suggested_df.to_dict('records'),
+                          )
+
+                             , html.Br(),
                           ], className="test"),
 
             ], className="todolist"), html.Div([
-                html.Div([ html.Img(src="/assets/test.png", style ={"height":"13vh"}), "Waterbuffalo says", html.Br(),"The question isn't who is going to let me; it's who is going to stop me. ~ Howard Roark",
+                html.Div([html.Img(src="/assets/test.png", style={"height": "13vh"}), "Waterbuffalo says", html.Br(),
+                          "The question isn't who is going to let me; it's who is going to stop me. ~ Howard Roark",
 
                           ], className="test"),
                 html.Div([

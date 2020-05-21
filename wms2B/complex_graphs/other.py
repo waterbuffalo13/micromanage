@@ -426,6 +426,13 @@ tank4 = daq.Tank(
     style={'margin-left': '5%', "margin-top": "10%"},
     color="green",
 )
+suggested_data = {'Index': ['1', '2','3','4','5','6'],
+             'content': ['Finish up waterbuffalo micromanagement', 'take up yoga','go to the clubs','have a good time','develop relationships', 'write papers'],
+             }
+
+suggested_df = pd.DataFrame(suggested_data)
+
+
 
 # fig.update_layout(height = 250)
 # fig.update_layout(height = 400 , margin = {'t':0, 'b':0, 'l':0})
