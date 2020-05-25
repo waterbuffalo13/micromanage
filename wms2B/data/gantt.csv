@@ -1,1 +1,3 @@
-created_date,start_task,stop_task,task_name,task_nature,task_subtype
+created_date,hours_expended,start_task,stop_task,task_name,task_nature,task_subtype
+25/05/2020 01:23:45:639636,1:00:00,25/05/2020 01:21,25/05/2020 02:21,Sleep,---,Sleep
+25/05/2020 01:34:40:362516,0 days 04:00:00,25/05/2020 01:34,25/05/2020 05:34,Sleep,---,Sleep

@@ -252,10 +252,20 @@ body{
     grid-column:4/9;
     /*overflow: hidden;*/
     overflow-y:scroll;
-    /*min-height:30vh;*/
+    max-height:30vh;
     /*height:250px;*/
 
 }
+/*.schedulelist-flex{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*        grid-column:4/9;*/
+/*    !*overflow: hidden;*!*/
+/*    !*overflow-y:scroll;*!*/
+/*    !*max-height:30vh;*!*/
+/*    !*height:250px;*!*/
+
+/*}*/
 .nextbox{
     grid-column: 3/4;
     grid-row:3/4;

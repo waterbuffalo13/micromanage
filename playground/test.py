@@ -6,28 +6,19 @@ import dash_html_components as html
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
 import pandas as pd
-#
-df = [
-    dict(Task="Waterbuffalo Micromanagement", Start='2020-05-10', Finish='2020-09-01'),
-    dict(Task="Waterbuffalo Treasury", Start='2020-09-01', Finish='2021-09-01'),
-    dict(Task="Job search", Start='2020-06-01', Finish='2021-01-01')
-]
 
-# df = pd.read_csv(r"C:\Users\Patrick\Desktop\wms2\multi_page\apps\todolist.csv")
-# df_gantt = df[["task_name", "start_task", "stop_task"]].copy()
-# df_gantt.columns = ["Task", "Start", "Finish"]
+import plotly.graph_objects as go
 
-gantt = ff.create_gantt(df)
+labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
+values = [4500, 2500, 1053, 500]
+
+fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
 # fig = dcc.Graph(id='a_graph', figure={'data': [go.Bar(y=['giraffes', 'orangutans', 'monkeys'],x=[20, 14, 23],name = "SF ZOO", orientation='h')]})
 
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
-    dcc.Graph(figure=gantt, id='gantt'),
-
-
-
-
+    dcc.Graph(figure=fig, id='gantt'),
 ])
 if __name__ == '__main__':
     app.run_server(debug=True)

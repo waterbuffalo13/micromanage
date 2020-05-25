@@ -162,7 +162,6 @@ auto_data = {
 labels = ['Sleep', 'Recr', 'Work', 'Waste']
 values = [8 * 60, 4 * 60, 8 * 60, 9 * 60]
 
-
 def wrapiefigure(labels, values, holes):
     return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent', automargin=False)])
 pie = wrapiefigure(labels, values, .4)

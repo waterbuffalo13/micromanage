@@ -108,17 +108,20 @@ index_page = html.Div([
                 dcc.Graph(figure=task_distribution, style={'height': "30vh"}),
                 "gtest"
             ], className="sleepstats"),
+            # html.Div([
+                html.Div([
+                    html.Div(
+                        ["Schedule Log"],
+                        style={"text-align": "center", "font-size": "150%"}),
+                    dash_table.DataTable(
+                        id='schedule-table',
+                        columns=[{"name": i, "id": i} for i in schedule_df.columns],
+                        row_deletable=True,
+                        page_size=7,
+                    )
+                ], className="schedulelist"),
 
-            html.Div([
-                html.Div(
-                    ["Schedule Log"],
-                    style={"text-align": "center", "font-size": "150%"}),
-                dash_table.DataTable(
-                    id='schedule-table',
-                    columns=[{"name": i, "id": i} for i in schedule_df.columns],
-                    row_deletable=True,
-                )
-            ], className="schedulelist"),
+            # ], className="schedulelist-flex"),
 
             html.Div([
                 html.Div([
@@ -251,14 +254,8 @@ index_page = html.Div([
                         style={"text-align": "center", "font-size": "150%"}),
                     dcc.Graph(figure=personality, style={'height': "25vh"}),
                 ], className="test"),
-                html.Div(["SUGGESTED ACTIVITIES", html.Br(),
-                          dash_table.DataTable(
-                              id='suggested',
-                              columns=[{"name": i, "id": i} for i in suggested_df.columns],
-                              data=suggested_df.to_dict('records'),
-                          )
+                html.Div([
 
-                             , html.Br(),
                           ], className="test"),
 
             ], className="todolist"), html.Div([
@@ -279,12 +276,19 @@ index_page = html.Div([
 
                 ], className="test"),
                 html.Div([
+                    "SUGGESTED ACTIVITIES", html.Br(),
+                    dash_table.DataTable(
+                        id='suggested',
+                        columns=[{"name": i, "id": i} for i in suggested_df.columns],
+                        data=suggested_df.to_dict('records'),
+                    )
 
-                    dcc.Graph(
-                        id='example-graph-2',
-                        figure=sankey,
-                        style={"width": "25vh", "height": "20vh"},
-                    ),
+                    , html.Br(),
+                    # dcc.Graph(
+                    #     id='example-graph-2',
+                    #     figure=sankey,
+                    #     style={"width": "25vh", "height": "20vh"},
+                    # ),
                 ],
                     className="test"),
                 html.Div(
@@ -298,9 +302,11 @@ index_page = html.Div([
                     className="test"),
                 # html.Div([dcc.Graph(figure=sankey, style={'height': "20vh"}),
                 #           ], className="test"),
-                html.Div(["KPI REPORT", html.Br(), "SLEEP : CONSISTENT GOOD", html.Br(), "NUTRITION : GOOD", html.Br(),
+                html.Div([
+                    "KPI REPORT", html.Br(), "SLEEP : CONSISTENT GOOD", html.Br(), "NUTRITION : GOOD", html.Br(),
                           "SCHEDULE QUALITY : CONSISTENT LOW", html.Br(), "VIRTUE SCORE : HIGH", html.Br(),
-                          "OVERALL WELLBEING: FLUCTUATING HIGH"], className="test"),
+                          "OVERALL WELLBEING: FLUCTUATING HIGH"
+                          ], className="test"),
 
             ], className="todolist"),
 
