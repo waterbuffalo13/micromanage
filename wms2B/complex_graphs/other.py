@@ -158,6 +158,8 @@ auto_data = {
     'row1': ['3.81', '2.42', '213', '431', 'clunker', 'strat', 'dawg'],
     # , '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
 }
+gantt_df = pd.read_csv("data/gantt.csv")
+hours_slept = gantt_df["hours_expended"]
 
 labels = ['Sleep', 'Recr', 'Work', 'Waste']
 values = [8 * 60, 4 * 60, 8 * 60, 9 * 60]

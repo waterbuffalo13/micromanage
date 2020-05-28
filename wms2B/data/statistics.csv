@@ -1,0 +1,8 @@
+task_type, aggregate sleep,
+Sleep, 800,
+Work,600,
+Study,400,
+Routine,500,
+Recreation,600,
+Exercise, 600,
+Indulgence, 700,

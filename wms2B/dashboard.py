@@ -44,9 +44,8 @@ index_page = html.Div([
                     ["Activity Breakdown"],
                     style={"text-align": "center", "font-size": "150%"}),
 
-                dcc.Graph(figure=pie,
-                          style={'height': "20vh"}
-                          ),
+                dcc.Graph(figure=pie,style={'height': "20vh"} ),
+
                 # dcc.Graph(figure=personality, style={'height': "25vh"}),
                 dcc.Graph(figure=horizontal_stats, style={'height': "9vh"}),
                 html.Br(),
