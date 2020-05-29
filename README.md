@@ -3,6 +3,8 @@
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot.PNG)
 
+![](screenshot-gif.gif)
+
 Waterbuffalo Micromanagement is a highly interactive pandas/SQL-driven dashboard that is designed to work primarily as a productivity application with the expressed aim of producing actionable feedback and insight through the analysis of personal data. Personal statistics such as wellbeing distributions, activity breakdowns and virtue-adherence are monitored, alongside more practical dynamic gantt-charts which I can use to structure my day. The end goal is to be able to identify causal structures of human flourishing through the use of data analysis, and to enforce positive behaviour using CBT-based strategies.
 
 This project can be summarized as an attempt to solve a very important question: 

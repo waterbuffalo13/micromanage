@@ -32,8 +32,12 @@ curr_second = int(dt.now().strftime("%S"))
 index_page = html.Div([
 
     html.Div([
-        html.H5("Waterbuffalo Micromanagement v2.01 ~ Success is commemorated; Failure merely remembered.  "),
+        # html.H5("Waterbuffalo Micromanagement v2.01 ~ Success is commemorated; Failure merely remembered.  "),
         # html.Img(src="/assets/test.png"),
+        html.Button('Mainframe', id='btn-nclicks-1', n_clicks=0),
+        html.Button('Financial Portfolio', id='btn-nclicks-2', n_clicks=0),
+        html.Button('Aspirational', id='btn-nclicks-3', n_clicks=0),
+
     ], className="banner", style={"textAlign": "center"}),
     html.Div([
 

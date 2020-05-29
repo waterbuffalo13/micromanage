@@ -48,7 +48,7 @@ html { overflow-y: scroll; }
 
 
 .banner {
-    height: 30px;
+    /*height: 30px;*/
     margin: 0px -10px 10px;
     background-color: white/*rgb(66, 196, 247)*/;
     border-radius: 2px;
