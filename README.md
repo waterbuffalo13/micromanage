@@ -34,17 +34,11 @@ Organization:
 I have attempted to categorize all of life's unique experiences into 7 distinct categories: Sleep, Work, Study, Exercise, Routine, Recreation and Indulgence.
 
 1. **Sleep**: Approximately one third of a human life is in this unconcious state. It is indivisible.
-
 2. **Work**: This encompasses all activities with a high potential either life maintenance or revenue generation. Can roughly be subdivided into three meaningful categories: domestic, paid and job hunting. 
-
 3. **Study**: These are self-improvement activities designed to expand my knowledge and skillset. Examples would be programming, lectures and reading.
-
 4. **Exercise**: Exercise is a long-term investment designed to add value to the daily activities of existing, including improved energy, vigour and wellbeing. Cardio, Resistance, Yoga, Sports etc.
-
 5. **Routine**: Mandatory breaks for breakfast lunch and dinner, commuting
-
 6. **Recreation**: Travel, unique, high value or novel experiences 
-
 7. **Indulgence**: Games, Movies, Music etc
 
 

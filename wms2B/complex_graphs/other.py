@@ -164,12 +164,15 @@ gantt_df = pd.read_csv("data/gantt.csv")
 gantt_df["hours_expended_int"] = gantt_df["hours_expended"].apply(lambda x: timeparse(x)/(60*60))
 sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
 work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
+study_count = gantt_df.loc[gantt_df["task_name"] == "Study", "hours_expended_int"].sum()
+exercise_count = gantt_df.loc[gantt_df["task_name"] == "Exercise", "hours_expended_int"].sum()
+routine_count = gantt_df.loc[gantt_df["task_name"] == "Routine", "hours_expended_int"].sum()
+recreation_count = gantt_df.loc[gantt_df["task_name"] == "Recreation", "hours_expended_int"].sum()
+indulgence_count = gantt_df.loc[gantt_df["task_name"] == "Indulgence", "hours_expended_int"].sum()
 
 
-labels = ['Sleep', 'Work']
-values = [sleep_count, work_count]
-# labels = ['Sleep', 'Recr', 'Work', 'Waste']
-# values = [sleep_count, 4 * 60, 8 * 60, 9 * 60]
+labels = ['Sleep', 'Work', 'Study', 'Exercise', 'Routine', 'Recreation', 'Indulgence']
+values = [sleep_count, work_count, study_count, exercise_count, routine_count, recreation_count, indulgence_count]
 
 def wrapiefigure(labels, values, holes):
     return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent', automargin=False)])
@@ -193,9 +196,9 @@ pie.update_layout(
 pie.update_yaxes(automargin=True)
 
 pie.update_traces(hoverinfo='label+percent',
-                  marker=dict(colors=piecolours,
+                  # marker=dict(colors=piecolours,
                               # line=dict(color='#000000', width=1))
-                  ))
+                  )
 
 
 x = np.arange(10)

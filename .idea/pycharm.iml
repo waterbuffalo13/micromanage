@@ -8,4 +8,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="test" />
   </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="C:\Users\Patrick\Desktop\wms2\wms2B" />
+  </component>
 </module>

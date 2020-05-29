@@ -73,14 +73,27 @@ def pie_layout(base):
     base["hours_expended_int"] = base["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
     sleep_count = base.loc[base["task_name"] == "Sleep", "hours_expended_int"].sum()
     work_count = base.loc[base["task_name"] == "Work", "hours_expended_int"].sum()
+    study_count = base.loc[base["task_name"] == "Study", "hours_expended_int"].sum()
+    exercise_count = base.loc[base["task_name"] == "Exercise", "hours_expended_int"].sum()
+    routine_count = base.loc[base["task_name"] == "Routine", "hours_expended_int"].sum()
+    recreation_count = base.loc[base["task_name"] == "Recreation", "hours_expended_int"].sum()
+    indulgence_count = base.loc[base["task_name"] == "Indulgence", "hours_expended_int"].sum()
+
+    # labels = ['Sleep', 'Work', 'Study', 'Exercise', 'Routine', 'Recreation', 'Indulgence']
+    # values = [sleep_count, work_count, study_count, exercise_count, routine_count, recreation_count, indulgence_count]
+
     pie_figure = go.Figure(data=[
-        go.Pie(labels=['Sleep', 'Work'], values=[sleep_count, work_count], hole=.4, textinfo='label+percent',
-               automargin=False)])
-    pie_figure.update_layout(autosize=True, margin=dict(l=10, r=10, b=10, t=10), paper_bgcolor="white",
-                             showlegend=False, )
+        go.Pie(labels=['Sleep', 'Work', 'Study', 'Exercise', 'Routine', 'Recreation', 'Indulgence'],
+               values=[sleep_count, work_count, study_count, exercise_count, routine_count, recreation_count, indulgence_count],
+               hole=.4,
+               textinfo='label+percent',
+               automargin=False,
+               textposition="inside"
+               )])
+    pie_figure.update_layout(autosize=True, margin=dict(l=10, r=10, b=10, t=10), paper_bgcolor="white",showlegend=False,  )
     pie_figure.update_yaxes(automargin=True)
-    pie_figure.update_traces(hoverinfo='label+percent',
-                             marker=dict(colors=['#171717', '#193c12', '#1c7813', '#990000']))
+    pie_figure.update_traces(hoverinfo='label+percent'#, marker=dict(colors=['#171717', '#193c12', '#1c7813', '#990000'])
+                             )
     return pie_figure
 #dependent
 def convert_to_gantt_format(final_df):
