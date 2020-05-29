@@ -93,7 +93,7 @@ def pie_layout(base):
     pie_figure.update_layout(autosize=True, margin=dict(l=10, r=10, b=10, t=10), paper_bgcolor="white",showlegend=False,  )
     pie_figure.update_yaxes(automargin=True)
     pie_figure.update_traces(hoverinfo='label+percent'#, marker=dict(colors=['#171717', '#193c12', '#1c7813', '#990000'])
-                             )
+                             )#test
     return pie_figure
 #dependent
 def convert_to_gantt_format(final_df):
