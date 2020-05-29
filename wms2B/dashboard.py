@@ -3,6 +3,7 @@ from wms2B.complex_graphs.habitsmonitor import habitsmonitor
 from wms2B.complex_graphs.gantt.ganttFigure import *
 from datetime import datetime as dt, datetime, timedelta
 from wms2B.complex_graphs.tabs import tabs
+from pytimeparse.timeparse import timeparse
 
 # from wms2B.app import app
 
@@ -44,7 +45,7 @@ index_page = html.Div([
                     ["Activity Breakdown"],
                     style={"text-align": "center", "font-size": "150%"}),
 
-                dcc.Graph(figure=pie,style={'height': "20vh"} ),
+                dcc.Graph(id ="pie-chart", figure=pie,style={'height': "20vh"} ),
 
                 # dcc.Graph(figure=personality, style={'height': "25vh"}),
                 dcc.Graph(figure=horizontal_stats, style={'height': "9vh"}),

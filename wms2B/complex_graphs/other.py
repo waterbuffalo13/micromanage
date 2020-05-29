@@ -9,8 +9,8 @@ import numpy as np
 import plotly.graph_objects as go
 from datetime import datetime as dt, datetime, timedelta
 from pytimeparse.timeparse import timeparse
-
 piecolours =  ['#171717', '#193c12', '#1c7813', '#990000']
+
 # Use `y` argument instead of `x` for horizontal histogram
 sankey = go.Figure(go.Sankey(
     arrangement="snap",
@@ -163,13 +163,18 @@ auto_data = {
 gantt_df = pd.read_csv("data/gantt.csv")
 gantt_df["hours_expended_int"] = gantt_df["hours_expended"].apply(lambda x: timeparse(x)/(60*60))
 sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
+work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
 
-labels = ['Sleep', 'Recr', 'Work', 'Waste']
-values = [8 * 60, 4 * 60, 8 * 60, 9 * 60]
+
+labels = ['Sleep', 'Work']
+values = [sleep_count, work_count]
+# labels = ['Sleep', 'Recr', 'Work', 'Waste']
+# values = [sleep_count, 4 * 60, 8 * 60, 9 * 60]
 
 def wrapiefigure(labels, values, holes):
     return go.Figure(data=[go.Pie(labels=labels, values=values, hole=.4, textinfo='label+percent', automargin=False)])
 pie = wrapiefigure(labels, values, .4)
+
 pie.update_layout(
     autosize=True,
     # width=500,
