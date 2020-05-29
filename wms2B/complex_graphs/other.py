@@ -8,6 +8,8 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 from datetime import datetime as dt, datetime, timedelta
+from pytimeparse.timeparse import timeparse
+
 piecolours =  ['#171717', '#193c12', '#1c7813', '#990000']
 # Use `y` argument instead of `x` for horizontal histogram
 sankey = go.Figure(go.Sankey(
@@ -159,7 +161,8 @@ auto_data = {
     # , '2.61',  "3.2", "fourth value"],#"third value", "fourth value",  "third value", "fourth value"],
 }
 gantt_df = pd.read_csv("data/gantt.csv")
-hours_slept = gantt_df["hours_expended"]
+gantt_df["hours_expended_int"] = gantt_df["hours_expended"].apply(lambda x: timeparse(x)/(60*60))
+sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
 
 labels = ['Sleep', 'Recr', 'Work', 'Waste']
 values = [8 * 60, 4 * 60, 8 * 60, 9 * 60]
