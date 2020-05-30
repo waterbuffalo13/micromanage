@@ -338,10 +338,10 @@ journal_content = dcc.Textarea(
 )
 
 horizontal_stats = go.Figure(go.Bar(
-    x=[20, 14, 23],
+    x=[work_count, sleep_count, recreation_count],
     y=['work', 'sleep', 'recr'],
     orientation='h',
-    marker_color= piecolours[1:],
+    # marker_color= piecolours[1:],
 
 
 ))

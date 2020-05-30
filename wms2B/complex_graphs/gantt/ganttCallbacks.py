@@ -49,17 +49,49 @@ def add_to_csv(base, start_task, stop_task, task_contents, task_nature, subtype_
 
 
 # remove task
-@app.callback([Output("gantt_chart", "figure"), Output('pie-chart', 'figure')],
+@app.callback([Output("gantt_chart", "figure"), Output('pie-chart', 'figure'), Output('horizontal-stats', 'figure')],
               [Input('schedule-table', 'data_previous'), Input("submit-schedule", "n_clicks"),
                Input("schedule-table", "data")],
               [State('schedule-table', 'data')])
-def update_graphs(old_table, n_clicks, data, new_table, ):
+def update_graphs(old_table, n_clicks, data, new_table):
     gantt_df = pd.read_csv("data/gantt.csv")
     if old_table is None:
         ganttChart = convert_to_gantt_format(gantt_df)
         set_gantt_layout(ganttChart)
         pie_figure = pie_layout(gantt_df)
-        return ganttChart, pie_figure
+
+        gantt_df["hours_expended_int"] = gantt_df["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
+        sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
+        work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
+        recreation_count = gantt_df.loc[gantt_df["task_name"] == "Recreation", "hours_expended_int"].sum()
+
+
+        horizontal_stats = go.Figure(go.Bar(
+            x=[work_count, sleep_count, recreation_count],
+            y=['work', 'sleep', 'recr'],
+            orientation='h',
+            # marker_color= piecolours[1:],
+
+        ))
+        horizontal_stats.update_layout(
+            margin=dict(
+                l=0,
+                r=10,
+                b=10,
+                t=10,
+            ),
+            paper_bgcolor="#ddd",
+
+        )
+        horizontal_stats.update_traces(
+            # marker_color='rgb(158,202,225)',
+            marker_line_color='rgb(0,0,0)',
+            marker_line_width=1,
+        )
+
+
+
+        return ganttChart, pie_figure, horizontal_stats
     else:
         for row in old_table:
             if row not in new_table:
@@ -67,7 +99,36 @@ def update_graphs(old_table, n_clicks, data, new_table, ):
                 ganttChart = convert_to_gantt_format(final_df)
                 set_gantt_layout(ganttChart)
                 pie_figure = pie_layout(final_df)
-                return ganttChart, pie_figure
+
+                sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
+                work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
+                recreation_count = gantt_df.loc[gantt_df["task_name"] == "Recreation", "hours_expended_int"].sum()
+
+                horizontal_stats = go.Figure(go.Bar(
+                    x=[work_count, sleep_count, recreation_count],
+                    y=['work', 'sleep', 'recr'],
+                    orientation='h',
+                    # marker_color= piecolours[1:],
+
+                ))
+                horizontal_stats.update_layout(
+                    margin=dict(
+                        l=0,
+                        r=10,
+                        b=10,
+                        t=10,
+                    ),
+                    paper_bgcolor="#ddd",
+
+                )
+                horizontal_stats.update_traces(
+                    # marker_color='rgb(158,202,225)',
+                    marker_line_color='rgb(0,0,0)',
+                    marker_line_width=1,
+                )
+
+
+                return ganttChart, pie_figure, horizontal_stats
 
 def pie_layout(base):
     base["hours_expended_int"] = base["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))

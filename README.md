@@ -1,11 +1,26 @@
 # Waterbuffalo Micromanagement
 
-
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot.PNG)
 
-![](screenshot-gif.gif)
+Waterbuffalo Micromanagement is a highly interactive pandas/SQL-driven dashboard that is designed to work primarily as a productivity application, but also analyses and visualizes personal data with the aim of producing actionable feedback and insight. Data visualized included wellbeing and energy distributions, dynamic gantt-charts to graph my daily schedules and habit monitors. The end goal is to be able to understand implicit causal structures of actualization, as well as the implementation of psychological strategies to ensure my adherence to these factors.
 
-Waterbuffalo Micromanagement is a highly interactive pandas/SQL-driven dashboard that is designed to work primarily as a productivity application with the expressed aim of producing actionable feedback and insight through the analysis of personal data. Personal statistics such as wellbeing distributions, activity breakdowns and virtue-adherence are monitored, alongside more practical dynamic gantt-charts which I can use to structure my day. The end goal is to be able to identify causal structures of human flourishing through the use of data analysis, and to enforce positive behaviour using CBT-based strategies.
+Whilst it's purpose and design philosophy has changed over time ultimately the project can be summarized as an attempt to solve a very important and fundamental question: What precisely should I be doing with my time? Should I be working on this project? Should I be applying for new jobs? Should I spend all of my time at home playing video games? An example could be going to the gym. Is going more often and for longer frequencies always increase my short-term wellbeing or is their a certain optimium? The question of time allocation needs to be solved in four parts, namely organization, reinforcement, cataloguing and insight production.
+
+- **Organization**: I have attempted to categorize all of life's unique experiences into 7 distinct categories: Sleep, Work, Study, Exercise, Routine, Recreation and Indulgence.
+
+- **Sleep**: Approximately one third of a human life is in this unconcious state. It is indivisible.
+
+- **Work**: This encompasses all activities with a high potential either life maintenance or revenue generation. Can roughly be subdivided into three meaningful categories: domestic, paid and job hunting. 
+
+- **Study**: These are self-improvement activities designed to expand my knowledge and skillset. Examples would be programming, lectures and reading.
+
+- **Exercise**: Exercise is a long-term investment designed to add value to the daily activities of existing, including improved energy, vigour and wellbeing. Cardio, Resistance, Yoga, Sports etc.
+
+- **Routine**: Mandatory breaks for breakfast lunch and dinner
+
+- **Recreation**: Travel, unique, high value or novel experiences 
+
+- **Indulgence**: Games, Movies, Music etc
 
 This project can be summarized as an attempt to solve a very important question: 
 - Time Allocation: 
@@ -28,21 +43,6 @@ This project can be summarized as an attempt to solve a very important question:
 
 Schedule Structure:
 -	How should I structure my days to maximise wellbeing?
-
-
-The question of time allocation needs to be solved in four parts, namely organization, reinforcement, cataloguing and insight production.
-
-Organization:
-I have attempted to categorize all of life's unique experiences into 7 distinct categories: Sleep, Work, Study, Exercise, Routine, Recreation and Indulgence.
-
-1. **Sleep**: Approximately one third of a human life is in this unconcious state. It is indivisible.
-2. **Work**: This encompasses all activities with a high potential either life maintenance or revenue generation. Can roughly be subdivided into three meaningful categories: domestic, paid and job hunting. 
-3. **Study**: These are self-improvement activities designed to expand my knowledge and skillset. Examples would be programming, lectures and reading.
-4. **Exercise**: Exercise is a long-term investment designed to add value to the daily activities of existing, including improved energy, vigour and wellbeing. Cardio, Resistance, Yoga, Sports etc.
-5. **Routine**: Mandatory breaks for breakfast lunch and dinner, commuting
-6. **Recreation**: Travel, unique, high value or novel experiences 
-7. **Indulgence**: Games, Movies, Music etc
-
 
 
 

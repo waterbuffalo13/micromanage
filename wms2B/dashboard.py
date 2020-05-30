@@ -34,9 +34,11 @@ index_page = html.Div([
     html.Div([
         # html.H5("Waterbuffalo Micromanagement v2.01 ~ Success is commemorated; Failure merely remembered.  "),
         # html.Img(src="/assets/test.png"),
-        html.Button('Mainframe', id='btn-nclicks-1', n_clicks=0),
+        html.Button('WMS Mainframe', id='btn-nclicks-1', n_clicks=0),
         html.Button('Financial Portfolio', id='btn-nclicks-2', n_clicks=0),
-        html.Button('Aspirational', id='btn-nclicks-3', n_clicks=0),
+        html.Button('Predictive Analytics', id='btn-nclicks-3', n_clicks=0),
+        html.Button('Retrieval', id='btn-nclicks-4', n_clicks=0),
+
 
     ], className="banner", style={"textAlign": "center"}),
     html.Div([
@@ -45,61 +47,17 @@ index_page = html.Div([
 
             html.Div([
                 html.Div([], className="new"),
-                html.Div(
-                    ["Activity Breakdown"],
-                    style={"text-align": "center", "font-size": "150%"}),
-
+                html.Div(["Activity Breakdown"], style={"text-align": "center", "font-size": "150%"}),
                 dcc.Graph(id ="pie-chart", figure=pie,style={'height': "20vh"} ),
-
-                # dcc.Graph(figure=personality, style={'height': "25vh"}),
-                dcc.Graph(figure=horizontal_stats, style={'height': "9vh"}),
+                dcc.Graph(id="horizontal-stats", figure=horizontal_stats, style={'height': "9vh"}),
                 html.Br(),
                 html.Div([
                 ]
-                    # , style={"position": "relative", "bottom": "-2vh"}
                 ),
-                # dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
-                # dcc.Graph(figure=sleep, style={'height': "3vh", "position": "bottom"}), html.Br(),
 
             ], className="piechart", style={"position": "relative"}),
 
             html.Div([
-                # "Box2",
-                # html.Div([
-                # dcc.Tabs(id='tabs-example', value='tab-1', children=[
-                #
-                #     dcc.Tab(className="tabs-individual", label='Schedule', value='Schedule', style={'borderBottom': '1px solid #d6d6d6','padding': '6px','fontWeight': 'bold'},
-                #             selected_style={'borderBottom': '1px solid #d6d6d6',
-                #                             'padding': '6px',
-                #                             'fontWeight': 'bold'}),
-                #     dcc.Tab(label='Retro-Schedule', value='Performance', style={'borderBottom': '1px solid #d6d6d6',
-                #                                                                 'padding': '6px',
-                #                                                                 'fontWeight': 'bold'},
-                #             selected_style={'borderBottom': '1px solid #d6d6d6',
-                #                             'padding': '6px',
-                #                             'fontWeight': 'bold'}),
-                #     dcc.Tab(label='Mood and Energy', value='Wisdom', style={'borderBottom': '1px solid #d6d6d6',
-                #                                                             'padding': '6px',
-                #                                                             'fontWeight': 'bold'},
-                #             selected_style={'borderBottom': '1px solid #d6d6d6',
-                #                             'padding': '6px',
-                #                             'fontWeight': 'bold'}),
-                #     dcc.Tab(label='Journal', value='Energy', style={'borderBottom': '1px solid #d6d6d6',
-                #                                                     'padding': '6px',
-                #                                                     'fontWeight': 'bold'},
-                #             selected_style={'borderBottom': '1px solid #d6d6d6',
-                #                             'padding': '6px',
-                #                             'fontWeight': 'bold'}),
-                #     dcc.Tab(label='Diet Planner', value='Weight', style={'borderBottom': '1px solid #d6d6d6',
-                #                                                          'padding': '6px',
-                #                                                          'fontWeight': 'bold'},
-                #             selected_style={'borderBottom': '1px solid #d6d6d6',
-                #                             'padding': '6px',
-                #                             'fontWeight': 'bold'}),
-                #
-                # ]),
-                #
-                # ]),
                 tabs,
                 html.Div(id='tabs-example-content'),
 
