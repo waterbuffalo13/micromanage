@@ -55,16 +55,16 @@ def add_to_csv(base, start_task, stop_task, task_contents, task_nature, subtype_
               [State('schedule-table', 'data')])
 def update_graphs(old_table, n_clicks, data, new_table):
     gantt_df = pd.read_csv("data/gantt.csv")
+    gantt_df["hours_expended_int"] = gantt_df["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
+    sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
+    work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
+    recreation_count = gantt_df.loc[gantt_df["task_name"] == "Recreation", "hours_expended_int"].sum()
     if old_table is None:
+
+
         ganttChart = convert_to_gantt_format(gantt_df)
         set_gantt_layout(ganttChart)
         pie_figure = pie_layout(gantt_df)
-
-        gantt_df["hours_expended_int"] = gantt_df["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
-        sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
-        work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
-        recreation_count = gantt_df.loc[gantt_df["task_name"] == "Recreation", "hours_expended_int"].sum()
-
 
         horizontal_stats = go.Figure(go.Bar(
             x=[work_count, sleep_count, recreation_count],
@@ -89,20 +89,15 @@ def update_graphs(old_table, n_clicks, data, new_table):
             marker_line_width=1,
         )
 
-
-
         return ganttChart, pie_figure, horizontal_stats
     else:
         for row in old_table:
             if row not in new_table:
+
                 final_df = remove_from_csv(gantt_df, row)
                 ganttChart = convert_to_gantt_format(final_df)
                 set_gantt_layout(ganttChart)
                 pie_figure = pie_layout(final_df)
-
-                sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
-                work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
-                recreation_count = gantt_df.loc[gantt_df["task_name"] == "Recreation", "hours_expended_int"].sum()
 
                 horizontal_stats = go.Figure(go.Bar(
                     x=[work_count, sleep_count, recreation_count],
