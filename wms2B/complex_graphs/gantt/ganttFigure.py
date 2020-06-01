@@ -12,7 +12,6 @@ colors = dict(Meal = 'rgb(46, 137, 205)',
               Exercise = 'rgb(58, 149, 136)',
               Rest = 'rgb(107, 127, 135)')
 
-
 schedule_df = pd.read_csv("data/gantt.csv")
 
 df_gantt = schedule_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()

@@ -59,9 +59,8 @@ def update_graphs(old_table, n_clicks, data, new_table):
     sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
     work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
     recreation_count = gantt_df.loc[gantt_df["task_name"] == "Recreation", "hours_expended_int"].sum()
+
     if old_table is None:
-
-
         ganttChart = convert_to_gantt_format(gantt_df)
         set_gantt_layout(ganttChart)
         pie_figure = pie_layout(gantt_df)
@@ -98,6 +97,11 @@ def update_graphs(old_table, n_clicks, data, new_table):
                 ganttChart = convert_to_gantt_format(final_df)
                 set_gantt_layout(ganttChart)
                 pie_figure = pie_layout(final_df)
+
+                final_df["hours_expended_int"] = final_df["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
+                sleep_count = final_df.loc[final_df["task_name"] == "Sleep", "hours_expended_int"].sum()
+                work_count = final_df.loc[final_df["task_name"] == "Work", "hours_expended_int"].sum()
+                recreation_count = final_df.loc[final_df["task_name"] == "Recreation", "hours_expended_int"].sum()
 
                 horizontal_stats = go.Figure(go.Bar(
                     x=[work_count, sleep_count, recreation_count],
