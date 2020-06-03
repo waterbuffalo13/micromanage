@@ -6,6 +6,7 @@ import dash
 import datetime
 from wms2B.dashboard import index_page
 from wms2B.complex_graphs.tabs import optionsList, names
+from wms2B import progress
 
 optionsList = {'Sleep': ['Sleep'], 'Work': ['Domestic', 'Paid', 'Job-Seeking'] , 'Study': ['Programming', 'Lectures', 'Books'], 'Exercise': ['Cardio', 'Resistance', "Stretch"], 'Routine': ['Morning', 'Lunchtime', 'Dinner', 'Commute'], 'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'], 'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
 names = list(optionsList.keys())
@@ -22,6 +23,8 @@ import_gantt_callbacks
 def display_page(pathname):
     if pathname == '/':
         return index_page
+    if pathname == '/progress':
+            return progress.progress_layout
     else:
         return '404'
 

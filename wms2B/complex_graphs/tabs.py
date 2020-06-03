@@ -1,6 +1,6 @@
 import dash_core_components as dcc
 import dash_html_components as html
-from wms2B.complex_graphs.gantt.ganttFigure import *
+
 from wms2B.complex_graphs.other import fig
 from datetime import datetime, timedelta
 
@@ -20,7 +20,7 @@ tabs = html.Div([
                     html.Div(
                         ["Today's Schedule"],
                         style={"text-align": "center", "font-size": "150%"}),
-                    dcc.Graph(id="gantt_chart", figure=gantt_diagram, style={'height': "35vh"}),
+                    dcc.Graph(id="gantt_chart", style={'height': "35vh"}),
                     dcc.Graph(figure=fig, style={'height': "4vh"}),
                     html.Br(),
                     html.Div([

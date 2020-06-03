@@ -1,6 +1,5 @@
 from wms2B.complex_graphs.other import *
 from wms2B.complex_graphs.habitsmonitor import habitsmonitor
-from wms2B.complex_graphs.gantt.ganttFigure import *
 from datetime import datetime as dt, datetime, timedelta
 from wms2B.complex_graphs.tabs import tabs
 from pytimeparse.timeparse import timeparse
@@ -34,17 +33,15 @@ index_page = html.Div([
     html.Div([
         # html.H5("Waterbuffalo Micromanagement v2.01 ~ Success is commemorated; Failure merely remembered.  "),
         # html.Img(src="/assets/test.png"),
-        html.Button('WMS Mainframe', id='btn-nclicks-1', n_clicks=0),
-        html.Button('Financial Portfolio', id='btn-nclicks-2', n_clicks=0),
+        html.Button('Personal Dashboard', id='btn-nclicks-1', n_clicks=0),
+        html.A(html.Button('Progress Monitor', id='btn-nclicks-2', n_clicks=0), href='/progress'),
         html.Button('Predictive Analytics', id='btn-nclicks-3', n_clicks=0),
         html.Button('Retrieval', id='btn-nclicks-4', n_clicks=0),
 
 
     ], className="banner", style={"textAlign": "center"}),
     html.Div([
-
         html.Div([
-
             html.Div([
                 html.Div([], className="new"),
                 html.Div(["Activity Breakdown"], style={"text-align": "center", "font-size": "150%"}),

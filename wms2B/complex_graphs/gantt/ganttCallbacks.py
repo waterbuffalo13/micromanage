@@ -61,7 +61,12 @@ def update_graphs(old_table, n_clicks, data, new_table):
     recreation_count = gantt_df.loc[gantt_df["task_name"] == "Recreation", "hours_expended_int"].sum()
 
     if old_table is None:
-        ganttChart = convert_to_gantt_format(gantt_df)
+        df_gantt = gantt_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
+        df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
+        df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
+        df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
+        add_or_remove = ff.create_gantt(df_gantt, group_tasks=True, showgrid_x=True, showgrid_y=True)
+        ganttChart = add_or_remove
         set_gantt_layout(ganttChart)
         pie_figure = pie_layout(gantt_df)
 
@@ -94,8 +99,7 @@ def update_graphs(old_table, n_clicks, data, new_table):
             if row not in new_table:
 
                 final_df = remove_from_csv(gantt_df, row)
-                ganttChart = convert_to_gantt_format(final_df)
-                set_gantt_layout(ganttChart)
+                ganttChart = convert_to_gantt(final_df)
                 pie_figure = pie_layout(final_df)
 
                 final_df["hours_expended_int"] = final_df["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
@@ -129,6 +133,18 @@ def update_graphs(old_table, n_clicks, data, new_table):
 
                 return ganttChart, pie_figure, horizontal_stats
 
+
+def convert_to_gantt(final_df):
+    gantt = final_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
+    gantt.columns = ["Task", "Start", "Finish", "Resource"]
+    gantt["Start"] = pd.to_datetime(gantt["Start"], format="%d/%m/%Y %H:%M")
+    gantt["Finish"] = pd.to_datetime(gantt["Finish"], format="%d/%m/%Y %H:%M")
+    remove = ff.create_gantt(gantt, group_tasks=True, showgrid_x=True, showgrid_y=True)
+    ganttChart = remove
+    set_gantt_layout(ganttChart)
+    return ganttChart
+
+
 def pie_layout(base):
     base["hours_expended_int"] = base["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
     sleep_count = base.loc[base["task_name"] == "Sleep", "hours_expended_int"].sum()
@@ -156,14 +172,6 @@ def pie_layout(base):
                              )#test
     return pie_figure
 #dependent
-def convert_to_gantt_format(final_df):
-    df_gantt = final_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
-    df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
-    df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
-    df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
-    add_or_remove = ff.create_gantt(df_gantt, group_tasks=True, showgrid_x=True, showgrid_y=True)
-
-    return add_or_remove
 
 #dependent
 def remove_from_csv(current_df, row):
