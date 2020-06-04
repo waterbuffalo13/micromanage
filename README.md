@@ -2,20 +2,18 @@
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot.PNG)
 
-Why?
+Purpose:
 
 
-It is important for people to strive towards self-improvement, freedom and the pursuit of happiness. Somewhat inconveniently, the instinctive and unguided approaches to time allocation often produces suboptimal results due to the human tendency for irrational, impulsive or emotional reasoning. This project is an attempt at creating bespoke data-driven strategies to determine how a person should allocate their time. The question of time allocation is solved through four stragies, namely organization, reinforcement, cataloguing and insight production.
+It is important that people strive towards self-improvement, freedom and the pursuit of their own happiness. Somewhat inconveniently, instinctive, passive, "human-driven" decision-making is not the most reliable strategy for self-actualization because of the tendency for short-term, idealistic or emotional reasoning. The purpose of this application is to allow people to create tools for organization and planning, reinforce good habits, maintain a catalogue of events and the production of insight from personal data.
 
 How?
 
-
-The purpose of this application is to view life as an optimization problem, where a user is encouraged to discover, choose and partake in the activities that provide the most meaning and satisfaction. Automated feedback systems encourage incremental progress towards an optimal schedule (i.e. a schedule so meticiously constructed as to be considered the best possible use of a day!). This is achieved by an iterative procedure of recording adn feedback which aims uncover the associations between between various activities and wellbeing. More succinctly, the project aims to infer causal factors of actualization through the use of data analysis. 
+In this application, life is viewed as an optimization problem which allows the user makes incremental progress towards approaching an optimal daily schedule (i.e. where your daily schedule is so meticulously constructed for wellbeing/energy/productivity as for every day to be considered the possible use of a day!). This is achieved through data collection through data entry through a user interface. This app aims to record personal information including daily planners (sleeping, eating, working, watching tv etc), journal entries, diet planners as well as an abundance of organizational benefits such as to-do lists, gantt-charts, journal entries. This data is in turn used for organization, reinforcement, cataloguing and insight production. Insight production such as automated feedback and suggested activities allows new activities to be tested and provides the user a tool to be able to discover, choose and partake in the activities and hobbies that provide the most meaning and satisfaction.
 
 What?
 
-
-Waterbuffalo Micromanagement is a highly interactive pandas/SQL-driven dashboard that is designed to work primarily as a productivity application with the aim of producing actionable feedback and insight through the collection and analysis of large amounts of personal data. This dashboard is unique. statistics such as wellbeing distributions, activity breakdowns and virtue-adherence are monitored, alongside more practical dynamic gantt-charts whichI can use to structure my day. The end goal is to be able to identify causal structures actualization through the use of data analysis. The question of time allocation needs to be solved in four parts, namely organization, reinforcement, cataloguing and insight production.
+Waterbuffalo Micromanagement is a highly interactive pandas/SQL-driven dashboard that is designed to work primarily as a productivity application that analyzes personal data with the aim of producing actionable feedback and insight. A unique feature of this dashboard is the ability to add information (e.g. journal entries) in real time through a user interface which allows for dynamic and responsive graphing of daily schedules, as well as active monitoring of wellbeing and energy over a specified timeframe. Other data visualized includes wellbeing/energy distributions, habit adherence and virtue hangling. The end goal is to be able to understand implicit causal structures of actualization, as well as the implementation of psychological strategies to ensure my adherence to these factors.
 
 - **Organization**: I have attempted to categorize all of life's unique experiences into 7 distinct categories: Sleep, Work, Study, Exercise, Routine, Recreation and Indulgence.
 
