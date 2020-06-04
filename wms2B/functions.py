@@ -8,10 +8,6 @@ from wms2B.dashboard import index_page
 from wms2B.complex_graphs.tabs import optionsList, names
 from wms2B import progress
 
-optionsList = {'Sleep': ['Sleep'], 'Work': ['Domestic', 'Paid', 'Job-Seeking'] , 'Study': ['Programming', 'Lectures', 'Books'], 'Exercise': ['Cardio', 'Resistance', "Stretch"], 'Routine': ['Morning', 'Lunchtime', 'Dinner', 'Commute'], 'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'], 'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
-names = list(optionsList.keys())
-nestedOptions = optionsList[names[0]]
-
 ################################################
 ###TO-DO LIST
 ################################################
@@ -27,6 +23,7 @@ def display_page(pathname):
             return progress.progress_layout
     else:
         return '404'
+
 
 @app.callback(Output("table", "data"),
               [Input('todo_submit', 'n_clicks')],
@@ -72,4 +69,12 @@ def delete_from_todo(previous, data, current):
     [dash.dependencies.Input('task_content', 'value')]
 )
 def update_date_dropdown(name):
+    optionsList = {'Sleep': ['Sleep'], 'Work': ['Domestic', 'Paid', 'Job-Seeking'],
+                   'Study': ['Programming', 'Lectures', 'Books'], 'Exercise': ['Cardio', 'Resistance', "Stretch"],
+                   'Routine': ['Morning', 'Lunchtime', 'Dinner', 'Commute'],
+                   'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'],
+                   'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
+    names = list(optionsList.keys())
+    nestedOptions = optionsList[names[0]]
+
     return [{'label': i, 'value': i} for i in optionsList[name]], optionsList[name][0]

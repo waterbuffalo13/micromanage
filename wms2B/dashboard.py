@@ -76,7 +76,9 @@ index_page = html.Div([
                         id='schedule-table',
                         columns=[{"name": i, "id": i} for i in schedule_df.columns],
                         row_deletable=True,
-                        page_size=7,
+
+
+
                     )
                 ], className="schedulelist"),
 
@@ -172,6 +174,24 @@ index_page = html.Div([
                         # data=todo_df.to_dict('records'),
                         editable=True,
                         row_deletable=True,
+
+                        # style_cell_conditional=[
+                        #     {
+                        #         'if': {'column_id': i},
+                        #         'textAlign': 'left'
+                        #     } for i in ['Date', 'Region']
+                        # ],
+                        style_data_conditional=[
+                            {
+                                'if': {'row_index': 'odd'},
+                                'backgroundColor': 'rgb(248, 248, 248)'
+                            }
+                        ],
+                        style_header={
+                            'backgroundColor': 'rgb(230, 230, 230)',
+                            'fontWeight': 'bold'
+                        }
+
                     ),
                     html.Div(id="hidden_div", style={"display": "none"}),
                     html.Div([
