@@ -20,6 +20,7 @@ suggested_df = pd.DataFrame(suggested_data)
 
 todo_df = pd.read_csv("data/todolist.csv")
 schedule_df = pd.read_csv("data/gantt.csv")
+test = schedule_df.columns
 
 curr_year = int(dt.now().strftime("%Y"))
 curr_month = int(dt.now().strftime("%m"))
@@ -74,8 +75,9 @@ index_page = html.Div([
                         style={"text-align": "center", "font-size": "150%"}),
                     dash_table.DataTable(
                         id='schedule-table',
-                        columns=[{"name": i, "id": i} for i in schedule_df.columns],
+                        columns=[{"name": i, "id": i} for i in schedule_df.columns[4:] ],
                         row_deletable=True,
+                        style_cell={'fontSize': 12, 'font-family': 'Helvetica'}
 
 
 
@@ -171,6 +173,7 @@ index_page = html.Div([
                     dash_table.DataTable(
                         id='table',
                         columns=[{"name": i, "id": i} for i in todo_df.columns],
+                        style_cell={'fontSize': 12, 'font-family': 'Helvetica'},
                         # data=todo_df.to_dict('records'),
                         editable=True,
                         row_deletable=True,
@@ -260,6 +263,7 @@ index_page = html.Div([
                         id='suggested',
                         columns=[{"name": i, "id": i} for i in suggested_df.columns],
                         data=suggested_df.to_dict('records'),
+                        style_cell={'fontSize':15, 'font-family':'sans-serif'}
                     )
 
                     , html.Br(),

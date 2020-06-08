@@ -5,10 +5,15 @@ import dash_core_components as dcc
 #Overall Gantt
 df = [dict(Task="Gain Employment", Start='2020-06-03', Finish='2020-09-03'),
 
-      dict(Task="MVP Development", Start='2020-06-03', Finish='2020-12-31'),
-      dict(Task="MVP Deployment", Start='2021-01-01', Finish='2021-04-30'),
+      dict(Task="Personal Analytics", Start='2020-06-03', Finish='2020-09-31'),
+      dict(Task="Hedge fund return page", Start='2020-06-03', Finish='2020-09-31'),
+      dict(Task="Dashboard Consultancy", Start='2020-09-03', Finish='2020-12-31'),
+      dict(Task="Business", Start='2020-06-03', Finish='2020-12-31'),
 
-      dict(Task="Rent Accommodation", Start='2021-04-30', Finish='2021-12-31'),
+      dict(Task="VANLIFE", Start='2021-04-30', Finish='2021-07-31'),
+      dict(Task="Driving License", Start='2021-04-30', Finish='2021-05-31'),
+      dict(Task="Purchase Van", Start='2021-05-30', Finish='2021-06-30'),
+
 
 
       ]
