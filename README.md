@@ -1,6 +1,6 @@
 # Waterbuffalo Micromanagement
 
-![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot.PNG)
+![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/screenshot-gif.gif)
 
 Purpose:
 
