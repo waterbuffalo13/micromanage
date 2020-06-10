@@ -1,5 +1,5 @@
-from wms2B.complex_graphs.other import *
-from wms2B.complex_graphs.habitsmonitor import habitsmonitor
+from wms2B.complex_graphs.z_misc_graphs import *
+from wms2B.complex_graphs.habits_monitor import habitsmonitor
 from datetime import datetime as dt, datetime, timedelta
 from wms2B.complex_graphs.tabs import tabs
 from pytimeparse.timeparse import timeparse

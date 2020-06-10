@@ -1,11 +1,10 @@
-import wms2B.complex_graphs.gantt.ganttCallbacks as import_gantt_callbacks
+import wms2B.complex_graphs.gantt_schedule as import_gantt_callbacks
 from wms2B.app import app
 from dash.dependencies import Input, Output, State
 import pandas as pd
 import dash
 import datetime
 from wms2B.dashboard import index_page
-from wms2B.complex_graphs.tabs import optionsList, names
 from wms2B import progress
 
 ################################################
