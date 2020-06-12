@@ -1,3 +1,4 @@
+from wms2B.complex_graphs.indicators import indicators
 from wms2B.complex_graphs.z_misc_graphs import *
 from wms2B.complex_graphs.habits_monitor import habitsmonitor
 from datetime import datetime as dt, datetime, timedelta
@@ -11,9 +12,7 @@ from pytimeparse.timeparse import timeparse
 # user-controller class - handles all the main functions related to user (CRUD)
 # session controller - logging in/out
 
-suggested_data = {'Index': ['1', '2','3','4','5','6'],
-             'content': ['Draw a picture', 'Listen to a podcast','Watch a movie','Read a book','Work on game design', 'write papers'],
-             }
+suggested_data = {'Index': ['1', '2','3','4','5','6'], 'content': ['Draw a picture', 'Listen to a podcast','Watch a movie','Read a book','Work on game design', 'write papers'],}
 
 suggested_df = pd.DataFrame(suggested_data)
 
@@ -75,7 +74,7 @@ index_page = html.Div([
                         style={"text-align": "center", "font-size": "150%"}),
                     dash_table.DataTable(
                         id='schedule-table',
-                        columns=[{"name": i, "id": i} for i in schedule_df.columns[4:] ],
+                        columns=[{"name": i, "id": i} for i in schedule_df.columns[3:] ],
                         row_deletable=True,
                         style_cell={'fontSize': 12, 'font-family': 'Helvetica'}
 
@@ -87,65 +86,13 @@ index_page = html.Div([
             # ], className="schedulelist-flex"),
 
             html.Div([
-                html.Div([
-                    html.Div([
-                        daq.LEDDisplay(
-                            label="SLEEP",
-                            labelPosition='bottom',
-                            id='my-daq-leddisplay',
-                            value="6.43",
-                            size=10,
-                            backgroundColor="#f5f5f5",
-                            color="red"
-                        ),
-
-                    ], className="three columns"),
-                    html.Div([
-                        daq.LEDDisplay(
-                            label="EAT",
-                            labelPosition='bottom',
-                            id='my-daq-leddisplay',
-                            value="3000",
-                            size=10,
-                            backgroundColor="#f5f5f5",
-                            color="green"
-                        ),
-
-                    ], className="three columns"),
-                    html.Div([
-                        daq.LEDDisplay(
-                            label="WORK",
-                            labelPosition='bottom',
-                            id='my-daq-leddisplay',
-                            value="5.14",
-                            size=10,
-                            backgroundColor="#f5f5f5",
-                            color="green"
-                        ),
-
-                    ], className="three columns"),
-                    html.Div([
-                        daq.LEDDisplay(
-                            label="",
-                            labelPosition='bottom',
-                            id='my-daq-leddisplay',
-                            value="3.14159",
-                            size=10,
-                            backgroundColor="#f5f5f5",
-                            color="green"
-                        ),
-
-                    ], className="three columns"),
-
-                ], className="twelve columns"),
-
+                indicators,
                 html.Div(
                     ["-", dcc.Graph(figure=sleep, style={'height': "5vh", "position": "bottom"}), html.Br(), ],
                     style={"text-align": "center"}),
 
             ], className="n2box"),
             html.Div([
-
                 html.Div([
                     tank1,
                 ], className="three columns"),

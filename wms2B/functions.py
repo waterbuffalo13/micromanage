@@ -64,7 +64,7 @@ def delete_from_todo(previous, data, current):
                 return final_df.to_dict('records')
 
 @app.callback(
-    [dash.dependencies.Output('task_type', 'options'), dash.dependencies.Output('task_type', 'value'),],
+    [dash.dependencies.Output('task_type', 'options'), dash.dependencies.Output('task_type', 'placeholder'),],
     [dash.dependencies.Input('task_content', 'value')]
 )
 def update_date_dropdown(name):
@@ -73,7 +73,7 @@ def update_date_dropdown(name):
                    'Routine': ['Morning', 'Lunchtime', 'Dinner', 'Commute'],
                    'Recreation': ['Travel', 'Socialize', 'Artistic & Creative'],
                    'Indulgence': ['YouTube & Music', 'Video games', 'Movies & TV shows', 'Music']}
-    names = list(optionsList.keys())
-    nestedOptions = optionsList[names[0]]
+    # names = list(optionsList.keys())
+    # nestedOptions = optionsList[names[0]]
 
     return [{'label': i, 'value': i} for i in optionsList[name]], optionsList[name][0]

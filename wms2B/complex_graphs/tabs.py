@@ -43,10 +43,10 @@ tabs = html.Div([
                         style={'width': 120}),
                         dcc.Dropdown(
                             id='task_type',
-                            options=[{'label': opt, 'value': opt} for opt in nestedOptions],
-                            clearable=False,
-                            value= nestedOptions[0],
+                            # options=[{'label': opt, 'value': opt} for opt in nestedOptions],
+                            clearable=True,
                             # value= nestedOptions[0],
+                            # placeholder= nestedOptions[0],
                             style={'width': 120}),
                         dcc.Input(id='task_start', type='text', value=datetime.now().strftime("%d/%m/%Y %H:%M"), style={'width': 100}),
                         dcc.Input(id='task_stop', type='text',
