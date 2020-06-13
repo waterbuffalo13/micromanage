@@ -64,7 +64,7 @@ def delete_from_todo(previous, data, current):
                 return final_df.to_dict('records')
 
 @app.callback(
-    [dash.dependencies.Output('task_type', 'options'), dash.dependencies.Output('task_type', 'placeholder'),],
+    [dash.dependencies.Output('task_type', 'options'), dash.dependencies.Output('task_type', 'value'),],
     [dash.dependencies.Input('task_content', 'value')]
 )
 def update_date_dropdown(name):
