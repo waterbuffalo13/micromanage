@@ -41,10 +41,10 @@ tabs = html.Div([
                             clearable=False,
                             value= list(optionsList.keys())[0],
                         style={'width': 120}),
-                        dcc.Dropdown(
-                            id='task_type',
+                        dcc.Input(
+                            id='task_type', type="text",
                             # options=[{'label': opt, 'value': opt} for opt in nestedOptions],
-                            clearable=True,
+                            # clearable=True,
                             # value= nestedOptions[0],
                             # placeholder= nestedOptions[0],
                             style={'width': 120}),
