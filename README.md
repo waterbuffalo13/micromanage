@@ -15,12 +15,13 @@ Auxiliary purposes include for organization and planning, positive habit reinfor
 
 | Task  | Deadline | isComplete | 
  | ------------- | ------------- | ------------- |
-| Learn about SQlite  | 28/06  |
-| Create Tables  | 30/06  |
-| Refactor Existing Callbacks  | 15/07  |
-| Complete remaining callbacks  | 22/07  |
-| ???  | 28/07  |
-| Profit!  | 30/07  |
+| SQLite Tutorial  | 27/06/2020  | N |
+| Create Tables and begin refactor  | 28/06/2020  | |
+| contineu refactor  | 30/06/2020  | |
+| Complete remaining callbacks  | 01/07/2020   | |
+| Deploy  | 02/07/2020 | |
+| ???  | 02/07/2020 | |
+| Profit!  | 26/09/2036 | |
 
 
 
