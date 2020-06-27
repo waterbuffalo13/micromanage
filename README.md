@@ -12,6 +12,11 @@ This project  heavily relies on the use of statistics and machine learning for t
 Auxiliary purposes include for organization and planning, positive habit reinforcement, maintaining a catalogue of events and the production of insight from personal data.
 
 ## Phase 1: Minimal Viable Product Development (Hostable) est deadline: 31/07/2020
+![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/misc_image/er_diagram.png)
+
+A preliminary ER Diagram
+
+And my schedule:
 
 | Task  | Deadline | isComplete | 
  | ------------- | ------------- | ------------- |
