@@ -18,6 +18,7 @@ import_gantt_callbacks
 
 p = Database(":memory:")
 
+
 # emp_1 = Employee('Jake', 'Williams', '80,000.00')
 # emp_2 = Employee('Django', 'Henry', '68,000.00')
 # p.cursor.execute("""CREATE TABLE employees (
@@ -45,20 +46,26 @@ def display_page(pathname):
               [Input('todo_submit', 'n_clicks')],
               [State('todo_content', 'value')])
 def update_output(n_clicks, task_contents):
-    base = pd.read_csv("data/todolist.csv")
+    # base = pd.read_csv("data/todolist.csv")
     base = pd.read_sql("SELECT * FROM employees", p.connection)
 
     if (task_contents == "") == True:
         dash.exceptions.PreventUpdate()
         return base.to_dict('records')
     else:
-        base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
+
+        # base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
         created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        task_data = [[created, task_contents]]
-        updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
-        updated = base.append(updated, sort=False)
-        updated = updated[pd.notnull(updated["task_contents"])]
-        updated.to_csv("data/todolist.csv", index=False)
+        # task_data = [[created, task_contents]]
+
+        p.execute("INSERT INTO employees VALUES (?, ? ,?)", (created, task_contents, created))
+        updated = pd.read_sql("SELECT * FROM employees", p.connection)
+        # updated = pd.read_sql("SELECT * FROM employees", p.connection)
+        # updated.to_sql()
+        # updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
+        # updated = base.append(updated, sort=False)
+        # updated = updated[pd.notnull(updated["task_contents"])]
+        # updated.to_csv("data/todolist.csv", index=False)
 
         return updated.to_dict('records')
 

@@ -33,8 +33,9 @@ suggested_data = {'Index': ['1', '2','3','4','5','6'], 'content': ['Draw a pictu
 suggested_df = pd.DataFrame(suggested_data)
 
 
-todo_df = pd.read_csv("data/todolist.csv")
+# todo_df = pd.read_csv("data/todolist.csv")
 todo_df = pd.read_sql("SELECT * FROM employees", p.connection)
+
 schedule_df = pd.read_csv("data/gantt.csv")
 test = schedule_df.columns
 

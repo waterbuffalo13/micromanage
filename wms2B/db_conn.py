@@ -5,8 +5,6 @@ from wms2B.data.employee import Employee
 
 class Database:
 
-
-
     def __init__(self, name):
         emp_1 = Employee('Jake', 'Williams', '80,000.00')
         emp_2 = Employee('Django', 'Henry', '68,000.00')
