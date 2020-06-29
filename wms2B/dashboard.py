@@ -5,12 +5,28 @@ from datetime import datetime as dt, datetime, timedelta
 from wms2B.complex_graphs.tabs import tabs
 from pytimeparse.timeparse import timeparse
 
+from wms2B.data.employee import Employee
+from wms2B.db_conn import Database
+
 # from wms2B.app import app
 
 
 # user class
 # user-controller class - handles all the main functions related to user (CRUD)
 # session controller - logging in/out
+# p = Database(":memory:")
+p = Database(":memory:")
+
+# emp_1 = Employee('Jake', 'Williams', '80,000.00')
+# emp_2 = Employee('Django', 'Henry', '68,000.00')
+# p.cursor.execute("""CREATE TABLE employees (
+#             first text,
+#             last text,
+#             pay real
+#     )""")
+# p.execute("INSERT INTO employees VALUES (?, ? ,?)", (emp_1.first, emp_1.last, emp_1.pay))
+# p.execute("INSERT INTO employees VALUES (:first, :last, :pay)",
+#           {"first": emp_2.first, "last": emp_2.last, "pay": emp_2.pay})
 
 suggested_data = {'Index': ['1', '2','3','4','5','6'], 'content': ['Draw a picture', 'Listen to a podcast','Watch a movie','Read a book','Work on game design', 'write papers'],}
 
@@ -18,6 +34,7 @@ suggested_df = pd.DataFrame(suggested_data)
 
 
 todo_df = pd.read_csv("data/todolist.csv")
+todo_df = pd.read_sql("SELECT * FROM employees", p.connection)
 schedule_df = pd.read_csv("data/gantt.csv")
 test = schedule_df.columns
 
@@ -27,6 +44,8 @@ curr_day = int(dt.now().strftime("%d"))
 curr_hour = int(dt.now().strftime("%H"))
 curr_minute = int(dt.now().strftime("%M"))
 curr_second = int(dt.now().strftime("%S"))
+
+
 
 index_page = html.Div([
 

@@ -6,11 +6,28 @@ import dash
 import datetime
 from wms2B.dashboard import index_page
 from wms2B import progress
+from wms2B.db_conn import Database
+from wms2B.data.employee import Employee
 
 ################################################
 ###TO-DO LIST
 ################################################
+
+
 import_gantt_callbacks
+
+p = Database(":memory:")
+
+# emp_1 = Employee('Jake', 'Williams', '80,000.00')
+# emp_2 = Employee('Django', 'Henry', '68,000.00')
+# p.cursor.execute("""CREATE TABLE employees (
+#             first text,
+#             last text,
+#             pay real
+#     )""")
+# p.execute("INSERT INTO employees VALUES (?, ? ,?)", (emp_1.first, emp_1.last, emp_1.pay))
+# p.execute("INSERT INTO employees VALUES (:first, :last, :pay)",
+#           {"first": emp_2.first, "last": emp_2.last, "pay": emp_2.pay})
 
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
@@ -29,6 +46,7 @@ def display_page(pathname):
               [State('todo_content', 'value')])
 def update_output(n_clicks, task_contents):
     base = pd.read_csv("data/todolist.csv")
+    base = pd.read_sql("SELECT * FROM employees", p.connection)
 
     if (task_contents == "") == True:
         dash.exceptions.PreventUpdate()
