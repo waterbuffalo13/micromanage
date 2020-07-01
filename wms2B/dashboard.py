@@ -5,7 +5,7 @@ from datetime import datetime as dt, datetime, timedelta
 from wms2B.complex_graphs.tabs import tabs
 from pytimeparse.timeparse import timeparse
 
-from wms2B.data.employee import Employee
+from wms2B.data.task import Task
 from wms2B.db_conn import Database
 
 # from wms2B.app import app
@@ -34,7 +34,7 @@ suggested_df = pd.DataFrame(suggested_data)
 
 
 # todo_df = pd.read_csv("data/todolist.csv")
-todo_df = pd.read_sql("SELECT * FROM employees", p.connection)
+todo_df = pd.read_sql("SELECT * FROM tasks", p.connection)
 
 schedule_df = pd.read_csv("data/gantt.csv")
 test = schedule_df.columns

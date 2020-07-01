@@ -1,25 +1,26 @@
 import sqlite3
 
-from wms2B.data.employee import Employee
+from wms2B.data.task import Task
 
 
 class Database:
 
     def __init__(self, name):
-        emp_1 = Employee('Jake', 'Williams', '80,000.00')
-        emp_2 = Employee('Django', 'Henry', '68,000.00')
-
         self._conn = sqlite3.connect(name, check_same_thread=False)
         self._cursor = self._conn.cursor()
 
-        self._cursor.execute("""CREATE TABLE employees (
-                     first text,
-                     last text,
-                     pay real
+        #Example tasks
+        emp_1 = Task('Jake', 'Williams')
+        emp_2 = Task('Django', 'Henry')
+
+        ##initialize tables
+        self._cursor.execute("""CREATE TABLE tasks (
+                     created text,
+                     content text,
              )""")
-        self._cursor.execute("INSERT INTO employees VALUES (?, ? ,?)", (emp_1.first, emp_1.last, emp_1.pay))
-        self._cursor.execute("INSERT INTO employees VALUES (:first, :last, :pay)",
-                  {"first": emp_2.first, "last": emp_2.last, "pay": emp_2.pay})
+        self._cursor.execute("INSERT INTO tasks VALUES (?, ? )", (emp_1.first, emp_1.last))
+        self._cursor.execute("INSERT INTO tasks VALUES (:first, :last)",
+                  {"first": emp_2.first, "last": emp_2.last})
 
     def __enter__(self):
         return self

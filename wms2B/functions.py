@@ -7,7 +7,7 @@ import datetime
 from wms2B.dashboard import index_page
 from wms2B import progress
 from wms2B.db_conn import Database
-from wms2B.data.employee import Employee
+from wms2B.data.task import Task
 
 ################################################
 ###TO-DO LIST
@@ -17,18 +17,6 @@ from wms2B.data.employee import Employee
 import_gantt_callbacks
 
 p = Database(":memory:")
-
-
-# emp_1 = Employee('Jake', 'Williams', '80,000.00')
-# emp_2 = Employee('Django', 'Henry', '68,000.00')
-# p.cursor.execute("""CREATE TABLE employees (
-#             first text,
-#             last text,
-#             pay real
-#     )""")
-# p.execute("INSERT INTO employees VALUES (?, ? ,?)", (emp_1.first, emp_1.last, emp_1.pay))
-# p.execute("INSERT INTO employees VALUES (:first, :last, :pay)",
-#           {"first": emp_2.first, "last": emp_2.last, "pay": emp_2.pay})
 
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
@@ -41,16 +29,15 @@ def display_page(pathname):
     else:
         return '404'
 
-
 @app.callback(Output("table", "data"),
               [Input('todo_submit', 'n_clicks')],
               [State('todo_content', 'value')])
 def update_output(n_clicks, task_contents):
-    # base = pd.read_csv("data/todolist.csv")
-    base = pd.read_sql("SELECT * FROM employees", p.connection)
 
+    # if n_clicks is  None and n_clicks <= 0:
     if (task_contents == "") == True:
         dash.exceptions.PreventUpdate()
+        base = pd.read_sql("SELECT * FROM tasks", p.connection)
         return base.to_dict('records')
     else:
 
@@ -58,8 +45,8 @@ def update_output(n_clicks, task_contents):
         created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         # task_data = [[created, task_contents]]
 
-        p.execute("INSERT INTO employees VALUES (?, ? ,?)", (created, task_contents, created))
-        updated = pd.read_sql("SELECT * FROM employees", p.connection)
+        p.execute("INSERT INTO tasks VALUES (?, ? ,?)", (created, task_contents, created))
+        updated = pd.read_sql("SELECT * FROM tasks", p.connection)
         # updated = pd.read_sql("SELECT * FROM employees", p.connection)
         # updated.to_sql()
         # updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
@@ -77,16 +64,16 @@ def delete_from_todo(previous, data, current):
     current_df = pd.read_csv("data/todolist.csv")
     if previous is None:
         dash.exceptions.PreventUpdate()
-        return current_df.to_dict('records')
+        base = pd.read_sql("SELECT * FROM tasks", p.connection)
+        return base.to_dict('records')
     else:
         for row in previous:
             if row not in current:
-                x_df = pd.DataFrame.from_dict(row, orient="index", columns=["created_date"])
-                final_df = pd.merge(current_df, x_df, on=['created_date', 'created_date'], how="outer", indicator=True)
-                final_df = final_df[final_df['_merge'] == 'left_only']
-                final_df = final_df.drop(columns=["_merge"])
-                final_df.to_csv("data/todolist.csv", index=False)
-                return final_df.to_dict('records')
+                x_row = row
+                x_row_id = row["first"]
+                p.execute("DELETE FROM tasks WHERE first = (:first)",{"first": x_row_id})
+                current = pd.read_sql("SELECT * FROM tasks", p.connection)
+                return current.to_dict('records')
 
 @app.callback(
     [dash.dependencies.Output('task_type', 'options'), dash.dependencies.Output('task_type', 'value'),],

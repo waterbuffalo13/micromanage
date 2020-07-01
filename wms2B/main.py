@@ -8,7 +8,7 @@ import datetime
 import plotly.figure_factory as ff
 from wms2B.app import app
 import wms2B.functions
-from wms2B.data.employee import Employee
+from wms2B.data.task import Task
 from wms2B.db_conn import Database
 
 if __name__ == '__main__':

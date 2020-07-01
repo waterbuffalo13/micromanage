@@ -6,7 +6,9 @@ from datetime import datetime, timedelta
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
 from pytimeparse.timeparse import timeparse
+from wms2B.db_conn import Database
 
+p = Database(":memory:")
 
 colors = dict(Meal = '#00ba03',
               Work = '#1c7813',
