@@ -14,13 +14,24 @@ class Database:
         emp_2 = Task('Django', 'Henry')
 
         ##initialize tables
-        self._cursor.execute("""CREATE TABLE tasks (
+        self._cursor.execute("""CREATE TABLE Task (
                      created text,
                      content text
              )""")
-        self._cursor.execute("INSERT INTO tasks VALUES (?, ? )", (emp_1.created, emp_1.content))
-        self._cursor.execute("INSERT INTO tasks VALUES (:first, :last)",
+        self._cursor.execute("INSERT INTO Task VALUES (?, ? )", (emp_1.created, emp_1.content))
+        self._cursor.execute("INSERT INTO Task VALUES (:first, :last)",
                   {"first": emp_2.created, "last": emp_2.content})
+
+        self._cursor.execute("""CREATE TABLE Activity (
+                     created text,
+                     activity_name text,
+                     activity_subtype text,
+                     start_time text,
+                     stop_time text,
+                     task_nature text,
+                     activity_genre text
+                     
+             )""")
 
     def __enter__(self):
         return self

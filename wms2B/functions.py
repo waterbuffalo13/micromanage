@@ -37,7 +37,7 @@ def update_output(n_clicks, task_contents):
     # if n_clicks is  None and n_clicks <= 0:
     if (task_contents == ""):
         dash.exceptions.PreventUpdate()
-        base = pd.read_sql("SELECT * FROM tasks", p.connection)
+        base = pd.read_sql("SELECT * FROM Task", p.connection)
         return base.to_dict('records')
     else:
 
@@ -45,8 +45,8 @@ def update_output(n_clicks, task_contents):
         created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         # task_data = [[created, task_contents]]
 
-        p.execute("INSERT INTO tasks VALUES (?, ?)", (created, task_contents))
-        updated = pd.read_sql("SELECT * FROM tasks", p.connection)
+        p.execute("INSERT INTO Task VALUES (?, ?)", (created, task_contents))
+        updated = pd.read_sql("SELECT * FROM Task", p.connection)
         # updated = pd.read_sql("SELECT * FROM employees", p.connection)
         # updated.to_sql()
         # updated = pd.DataFrame(task_data, columns=['created_date', "task_contents"])
@@ -61,18 +61,19 @@ def update_output(n_clicks, task_contents):
               [Input('table', 'data_previous'), Input("table", "data")],
               [State('table', 'data')])
 def delete_from_todo(previous, data, current):
-    current_df = pd.read_csv("data/todolist.csv")
+    # current_df = pd.read_csv("data/todolist.csv")
+    #
     if previous is None:
         dash.exceptions.PreventUpdate()
-        base = pd.read_sql("SELECT * FROM tasks", p.connection)
+        base = pd.read_sql("SELECT * FROM Task", p.connection)
         return base.to_dict('records')
     else:
         for row in previous:
             if row not in current:
-                x_row = row
-                x_row_id = row["created"]
-                p.execute("DELETE FROM tasks WHERE created = (:created)",{"created": x_row_id})
-                current = pd.read_sql("SELECT * FROM tasks", p.connection)
+                # x_row = row
+                # x_row_id = row["created"]
+                p.execute("DELETE FROM Task WHERE created = (:created)",{"created": row["created"]})
+                current = pd.read_sql("SELECT * FROM Task", p.connection)
                 return current.to_dict('records')
 
 @app.callback(

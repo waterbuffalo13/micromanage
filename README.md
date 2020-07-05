@@ -5,7 +5,7 @@
 # Abstract
 It is important that people strive towards self-improvement, freedom and the pursuit of their own happiness. Somewhat inconveniently, instinctive, passive, "human-driven" decision-making is not the most reliable strategy for self-actualization because of the tendency for short-term, idealistic or emotional reasoning. The purpose of this application is to view life as an optimization problem and apply techniques inspired from portfolio optimization to the study of wellbeing. 
 
-Time is a finite commodity that is continuously being exchanged for activities that provides some form of value. Therefore, it is important to select activities that are the most beneficial for human happiness and thriving. This project views time as a series of these (time-> activity-> value) transactions.
+Time is a finite resource that is continuously being exchanged for activities that provides some form of value. Therefore, it is important to select activities that are the most beneficial for human happiness and thriving. This project views life as a series of these (time-> activity-> value) transactions.
 
 From this perspective, **activities** are viewed as analogous to ***assets (a)*** of which returns are expected, **events** as ***shifts in the news cycle*** and the **virtue system** as the ***adherence to fixed rules and principles of profitability (μi)*** with the aim of maximising an **index of wellbeing (R)**. This wellbeing index takes into account individual wellbeing (TTW), as well as accounting for management of explore/exploit tradeoffs
 

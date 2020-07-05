@@ -21,10 +21,12 @@ colors = dict(Meal = '#00ba03',
               [State('task_content', 'value'), State('task_start', 'value'),
                State('task_stop', 'value'), State('task_type','value')])
 def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task, subtype_task):
-    base = pd.read_csv("data/gantt.csv")
+    # base = pd.read_csv("data/gantt.csv")
+    base = pd.read_sql("SELECT * FROM Activity", p.connection)
     # hours_expended = (datetime.strptime(stop_task, "%d/%m/%Y %H:%M") - datetime.strptime(start_task, "%d/%m/%Y %H:%M"))
     hours_expended_str = str(datetime.strptime(stop_task, "%d/%m/%Y %H:%M") - datetime.strptime(start_task, "%d/%m/%Y %H:%M"))
     if n_clicks is not None and n_clicks > 0:
+
         updated = add_to_csv(base, start_task, stop_task, task_contents, "---", subtype_task, hours_expended_str)
         start_task = stop_task
         stop_task = (datetime.strptime(start_task, "%d/%m/%Y %H:%M") + timedelta(hours=1)).strftime("%d/%m/%Y %H:%M")
@@ -57,6 +59,7 @@ def add_to_csv(base, start_task, stop_task, task_contents, task_nature, subtype_
               [State('schedule-table', 'data')])
 def update_graphs(old_table, n_clicks, data, new_table):
     gantt_df = pd.read_csv("data/gantt.csv")
+
     gantt_df["hours_expended_int"] = gantt_df["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
     sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
     work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
