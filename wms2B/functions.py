@@ -45,7 +45,7 @@ def update_output(n_clicks, task_contents):
         created = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         # task_data = [[created, task_contents]]
 
-        p.execute("INSERT INTO tasks VALUES (?, ? ,?)", (created, task_contents, created))
+        p.execute("INSERT INTO tasks VALUES (?, ?)", (created, task_contents))
         updated = pd.read_sql("SELECT * FROM tasks", p.connection)
         # updated = pd.read_sql("SELECT * FROM employees", p.connection)
         # updated.to_sql()
@@ -70,8 +70,8 @@ def delete_from_todo(previous, data, current):
         for row in previous:
             if row not in current:
                 x_row = row
-                x_row_id = row["first"]
-                p.execute("DELETE FROM tasks WHERE first = (:first)",{"first": x_row_id})
+                x_row_id = row["created"]
+                p.execute("DELETE FROM tasks WHERE created = (:created)",{"created": x_row_id})
                 current = pd.read_sql("SELECT * FROM tasks", p.connection)
                 return current.to_dict('records')
 
