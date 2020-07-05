@@ -16,11 +16,11 @@ class Database:
         ##initialize tables
         self._cursor.execute("""CREATE TABLE tasks (
                      created text,
-                     content text,
+                     content text
              )""")
-        self._cursor.execute("INSERT INTO tasks VALUES (?, ? )", (emp_1.first, emp_1.last))
+        self._cursor.execute("INSERT INTO tasks VALUES (?, ? )", (emp_1.created, emp_1.content))
         self._cursor.execute("INSERT INTO tasks VALUES (:first, :last)",
-                  {"first": emp_2.first, "last": emp_2.last})
+                  {"first": emp_2.created, "last": emp_2.content})
 
     def __enter__(self):
         return self

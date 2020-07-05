@@ -35,7 +35,7 @@ def display_page(pathname):
 def update_output(n_clicks, task_contents):
 
     # if n_clicks is  None and n_clicks <= 0:
-    if (task_contents == "") == True:
+    if (task_contents == ""):
         dash.exceptions.PreventUpdate()
         base = pd.read_sql("SELECT * FROM tasks", p.connection)
         return base.to_dict('records')
