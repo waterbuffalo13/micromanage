@@ -66,15 +66,16 @@ def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task, subty
                Input("schedule-table", "data")],
               [State('schedule-table', 'data')])
 def update_graphs(old_table, n_clicks, data, new_table):
-    gantt_df = pd.read_csv("data/gantt.csv")
+    # gantt_df = pd.read_csv("data/gantt.csv")
+    gantt_df = pd.read_sql("SELECT * FROM Activity", p.connection)
 
     gantt_df["hours_expended_int"] = gantt_df["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
-    sleep_count = gantt_df.loc[gantt_df["task_name"] == "Sleep", "hours_expended_int"].sum()
-    work_count = gantt_df.loc[gantt_df["task_name"] == "Work", "hours_expended_int"].sum()
-    recreation_count = gantt_df.loc[gantt_df["task_name"] == "Recreation", "hours_expended_int"].sum()
+    sleep_count = gantt_df.loc[gantt_df["activity_name"] == "Sleep", "hours_expended_int"].sum()
+    work_count = gantt_df.loc[gantt_df["activity_name"] == "Work", "hours_expended_int"].sum()
+    recreation_count = gantt_df.loc[gantt_df["activity_name"] == "Recreation", "hours_expended_int"].sum()
 
     if old_table is None:
-        df_gantt = gantt_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
+        df_gantt = gantt_df[["activity_name", "start_time", "stop_time", "task_nature"]].copy()
         df_gantt.columns = ["Task", "Start", "Finish", "Resource"]
         df_gantt["Start"] = pd.to_datetime(df_gantt["Start"], format="%d/%m/%Y %H:%M")
         df_gantt["Finish"] = pd.to_datetime(df_gantt["Finish"], format="%d/%m/%Y %H:%M")
@@ -116,9 +117,9 @@ def update_graphs(old_table, n_clicks, data, new_table):
                 pie_figure = pie_layout(final_df)
 
                 final_df["hours_expended_int"] = final_df["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
-                sleep_count = final_df.loc[final_df["task_name"] == "Sleep", "hours_expended_int"].sum()
-                work_count = final_df.loc[final_df["task_name"] == "Work", "hours_expended_int"].sum()
-                recreation_count = final_df.loc[final_df["task_name"] == "Recreation", "hours_expended_int"].sum()
+                sleep_count = final_df.loc[final_df["activity_name"] == "Sleep", "hours_expended_int"].sum()
+                work_count = final_df.loc[final_df["activity_name"] == "Work", "hours_expended_int"].sum()
+                recreation_count = final_df.loc[final_df["activity_name"] == "Recreation", "hours_expended_int"].sum()
 
                 horizontal_stats = go.Figure(go.Bar(
                     x=[work_count, sleep_count, recreation_count],
@@ -148,7 +149,7 @@ def update_graphs(old_table, n_clicks, data, new_table):
 
 
 def convert_to_gantt(final_df):
-    gantt = final_df[["task_name", "start_task", "stop_task", "task_nature"]].copy()
+    gantt = final_df[["activity_name", "start_time", "stop_time", "task_nature"]].copy()
     gantt.columns = ["Task", "Start", "Finish", "Resource"]
     gantt["Start"] = pd.to_datetime(gantt["Start"], format="%d/%m/%Y %H:%M")
     gantt["Finish"] = pd.to_datetime(gantt["Finish"], format="%d/%m/%Y %H:%M")
@@ -160,13 +161,13 @@ def convert_to_gantt(final_df):
 
 def pie_layout(base):
     base["hours_expended_int"] = base["hours_expended"].apply(lambda x: timeparse(x) / (60 * 60))
-    sleep_count = base.loc[base["task_name"] == "Sleep", "hours_expended_int"].sum()
-    work_count = base.loc[base["task_name"] == "Work", "hours_expended_int"].sum()
-    study_count = base.loc[base["task_name"] == "Study", "hours_expended_int"].sum()
-    exercise_count = base.loc[base["task_name"] == "Exercise", "hours_expended_int"].sum()
-    routine_count = base.loc[base["task_name"] == "Routine", "hours_expended_int"].sum()
-    recreation_count = base.loc[base["task_name"] == "Recreation", "hours_expended_int"].sum()
-    indulgence_count = base.loc[base["task_name"] == "Indulgence", "hours_expended_int"].sum()
+    sleep_count = base.loc[base["activity_name"] == "Sleep", "hours_expended_int"].sum()
+    work_count = base.loc[base["activity_name"] == "Work", "hours_expended_int"].sum()
+    study_count = base.loc[base["activity_name"] == "Study", "hours_expended_int"].sum()
+    exercise_count = base.loc[base["activity_name"] == "Exercise", "hours_expended_int"].sum()
+    routine_count = base.loc[base["activity_name"] == "Routine", "hours_expended_int"].sum()
+    recreation_count = base.loc[base["activity_name"] == "Recreation", "hours_expended_int"].sum()
+    indulgence_count = base.loc[base["activity_name"] == "Indulgence", "hours_expended_int"].sum()
 
     # labels = ['Sleep', 'Work', 'Study', 'Exercise', 'Routine', 'Recreation', 'Indulgence']
     # values = [sleep_count, work_count, study_count, exercise_count, routine_count, recreation_count, indulgence_count]
