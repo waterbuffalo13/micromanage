@@ -22,12 +22,20 @@ colors = dict(Meal = '#00ba03',
                State('task_stop', 'value'), State('task_type','value')])
 def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task, subtype_task):
     # base = pd.read_csv("data/gantt.csv")
+    created = datetime.now().strftime("%d/%m/%Y %H:%M:%S:%f")
     base = pd.read_sql("SELECT * FROM Activity", p.connection)
-    # hours_expended = (datetime.strptime(stop_task, "%d/%m/%Y %H:%M") - datetime.strptime(start_task, "%d/%m/%Y %H:%M"))
+
+    hours_expended = (datetime.strptime(stop_task, "%d/%m/%Y %H:%M") - datetime.strptime(start_task, "%d/%m/%Y %H:%M"))
     hours_expended_str = str(datetime.strptime(stop_task, "%d/%m/%Y %H:%M") - datetime.strptime(start_task, "%d/%m/%Y %H:%M"))
     if n_clicks is not None and n_clicks > 0:
 
-        updated = add_to_csv(base, start_task, stop_task, task_contents, "---", subtype_task, hours_expended_str)
+        # updated = add_to_csv(base, start_task, stop_task, task_contents, "---", subtype_task, hours_expended_str)
+        #Activity(created, activity_name,activity_subtype, start_time, stop_time, task_nature, activity_genre)
+        #(created, start_task, stop_task, task_contents, "---", subtype_task, hours_expended_str)
+        #Activity(created, task_contents, subtype_task, start_task, stop_task, "---", "-")
+        p.execute("INSERT INTO Activity VALUES (?, ?, ?, ?, ?, ?, ?)", (created, task_contents, subtype_task, start_task, stop_task, "---", hours_expended_str))
+        updated = pd.read_sql("SELECT * FROM Activity", p.connection)
+
         start_task = stop_task
         stop_task = (datetime.strptime(start_task, "%d/%m/%Y %H:%M") + timedelta(hours=1)).strftime("%d/%m/%Y %H:%M")
         # pie_figure = pie_layout(updated)
@@ -40,16 +48,16 @@ def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task, subty
 
 
 #dependent
-def add_to_csv(base, start_task, stop_task, task_contents, task_nature, subtype_task, hours_expended_str):
-    base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
-    created = datetime.now().strftime("%d/%m/%Y %H:%M:%S:%f")
-    task_data = [[task_contents, created, start_task, stop_task, task_nature, subtype_task, hours_expended_str]]
-    updated = pd.DataFrame(task_data, columns=['task_name', 'created_date', 'start_task', 'stop_task', "task_nature", 'task_subtype', 'hours_expended'])
-    updated = pd.concat([base, updated])
-    updated = updated[pd.notnull(updated["task_name"])]
-    updated = updated.reset_index(drop=True)
-    updated.to_csv("data/gantt.csv", index=False)
-    return updated
+# def add_to_csv(base, start_task, stop_task, task_contents, task_nature, subtype_task, hours_expended_str):
+#     base = base.loc[:, ~base.columns.str.contains('^Unnamed')]
+#     created = datetime.now().strftime("%d/%m/%Y %H:%M:%S:%f")
+#     task_data = [[task_contents, created, start_task, stop_task, task_nature, subtype_task, hours_expended_str]]
+#     updated = pd.DataFrame(task_data, columns=['task_name', 'created_date', 'start_task', 'stop_task', "task_nature", 'task_subtype', 'hours_expended'])
+#     updated = pd.concat([base, updated])
+#     updated = updated[pd.notnull(updated["task_name"])]
+#     updated = updated.reset_index(drop=True)
+#     updated.to_csv("data/gantt.csv", index=False)
+#     return updated
 
 
 # remove task

@@ -29,7 +29,7 @@ class Database:
                      start_time text,
                      stop_time text,
                      task_nature text,
-                     activity_genre text
+                     hours_expended text
                      
              )""")
 

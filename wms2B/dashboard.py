@@ -36,7 +36,9 @@ suggested_df = pd.DataFrame(suggested_data)
 # todo_df = pd.read_csv("data/todolist.csv")
 todo_df = pd.read_sql("SELECT * FROM Task", p.connection)
 
-schedule_df = pd.read_csv("data/gantt.csv")
+# schedule_df = pd.read_csv("data/gantt.csv")
+schedule_df = pd.read_sql("SELECT * FROM Activity", p.connection)
+
 test = schedule_df.columns
 
 curr_year = int(dt.now().strftime("%Y"))
@@ -94,7 +96,8 @@ index_page = html.Div([
                         style={"text-align": "center", "font-size": "150%"}),
                     dash_table.DataTable(
                         id='schedule-table',
-                        columns=[{"name": i, "id": i} for i in schedule_df.columns[3:] ],
+                        # columns=[{"name": i, "id": i} for i in schedule_df.columns[3:] ],
+                        columns=[{"name": i, "id": i} for i in schedule_df.columns],
                         row_deletable=True,
                         style_cell={'fontSize': 12, 'font-family': 'Helvetica'}
 
