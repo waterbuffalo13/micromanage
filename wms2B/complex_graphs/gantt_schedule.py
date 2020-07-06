@@ -111,8 +111,9 @@ def update_graphs(old_table, n_clicks, data, new_table):
     else:
         for row in old_table:
             if row not in new_table:
-
-                final_df = remove_from_csv(gantt_df, row)
+                p.execute("DELETE FROM Activity WHERE created = (:created)",{"created": row["created"]})
+                final_df = pd.read_sql("SELECT * FROM Activity", p.connection)
+                # final_df = remove_from_csv(gantt_df, row)
                 ganttChart = convert_to_gantt(final_df)
                 pie_figure = pie_layout(final_df)
 
