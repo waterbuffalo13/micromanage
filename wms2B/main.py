@@ -6,7 +6,7 @@ from wms2B.dashboard import index_page
 import dash
 import datetime
 import plotly.figure_factory as ff
-from wms2B.app import app
+from wms2B.__init__ import app
 import wms2B.functions
 from wms2B.data.task import Task
 from wms2B.db_conn import Database

@@ -20,6 +20,7 @@ app.layout = html.Div([
     html.Div(id='page-content')
 ])
 
-
+def getApp():
+    return app
 
 

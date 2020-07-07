@@ -1,5 +1,5 @@
 import wms2B.complex_graphs.gantt_schedule as import_gantt_callbacks
-from wms2B.app import app
+from wms2B.__init__ import app
 from dash.dependencies import Input, Output, State
 import pandas as pd
 import dash

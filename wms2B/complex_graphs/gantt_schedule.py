@@ -1,4 +1,4 @@
-from wms2B.app import app
+from wms2B.__init__ import app
 from dash.dependencies import Input, Output, State
 import pandas as pd
 import dash
@@ -22,7 +22,6 @@ colors = dict(Meal = '#00ba03',
                State('task_stop', 'value'), State('task_type','value')])
 def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task, subtype_task):
     created = datetime.now().strftime("%d/%m/%Y %H:%M:%S:%f")
-    base = pd.read_sql("SELECT * FROM Activity", p.connection)
 
     hours_expended_str = str(datetime.strptime(stop_task, "%d/%m/%Y %H:%M") - datetime.strptime(start_task, "%d/%m/%Y %H:%M"))
     if n_clicks is not None and n_clicks > 0:
@@ -37,6 +36,7 @@ def update_gantt_datatable(n_clicks, task_contents, start_task, stop_task, subty
         return updated.to_dict('records'), start_task, stop_task
     else:
         dash.exceptions.PreventUpdate()
+        base = pd.read_sql("SELECT * FROM Activity", p.connection)
         return base.to_dict('records'), start_task, stop_task
 
 
