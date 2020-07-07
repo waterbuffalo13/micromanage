@@ -20,7 +20,7 @@ six==1.11.0
 tensorboard==1.14.0
 tensorflow==1.10.0
 tensorflow-estimator==1.14.0
-tensorflow-gpu==1.14.0
+tensorflow-gpu==1.15.2
 termcolor==1.1.0
 tools==0.1.9
 werkzeug==0.14.1
