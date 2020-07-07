@@ -18,7 +18,7 @@ pytils==0.3
 PyYAML==5.1.1
 six==1.11.0
 tensorboard==1.14.0
-tensorflow==1.10.0
+tensorflow==1.15.2
 tensorflow-estimator==1.14.0
 tensorflow-gpu==1.14.0
 termcolor==1.1.0
