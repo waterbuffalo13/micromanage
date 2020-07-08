@@ -10,8 +10,8 @@ class Database:
         self._cursor = self._conn.cursor()
 
         #Example tasks
-        emp_1 = Task('Jake', 'Williams')
-        emp_2 = Task('Django', 'Henry')
+        emp_1 = Task('1', 'Have a shower')
+        emp_2 = Task('2', 'Henry')
 
         ##initialize tables
         self._cursor.execute("""CREATE TABLE Task (
