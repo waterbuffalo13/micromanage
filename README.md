@@ -1,4 +1,4 @@
-# Waterbuffalo Micromanagement: 
+# Waterbuffalo Micromanagement: Automated Feedback and Guided Planning System 
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 
