@@ -3,7 +3,7 @@
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 
 # Abstract
-This project is my attempt to quell this anxiety of opportunity cost by developing a model of life that can assume the responsibility for making choices on how I should live. The ultimate goal of this project can be summarised by the following quote:
+This project is my attempt to quell my recently occuring existential anxiety by developing a model of life that can assume the responsibility for making choices on how I should live. The ultimate goal of this project can be summarised by the following quote:
 
 >“Obedience to a “perfect master”.... At last, to be set free, to lay down one’s burden – to be a child again – not in renewed innocence, but in restored dependence, in admitted, undisguised dependence. To be told again, what to do, and how to do it” - Waking Up, Sam Harris <
 
