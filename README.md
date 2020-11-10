@@ -5,7 +5,7 @@
 # Abstract
 This project is my attempt to quell my recently occuring existential anxiety by developing a model of life that can assume the responsibility for making choices on how I should live. The ultimate goal of this project can be summarised by the following quote:
 
->“Obedience to a “perfect master”.... At last, to be set free, to lay down one’s burden – to be a child again – not in renewed innocence, but in restored dependence, in admitted, undisguised dependence. To be told again, what to do, and how to do it” - Waking Up, Sam Harris <
+>“Obedience to a “perfect master”.... At last, to be set free, to lay down one’s burden – to be a child again – not in renewed innocence, but in restored dependence, in admitted, undisguised dependence. To be told again, what to do, and how to do it” - Waking Up, Sam Harris 
 
 
 Madness aside, I think that creating a data analytical tool for self-improvement will deliver real value to people with the same very peculiar desires that I have. 
