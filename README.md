@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 
-# Abstract
+# Abstract: The vision
 
 >Who am I and what do I want? And given all the uncertainity that is inherent in life, how should I spend my free time? Under what metric? And those different decisions, how can I forsee and calculate all the outcomes? How does the life I want even look like? And how do I navigate my decisions to get there? Is it possible to develop a machine that quantifies and actively maps routes towards happiness, as well as identifying paths to get there? To live fully oriented towards the pursuit of happiness, freedom and self-improvement? To cultivate a purely logical lifestyle where potential is realized and to be free from the tragedy of opportunity cost? 
 
