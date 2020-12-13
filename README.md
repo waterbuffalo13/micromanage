@@ -24,7 +24,7 @@ Want to work with me, or learn about the project? waterbuffalo13@tutanota.com
 
 ## How do you even quantify wellbeing?
 
-The same way the increase of prices (inflation) and other phenona is measured. Through an Index! A weighted composite of non-related fundamental factors. With this problem it is a little tricky as you can't use the same coefficients as priorities vary from person to person. Coming up with a concise formula that describes the relationship between activities and events and mood is a tricky business. Whilst I wait for future patrick to make sense of it, I just get the user to use a number between -3 (sucidal) and 3 (euphoric) that I input along with the activities, that populates the mood graphs.
+The same way inflation, human development and other phenomena is measured. Through an Index! A weighted composite of non-related fundamental factors. With this problem it is a little tricky as you can't use the same coefficients as priorities vary from person to person. Coming up with a concise formula that describes the relationship between activities and events and mood is a tricky business. Whilst I wait for future patrick to make sense of it, I just get the user to use a number between -3 (sucidal) and 3 (euphoric) that I input along with the activities, that populates the mood graphs.
 
 ## What strategies do you use?
 
