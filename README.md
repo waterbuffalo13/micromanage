@@ -1,10 +1,10 @@
-# Waterbuffalo Micromanagement: Automated Feedback and Guided Planning System 
+# Waterbuffalo Micromanagement: Navigating the Future using Quantitative Analysis
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 
 # The Vision
 
->Who am I and what do I want? And given all the uncertainity that is inherent in life how should I live my life? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I navigate my decisions to get there? Is it possible to develop a machine that tells me what to do? To live fully oriented towards the pursuit of meaning, freedom and self-improvement? To cultivate a purely logical lifestyle where potential is realized and to be free from the tragedy of opportunity cost? 
+>Who am I and what do I want? And given all the uncertainity that is inherent in life how should I act? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I get there? Is it possible to systematise a life strategy? To realize potential and minimize opportunity cost? 
 
 My attempt to answer all these questions is to develop an adaptive and usable application that develops bespoke strategies for various personalities and life situations, and to make recommendations on how to live that avoids short-term, idealistic and emotional reasoning. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. 
 
