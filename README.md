@@ -1,4 +1,4 @@
-# Waterbuffalo Micromanagement: Navigating the Future using Quantitative Analysis
+# Waterbuffalo Micromanagement: An Unusual Organizational Application
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 
