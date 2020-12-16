@@ -1,4 +1,4 @@
-# Waterbuffalo Micromanagement: An Unusual Organizational Application
+# Waterbuffalo Micromanagement: An Unusual Organisational Application
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 
