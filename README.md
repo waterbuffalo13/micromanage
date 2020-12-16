@@ -14,7 +14,7 @@ I place a strong a emphasis on concept on continual exploration and consistent s
 
 This project itself exists in the form of a useful organisational and planning tool that contains a useful suite of applets such as to-do lists, schedules, habit trackers, diet planners and journals. I also placed special attention to the look and feel of the application. After all, what good is an application if no-one enjoys using it? And these applets are interconnected with analytics to produce useful statistics about the end-user. 
 
-I believe that there is great potential for the usage of collective data gathering to empower collective self-improvement (in a future build this will allow multiple users), and the development of AI for the optimization of daily schedules.  I want this data analytical tool for self-improvement to deliver real value to people with the same very peculiar desires that I have i.e. to see my personal statistics laid out in front of me and to make better decisions.
+I believe that there is great potential for the usage of collective data gathering to empower individual self-improvement (in a future build this will allow multiple users), and the development of AI for the optimization of daily schedules.  I want this data analytical tool for self-improvement to deliver real value to people with the same very peculiar desires that I have i.e. to see my personal statistics laid out in front of me and to make better decisions.
 
 Want to work with me, or learn about the project? Feel free to hit me up on waterbuffalo13@tutanota.com
 
@@ -36,7 +36,7 @@ I haven't implemented any yet! Since this entire project was inspired by trading
 
 ## How does the virtue system work?
 
-The virtue system is a series of meta-data collected that reflect a given ideal. Productivity is what proportion of time you spend on high-quality activities i.e. the ones with high value. Integrity is what proportion of goals/commitments you actually follow through on. Self-restraint is how well you adhere to a system of positive habits. Wisdom represents time allocated to self-mastery. And rationality is simply the weighted average of all the previous. Fundamentally the idea is to give people a reason to use the application without trying to "win" it. These values reset every week, and so you always have a fresh start to go above and beyond.
+The virtue system is a series of meta-data collected that reflect a given ideal. Productivity is what proportion of time you spend on high-quality activities. Integrity is what proportion of goals/commitments you actually follow through on. Self-restraint is how well you adhere to a system of positive habits. Wisdom represents time allocated to self-mastery. And rationality is simply the weighted average of all the previous. Fundamentally the idea is to give people a reason to use the application without trying to "win" it. These values reset every week, and so you always have a fresh start to go above and beyond.
 
 ## The End Goal: A Collective Conciousness?
 
