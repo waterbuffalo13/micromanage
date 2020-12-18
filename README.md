@@ -4,7 +4,7 @@
 
 # The Vision
 
->Who am I and what do I want? And given all the uncertainity that is inherent in life how should I act? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I get there? Is it possible to systematise a life strategy? To understand and realize potential and minimize opportunity cost? 
+>Who am I and what do I want? And given all the uncertainity that is inherent in life how should I act? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I get there? Is it possible to systematise a life strategy? To understand and realize potential and overcome the tradegy of opportunity cost? 
 
 My attempt to answer all these questions is to develop an adaptive and usable application that develops bespoke strategies for various personalities and life situations, and to make recommendations on how to live that avoids short-term, idealistic or emotional reasoning. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. 
 
