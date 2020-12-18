@@ -6,20 +6,25 @@
 
 >"Achievement of your happiness is the only moral purpose of your life, and that happiness, not pain or mindless self-indulgence is the proof of your moral integrity, since it is the proof and the result of your loyalty to the achievement of your values" - Ayn Rand
 
-I think that people rely too much on "gut feeling" and subjectivity on how they choose to spend their time which is flawed because of the limitations of individual human knowledge and the psychological biases towards self-indulgence. What activities does a perfect schedule consist of, truly? That single *best* schedule out of the set of all possible configurations of schedules. How much different is it from the one I currently live? Where every element is micromanaged for the sole purpose of maximising for the single factor of wellbeing? And what if I could draw from the collective experience of large groups to form the basis of answering this question? And what about the humongous build-up of opportunity cost and the waste of potential that happens when an entire civilisation chooses to lives by an inefficient methodology?
+I have a hunch that people rely too much on "gut feeling" to justify how they spend their time. This methodology is flawed because of the limitations of individual human knowledge and the psychological biases towards familiarity and self-indulgence. What activities does a perfect schedule consist of, truly? The single *best* schedule out of all the possible configurations of schedules and how much different is it from the one I am currently experiencing? Where every element is micromanaged for the sole purpose of maximising for the single factor of wellbeing? And what if I could draw from the collective experience of large groups to form the basis of answering this question? We as humans never consider the humongous build-up of opportunity cost and the waste of potential that happens when an entire civilisation chooses to lives by an inefficient methodology.
 
-This project is my attempt to answer all these questions by developing an adaptive and usable application that develops bespoke strategies for various personalities and life situations, and to make recommendations on how to live that avoids short-term, idealistic or emotional reasoning. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. The purpose of this application is to view life as an optimisation problem and to apply techniques from data science to the study of wellbeing. 
+The purpose of this application is to view life as an optimisation problem and to apply techniques from data science to the study of wellbeing by developing bespoke strategies for various personalities and life situation. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. 
 
 # The Approach 
 
-I'm building an application that exists in the form of a multi-functional organisational and planning tool that provides value by allowing the user t
+I'm building an application that exists in the form of a multi-functional organisational and planning web-app that provides value by providing the following tools:
+- Sequential to-do list: Set out some goals for the day and tick them off as you .
+- Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
+- Scheduler: Plan out your day and see visually how you are spending it. Also generate suggested schedules.
+- Journal: Record important events or achievements. Write and save notes about your day or any thoughts you have and view them at any time.
+- Mood-tracker: How does your mood fluctuate throughout your day and what should you avoid/do more.
+- Diet Planner: Keep track of your calories. Useful for people trying to lose/gain weight or be healthier.
 
-
-
->Who am I and what do I want? And given all the uncertainity that is inherent in life how should I act? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I get there? Is it possible to systematise a life strategy? To understand and realize potential and overcome the tragedy of opportunity cost? 
- create to-do lists, visualize schedules, keep track ofh habits as well as keep records of important events and achievements.
-
-in the form of a useful suite of applets such as todo lists, schedules, habit trackers, diet planners and journals. I also really want 
+Advanced
+- Tree-based Planner: (inspired from Roberto's Satplanner (https://www.kickstarter.com/projects/lucenera/satplanner/description). Maybe even create recommended plans for days. Good for planning multiple outcomes (promotions/redundancies, divorce/marriage, kids/no-kids, employment/unemployment etc )
+- Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if I make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
+- Health & Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
+- Recommendation: Feeling bored? Here are some interesting activities that you might like! Feeling anxious? Tell me about it on this page. Feeling the existential angst? Hey I've booked a holiday for you and the family in Switzerland. No need to thank me man. And great work on that presentation you did at work! It was awesome!
 
 
 I also placed special attention to the look and feel of the application. After all, what good is an application if nobody wants to use it? And these applets are interconnected with analytics to produce useful statistics about the end-user. 
@@ -58,7 +63,7 @@ This is a WIP.
 
 ## Why build this app?
 
-After having more then a few bad days in a row, I became obsessed with the big questions (see quote on top). I spent a lot of time thinking about how it would be like under different circumstances. What if I had made different choices on what people I met, things I had done, subjects that I studied, risks I had taken? At one point I tried to draw a tree-like graph of all the different possibilities but I couldn't produce anything meaningful. And even if I did, it wouldn't really matter because I can't go back in time and evaluate all my alternatives. I think I wanted to build a fully rational, impartial advisor that would help me understand who I am and who I could trust to guide my trajectory through my life in a way that was reliable. 
+After having more then a few bad days in a row, I had lured into a state of existential anxiety. I spent a lot of time thinking about how it would be like under different circumstances. What if I had made different choices on what people I met, things I had done, subjects that I studied, risks I had taken? At one point I tried to draw a tree-like graph of all the different possibilities but I couldn't produce anything meaningful. And even if I did, it wouldn't really matter because I can't go back in time and evaluate all my alternatives. I think I wanted to build a fully rational, impartial advisor that would help me understand who I am and who I could trust to guide my trajectory through my life in a way that was reliable. 
 
 ## How do you even quantify wellbeing?
 
@@ -78,4 +83,5 @@ My goal is to support the end users and to produce lasting value. To enrich peop
 
 
 >Who am I and what do I want? And given all the uncertainity that is inherent in life how should I act? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I get there? Is it possible to systematise a life strategy? To understand and realize potential and overcome the tragedy of opportunity cost? 
+s, and to make recommendations on how to live that avoids short-term, idealistic or emotional reasoning
 
