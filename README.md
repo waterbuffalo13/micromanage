@@ -4,11 +4,27 @@
 
 # The Vision
 
->Who am I and what do I want? And given all the uncertainity that is inherent in life how should I act? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I get there? Is it possible to systematise a life strategy? To understand and realize potential and overcome the tradegy of opportunity cost? 
+>"Achievement of your happiness is the only moral purpose of your life, and that happiness, not pain or mindless self-indulgence is the proof of your moral integrity, since it is the proof and the result of your loyalty to the achievement of your values" - Ayn Rand
 
-My attempt to answer all these questions is to develop an adaptive and usable application that develops bespoke strategies for various personalities and life situations, and to make recommendations on how to live that avoids short-term, idealistic or emotional reasoning. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. 
+I think that people rely too much on "gut feeling" and subjectivity on how they choose to spend their time which is flawed because of the limitations of individual human knowledge and the psychological biases towards self-indulgence. What activities does a perfect schedule consist of, truely? That single *best* schedule out of the set of all possible configurations of schedules. How much different is it from the one I currently live? Where every element is micromanaged for the sole purpose of maximising for the single factor of wellbeing? And what if I could draw from the collective experience of large groups to form the basis of answering this question? And what about the humongous build-up of opportunity cost and the waste of potential that happens when an entire civilisation chooses to lives by an inefficient methodology?
 
-The purpose of this application is to view life as an optimisation problem and to apply techniques from data science to the study of wellbeing. I am using this project as an opportunity to explore systematic strategies to allocate uncommitted time in a way that maximises individual human happiness over the lifespan by tracking and optimising for a wellbeing index. The ultimate goal is help the user make progress towards a state of "perfect resource allocation"; a hypothetical psuedo-mystical pattern of behaviour where a person is doing precisely what they need to all the time. The concept of time is viewed as finite resource that is continuously being exchanged for activities that provides some form of value. This project views life as a series of these (time-> activity-> value) transactions. By viewing life from this perspective, concepts such as return-on-investment and opportunity cost become quantifiable and measurable.
+This project is my attempt to answer all these questions by developing an adaptive and usable application that develops bespoke strategies for various personalities and life situations, and to make recommendations on how to live that avoids short-term, idealistic or emotional reasoning. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. The purpose of this application is to view life as an optimisation problem and to apply techniques from data science to the study of wellbeing. 
+
+# The Approach 
+
+I'm building an application that exists in the form of a multi-functional organisational and planning tool that provides value by allowing the user t
+
+
+
+>Who am I and what do I want? And given all the uncertainity that is inherent in life how should I act? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I get there? Is it possible to systematise a life strategy? To understand and realize potential and overcome the tragedy of opportunity cost? 
+ create to-do lists, visualize schedules, keep track ofh habits as well as keep records of important events and achievements.
+
+in the form of a useful suite of applets such as todo lists, schedules, habit trackers, diet planners and journals. I also really want 
+
+
+I also placed special attention to the look and feel of the application. After all, what good is an application if nobody wants to use it? And these applets are interconnected with analytics to produce useful statistics about the end-user. 
+
+I want to explore systematic strategies to allocate uncommitted time in a way that maximises individual human happiness over the lifespan by tracking and optimising for a wellbeing index. The ultimate goal is help the user make progress towards a state of "perfect resource allocation"; a hypothetical psuedo-mystical pattern of behaviour where a person is doing precisely what they need to all the time. The concept of time is viewed as finite resource that is continuously being exchanged for activities that provides some form of value. This project views life as a series of these (time-> activity-> value) transactions. By viewing life from this perspective, concepts such as return-on-investment and opportunity cost become quantifiable and measurable.
 
 I place a strong a emphasis on concept on continual exploration and consistent self refinement of values.
 
@@ -33,7 +49,7 @@ You will get (now or eventually) access to the following features:
 - Diet Planner: Keep track of your calories. Useful for people trying to lose/gain weight or be healthier.
 
 Advanced
-- Tree-based Planner: (inspired from Roberto's Satplanner (https://www.kickstarter.com/projects/lucenera/satplanner/description). Maybe even create recommended plans for days. Good for planning for multiple outcomes (promotions/redundancies, divorce/marriage, kids/no-kids etc )
+- Tree-based Planner: (inspired from Roberto's Satplanner (https://www.kickstarter.com/projects/lucenera/satplanner/description). Maybe even create recommended plans for days. Good for planning multiple outcomes (promotions/redundancies, divorce/marriage, kids/no-kids, employment/unemployment etc )
 - Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if I make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
 - Health & Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
 - Recommendation: Feeling bored? Here are some interesting activities that you might like! Feeling anxious? Tell me about it on this page. Feeling the existential angst? Hey I've booked a holiday for you and the family in Switzerland. No need to thank me man. And great work on that presentation you did at work! It was awesome!
@@ -60,4 +76,6 @@ The virtue system is a series of meta-data collected that reflect a given ideal.
 
 My goal is to support the end users and to produce lasting value. To enrich peoples lives with new hobbies, lifestyles and ways of overcoming problems that they had not  previously considered. To answer definitively if your goal should be to work compulsively with the promise of a luxurious lifestyle, or to laze around on a field in a developing country,  or to tour the world in a van like some dried-up hippy. To understand how other users have gotten there and to provide the tools to get there. To reinforce good habits and promote good behaviour. To promote efficient resource-usage (e.g. time, money etc) and to spend it in ways you had not previously considered. To work to solve deeply embedded problems like mental health, debt and bad behaviour through multiple behavioural streams. To act as a companion in times of great difficulty and to provide fresh, new perspectives and call to actions. To increase collective commitment to rational self-interest.
 
+
+>Who am I and what do I want? And given all the uncertainity that is inherent in life how should I act? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I get there? Is it possible to systematise a life strategy? To understand and realize potential and overcome the tragedy of opportunity cost? 
 
