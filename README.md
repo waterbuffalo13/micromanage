@@ -25,16 +25,16 @@ Want to work with me, or learn about the project? Feel free to hit me up on wate
 ## Why should I use this app?
 
 You will get (now or eventually) have access to the following features (most/all from a single page):
-- Simple to-do list: Set out some plans for the day.
-- Habit-Tracking: You want a six-pack? That's cool mayn so do I! How much do you bench? What?! What do you mean you don't go to the gym?
+- Simple to-do list: Set out some plans for the day and tick them off as you .
+- Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
 - Scheduler: Plan out your day and see visually how you are spending it. Possibly also generate suggested schedules.
 - Journal: Record important events or achievements. Write and save notes about your day, or any thoughts you have and view them at any time.
-- Mood-tracker: How does your mood fluctuate throughout your day.
+- Mood-tracker: How does your mood fluctuate throughout your day and what should you avoid/do more.
 - Diet Planner: Keep track of your calories. Useful for people trying to lose/gain weight or be healthier.
 
 Advanced
-- Cytoscape-based short-term planning (inspired from https://www.kickstarter.com/projects/lucenera/satplanner/description). View life like a fsm/markov chain.
-- Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if i make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
+- Cytoscape-based short-term planning (inspired from https://www.kickstarter.com/projects/lucenera/satplanner/description). Maybe even create recommended plans.
+- Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if I make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
 - Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
 - Communication: Feeling bored? Here are some interesting activities that you might like! Feeling anxious? Tell me about it on this page. Feeling the existential angst? Hey I've booked a holiday for you and the family in Switzerland. No need to thank me man. And great work on that promotion you got at work! You earned it!
 
