@@ -8,19 +8,35 @@
 
 My attempt to answer all these questions is to develop an adaptive and usable application that develops bespoke strategies for various personalities and life situations, and to make recommendations on how to live that avoids short-term, idealistic or emotional reasoning. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. 
 
-The purpose of this application is to view life as an optimization problem and to apply techniques from data science to the study of wellbeing. I aim to explore systematic strategies to allocate uncommitted time in a way that maximises individual human happiness over the lifespan by tracking and optimising for a wellbeing index. The ultimate goal is help the user make progress towards a state of "perfect resource allocation"; a hypothetical psuedo-mystical pattern of behaviour where a person is doing precisely what they need to all the time. The concept of time is viewed as finite resource that is continuously being exchanged for activities that provides some form of value. This project views life as a series of these (time-> activity-> value) transactions. By viewing life from this perspective, concepts such as return-on-investment and opportunity cost become quantifiable and measurable.
+The purpose of this application is to view life as an optimisation problem and to apply techniques from data science to the study of wellbeing. I am using this project as an opportunity to explore systematic strategies to allocate uncommitted time in a way that maximises individual human happiness over the lifespan by tracking and optimising for a wellbeing index. The ultimate goal is help the user make progress towards a state of "perfect resource allocation"; a hypothetical psuedo-mystical pattern of behaviour where a person is doing precisely what they need to all the time. The concept of time is viewed as finite resource that is continuously being exchanged for activities that provides some form of value. This project views life as a series of these (time-> activity-> value) transactions. By viewing life from this perspective, concepts such as return-on-investment and opportunity cost become quantifiable and measurable.
 
 I place a strong a emphasis on concept on continual exploration and consistent self refinement of values.
 
-This project itself exists in the form of a useful organisational and planning tool that contains a useful suite of applets such as to-do lists, schedules, habit trackers, diet planners and journals. I also placed special attention to the look and feel of the application. After all, what good is an application if no-one enjoys using it? And these applets are interconnected with analytics to produce useful statistics about the end-user. 
+This project itself exists in the form of a useful organisational and planning tool that contains a useful suite of applets such as todo lists, schedules, habit trackers, diet planners and journals. I also placed special attention to the look and feel of the application. After all, what good is an application if nobody wants to use it? And these applets are interconnected with analytics to produce useful statistics about the end-user. 
 
-I believe that there is great potential for the usage of collective data gathering to empower individual self-improvement (in a future build this will allow multiple users), and the development of AI for the optimization of daily schedules.  I want this data analytical tool for self-improvement to deliver real value to people with the same very peculiar desires that I have i.e. to see my personal statistics laid out in front of me and to make better decisions.
+I believe that there is great potential for the usage of collective data gathering to empower individual self-improvement (in a future build this will allow multiple users), and the development of AI for the optimisation of daily schedules.  I want this data analytical tool for self-improvement to deliver real value to people with the same very peculiar desires that I have i.e. to see my personal statistics laid out in front of me and to make better decisions.
 
 Want to work with me, or learn about the project? Feel free to hit me up on waterbuffalo13@tutanota.com
 
 
 ## Phase 1: Prelim Database
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/misc_image/er_diagram.png)
+
+## Why should I use this app?
+
+You will get (now or eventually) have access to the following features (most/all from a single page):
+- Simple to-do list: Set out some plans for the day.
+- Habit-Tracking: You want a six-pack? That's cool mayn so do I! How much do you bench? What?! What do you mean you don't go to the gym?
+- Scheduler: Plan out your day and see visually how you are spending it. Possibly also generate suggested schedules.
+- Journal: Record important events or achievements. Write and save notes about your day, or any thoughts you have and view them at any time.
+- Mood-tracker: How does your mood fluctuate throughout your day.
+- Diet Planner: Keep track of your calories. Useful for people trying to lose/gain weight or be healthier.
+
+Advanced
+- Cytoscape-based short-term planning (inspired from https://www.kickstarter.com/projects/lucenera/satplanner/description). View life like a fsm/markov chain.
+- Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if i make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
+- Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
+- Communication: Feeling bored? Here are some interesting activities that you might like! Feeling anxious? Tell me about it on this page. Feeling the existential angst? Hey I've booked a holiday for you and the family in Switzerland. No need to thank me man. And great work on that promotion you got at work! You earned it!
 
 ## Why build this app?
 
@@ -32,7 +48,7 @@ The same way inflation, socio-economic development and various other phenomena i
 
 ## What strategies do you use?
 
-I haven't implemented any yet! Since this entire project was inspired by trading algorithms (now does this all make sense?!) it's likely many of the same approaches used in traditional finance portfolio optimization can be applied to this context. I'm more of an AI enthusiast than an expert but I hope my knowledge grows with time. My priority right now is to develop the infrastructure so that it can support all the analysis I have planned.
+I haven't implemented any yet! Since this entire project was inspired by trading algorithms (now does this all make sense?!) it's likely many of the same approaches used in traditional finance portfolio optimisation can be applied to this context. I'm more of an AI enthusiast than an expert but I hope my knowledge grows with time. My priority right now is to develop the infrastructure so that it can support all the analysis I have planned.
 
 ## How does the virtue system work?
 
