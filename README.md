@@ -24,7 +24,7 @@ Want to work with me, or learn about the project? Feel free to hit me up on wate
 
 ## Why should I use this app?
 
-You will get (now or eventually) have access to the following features:
+You will get (now or eventually) access to the following features:
 - Sequential to-do list: Set out some goals for the day and tick them off as you .
 - Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
 - Scheduler: Plan out your day and see visually how you are spending it. Also generate suggested schedules.
@@ -33,12 +33,12 @@ You will get (now or eventually) have access to the following features:
 - Diet Planner: Keep track of your calories. Useful for people trying to lose/gain weight or be healthier.
 
 Advanced
-- Cytoscape-based short-term planning (inspired from https://www.kickstarter.com/projects/lucenera/satplanner/description). Maybe even create recommended plans.
+- Goals: Cytoscape-based short-term planning (inspired from Roberto's Satplanner (https://www.kickstarter.com/projects/lucenera/satplanner/description). Maybe even create recommended plans for days.
 - Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if I make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
-- Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
+- Health & Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
 - Recommendation: Feeling bored? Here are some interesting activities that you might like! Feeling anxious? Tell me about it on this page. Feeling the existential angst? Hey I've booked a holiday for you and the family in Switzerland. No need to thank me man. And great work on that promotion you got at work! You earned it!
 
-This is a WIP. I would like to get much of done.
+This is a WIP. This is more of a bucket list then a description.
 
 ## Why build this app?
 
