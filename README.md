@@ -8,12 +8,12 @@
 
 I have a hunch that people rely too much on "gut feeling" to justify how they spend their time. This methodology is flawed because of the limitations of individual human knowledge and the cognitive biases towards familiarity and self-indulgence. What activities does the perfect schedule for me consist of, truly? The single *best* schedule out of all the possible configurations of schedules and how much different is it from the one I am currently experiencing? Where every activity is micromanaged for the sole purpose of maximising for the single factor of wellbeing? And what if I could draw from the collective experience of large groups to form the basis of answering this question? We as humans never consider the humongous build-up of opportunity cost and the waste of potential that happens when an entire civilisation chooses to lives by an inefficient methodology.
 
-The purpose of this application is to view life as an optimisation problem and to apply techniques from data science to the study of wellbeing in the form of a usable web app. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. 
+The goal of this application is to understand more deeply what the best possible life for me consists of so that I can experience it for myself. view life as an optimisation problem and to apply techniques from data science to the study of wellbeing in the form of a usable web app. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. 
 
 # The Approach 
 
 I'm building an application that exists in the form of a multi-functional organisational and planning web-app that provides value by providing the following tools:
-- Sequential to-do list: Set out some goals for the day and tick them off as you .
+- To-do list: Set out some goals for the day and tick them off as you .
 - Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
 - Scheduler: Plan out your day and see visually how you are spending it. Also do fancy things like generate suggested schedules.
 - Journal: Record important events or achievements. Write and save notes about your day or any thoughts you have and view them at any time.
