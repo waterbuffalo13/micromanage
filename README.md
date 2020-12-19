@@ -19,7 +19,7 @@ The goal of this application is to understand more deeply what the best possible
 I want to view life as an optimisation problem and to apply techniques from data science to the study of wellbeing in the form of a usable web app. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". Fundamentally the approach is to view life as a game of resource allocation with time being the sole, finite resource that is continually traded for some time of value. In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes.
 
 I'm building an application that exists in the form of a multi-functional organisational and planning web-app that provides value by providing the following tools:
-Features
+##Utility
 - To-do list: Set out some goals for the day and tick them off as you .
 - Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
 - Scheduler: Plan out your day and see visually how you are spending it. Also do fancy things like generate suggested schedules.
@@ -31,8 +31,9 @@ Advanced
 - Tree-based Planner: (inspired from Roberto's Satplanner (https://www.kickstarter.com/projects/lucenera/satplanner/description). Maybe even create recommended plans for days. Good for planning multiple outcomes (promotions/redundancies, divorce/marriage, kids/no-kids, employment/unemployment etc )
 - Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if I make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
 - Health & Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
+##Analytics
 - Recommendation: Feeling bored? Here are some interesting activities that you might like! Feeling anxious? Tell me about it on this page. Feeling the existential angst? Hey I've booked a holiday for you and the family in Switzerland. No need to thank me man. And great work on that presentation you did at work! It was awesome!
-- Advanced Analytics: A page dedicated for advanced stuff
+
 
 I also placed special attention to the look and feel of the application. After all, what good is an application if nobody wants to use it? And these applets are interconnected with analytics to produce useful statistics about the end-user. 
 
