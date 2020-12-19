@@ -1,16 +1,17 @@
 # Waterbuffalo Micromanagement: An Unusual Organisational Application
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
+>"Achievement of your happiness is the only moral purpose of your life, and that happiness, not pain or mindless self-indulgence is the proof of your moral integrity, since it is the proof and the result of your loyalty to the achievement of your values" - Ayn Rand
 
 # The Vision
-
->"Achievement of your happiness is the only moral purpose of your life, and that happiness, not pain or mindless self-indulgence is the proof of your moral integrity, since it is the proof and the result of your loyalty to the achievement of your values" - Ayn Rand
 
 I have a hunch that people rely too much on "gut feeling" to justify how they spend their time. This methodology is flawed because of the limitations of individual human awareness and the cognitive biases towards familiarity and self-indulgence. What activities does the perfect schedule for me consist of, truly? The single *best* schedule out of all the possible configurations of schedules and how much different is it from the one I am currently experiencing? Where every activity is micromanaged for the sole purpose of maximising for the single factor of wellbeing? And what if I could draw from the collective experience of large groups to form the basis of answering this question? We as humans never consider the humongous build-up of opportunity cost and the waste of potential that happens when an entire civilisation chooses to lives by an inefficient methodology.
 
 The goal of this application is to understand more deeply what the best possible life for me consists of so that I can experience it for myself. view life as an optimisation problem and to apply techniques from data science to the study of wellbeing in the form of a usable web app. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes. 
 
 # The Approach 
+
+Fundamentally the approach is to view life as a game of resource allocation with time being the sole, finite resource that is continually traded for value (whether this be some combination of pleasure, money, power etc). 
 
 I'm building an application that exists in the form of a multi-functional organisational and planning web-app that provides value by providing the following tools:
 - To-do list: Set out some goals for the day and tick them off as you .
@@ -25,10 +26,11 @@ Advanced
 - Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if I make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
 - Health & Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
 - Recommendation: Feeling bored? Here are some interesting activities that you might like! Feeling anxious? Tell me about it on this page. Feeling the existential angst? Hey I've booked a holiday for you and the family in Switzerland. No need to thank me man. And great work on that presentation you did at work! It was awesome!
+- Advanced Analytics: A page dedicated for advanced stuff
 
 I also placed special attention to the look and feel of the application. After all, what good is an application if nobody wants to use it? And these applets are interconnected with analytics to produce useful statistics about the end-user. 
 
-I want to explore systematic strategies to allocate uncommitted time in a way that maximises individual human happiness over the lifespan by tracking and optimising for a wellbeing index. The ultimate goal is help the user make progress towards a state of "perfect resource allocation"; a hypothetical psuedo-mystical pattern of behaviour where a person is doing precisely what they need to all the time. The concept of time is viewed as finite resource that is continuously being exchanged for activities that provides some form of value. This project views life as a series of these (time-> activity-> value) transactions. By viewing life from this perspective, concepts such as return-on-investment and opportunity cost become quantifiable and measurable.
+I want to explore systematic strategies to allocate uncommitted time in a way that maximises individual human happiness over the lifespan by tracking and optimising for a wellbeing index. The ultimate goal is help the user make progress towards a state of "perfect resource allocation"; a hypothetical psuedo-mystical pattern of behaviour where a person is doing precisely what they need to all the time. Fundamentally the approach is to view life as a game of resource allocation with time being the sole, finite resource that is continually traded for different types of values. This project views life as a series of these (time-> activity-> value) transactions. By viewing life from this perspective, concepts such as return-on-investment and opportunity cost become quantifiable and measurable.
 
 I place a strong a emphasis on concept on continual exploration and consistent self refinement of values.
 
