@@ -52,7 +52,7 @@ Want to work with me, or learn about the project? Feel free to hit me up on wate
 
 ## Why build this app?
 
-After having more then a few bad days in a row, I had lured into a state of existential anxiety. I spent a lot of time thinking about how it would be like under different circumstances. What if I had made different choices on what people I met, things I had done, subjects that I studied, risks I had taken? At one point I tried to draw a tree-like graph of all the different possibilities but I couldn't produce anything meaningful. And even if I did, it wouldn't really matter because I can't go back in time and evaluate all my alternatives. I think I wanted to build a fully rational, impartial advisor that would help me understand who I am and who I could trust to guide my trajectory through my life in a way that was reliable. 
+After having more then a few bad days in a row, I had found myself thrust into a state of existential anxiety. I spent a lot of time thinking about how it would be like under different circumstances. What if I had made different choices on what people I met, things I had done, subjects that I studied, risks I had taken? At one point I tried to draw a tree-like graph of all the different possibilities but I couldn't produce anything meaningful. And even if I did, it wouldn't really matter because I can't go back in time and evaluate all my alternatives. I think I wanted to build a fully rational, impartial advisor that would help me understand who I am and who I could trust to guide my trajectory through my life in a way that was reliable. 
 
 ## How do you even quantify wellbeing?
 
