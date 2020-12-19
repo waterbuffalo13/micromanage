@@ -3,6 +3,10 @@
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 >"Achievement of your happiness is the only moral purpose of your life, and that happiness, not pain or mindless self-indulgence is the proof of your moral integrity, since it is the proof and the result of your loyalty to the achievement of your values" - Ayn Rand
 
+# Prelude
+
+When playing a game of chess with 100+ billion different outcomes how do you categorically state what are the best moves to take to win the game?  And given the strategies that have emerged from AI from mid-century would it be possible to apply this to the game of human decision making? Out of all the choices I have to spend my time that are possible for me to do right now, how do I know which ones will lead to the best outcome for me? 
+
 # The Vision
 
 I have a hunch that people rely too much on "gut feeling" to justify how they spend their time. This methodology is flawed because of the limitations of individual human awareness and the cognitive biases towards familiarity and self-indulgence. What activities does the perfect schedule for me consist of, truly? The single *best* schedule out of all the possible configurations of schedules and how much different is it from the one I am currently experiencing? Where every activity is micromanaged for the sole purpose of maximising for the single factor of wellbeing? And what if I could draw from the collective experience of large groups to form the basis of answering this question? We as humans never consider the humongous build-up of opportunity cost and the waste of potential that happens when an entire civilisation chooses to lives by an inefficient methodology.
