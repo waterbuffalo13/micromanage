@@ -15,17 +15,19 @@ I have a hunch that people rely too much on "gut feeling" to justify how they sp
 The goal of this application is to understand more deeply what the best possible life for me consists of so that I can experience it for myself. 
 
 # The 2-Stage Approach 
-
 Build out the Utilities:
-- To-do list: 
--- Set out some goals (name, importance, urgency)
--- Tick them off
--- View as tree-like graph and draw associations
+
+### Central Dashboard
+* Authentication 
+- [ ] Set up a user page 
+* To-do list: 
+- [ ] Add/Remove a goal and view as graph
+- [ ] Define and visualise relationships as tree-like graph
 - Scheduler: Plan out your day and see visually how you are spending it. Also do fancy things like generate suggested schedules.
-- Journal: Record important events or achievements. Write and save notes about your day or any thoughts you have and view them at any time.
-- Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
--- Add a habit
--- Set habit done
+- [ ] Journal: Record important events or achievements. Write and save notes about your day or any thoughts you have and view them at any time.
+- [ ] Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
+- [ ] Add a habit
+- [ ] Set habit done
 - Mood-tracker: How does your mood fluctuate throughout your day and what should you avoid/do more.
 - Diet Planner: Keep track of your calories. Useful for people trying to lose/gain weight or be healthier.
 - Tree-based Planner: Maybe even create recommended plans for days. Good for planning multiple outcomes (promotions/redundancies, divorce/marriage, kids/no-kids, employment/unemployment etc )
