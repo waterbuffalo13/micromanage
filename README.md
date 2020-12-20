@@ -14,8 +14,9 @@ I have a hunch that people rely too much on "gut feeling" to justify how they sp
 
 The goal of this application is to understand more deeply what the best possible life for me consists of so that I can experience it for myself. 
 
-# The Approach 
+# The 2-Stage Approach 
 
+Utility
 I need to build out lots of utilities that people can use every day such as:
 - To-do list: 
 -- Set out some goals (name, importance, urgency)
