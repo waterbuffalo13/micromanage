@@ -15,26 +15,34 @@ I have a hunch that people rely too much on "gut feeling" to justify how they sp
 The goal of this application is to understand more deeply what the best possible life for me consists of so that I can experience it for myself. 
 
 # The 2-Stage Approach 
-Develop the Utilities in a clean, sustainable fashion. Then build out the supporting analytical functions.
+The plan is to the develop the Utilities in a sustainable fashion. Then build out the supporting analytical functions.
+
+Authentication 
+- [ ] Set up user authentication
+- [ ] Add user registration
 
 ### Central Dashboard
-Authentication 
-- [ ] Set user authentication
-- [ [
+
 To-do list: 
 - [ ] Add/Remove a goal and view as graph
-- [ ] Define and visualise relationships as tree-like graph
+- [ ] Define and visualise relationships in hierarchical tree-like graph
 
-Scheduler: Plan out your day and see visually how you are spending it. Also do fancy things like generate suggested schedules.
-- [ ] Journal: Record important events or achievements. Write and save notes about your day or any thoughts you have and view them at any time.
-- [ ] Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
+Scheduler: 
+- [ ] Add/Remove an activity to the schedule
+
+Journa & Achievements log:
+- [ ] 
+Habit-Tracking:
 - [ ] Add a habit
 - [ ] Set habit done
-- Mood-tracker: How does your mood fluctuate throughout your day and what should you avoid/do more.
-- Diet Planner: Keep track of your calories. Useful for people trying to lose/gain weight or be healthier.
-- Tree-based Planner: Maybe even create recommended plans for days. Good for planning multiple outcomes (promotions/redundancies, divorce/marriage, kids/no-kids, employment/unemployment etc )
+Mood-tracker: How does your mood fluctuate throughout your day and what should you avoid/do more.
+Diet Planner: Keep track of your calories. Useful for people trying to lose/gain weight or be healthier.
+
+### Other pages
+
 - Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if I make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
 - Health & Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
+
 ##Analytics
 - Graphs on 
 -- Activity Breakdown
