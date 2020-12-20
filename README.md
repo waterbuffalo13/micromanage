@@ -16,8 +16,7 @@ The goal of this application is to understand more deeply what the best possible
 
 # The 2-Stage Approach 
 
-Utility
-I need to build out lots of utilities that people can use every day such as:
+Build out the Utilities:
 - To-do list: 
 -- Set out some goals (name, importance, urgency)
 -- Tick them off
