@@ -16,7 +16,7 @@ The goal of this application is to understand more deeply what the best possible
 
 # The Approach 
 
-I need to create an application that provides a lot of utility and enjoyment for the end-user so that people have a reason to contribute to the data source.
+I need to create an application that provides a lot of utility and is enjoyable to use for the end-user so that people have a reason to contribute to the data source.
 
 - To-do list: Set out some goals for the day and tick them off as you go along.
 - Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
@@ -32,7 +32,7 @@ I need to create an application that provides a lot of utility and enjoyment for
 
 And this in turn will support the analytical function:
 - (Adv) Life Projection (Understand the effects of different decisions and how they are likely to affect your resources for common situations e.g. academic, career, situations)
-- (Adv) Financial Projection ()
+- (Adv) Recommendations: Be recommended activities/choices that maximise the wellbeing utility function.
 
 I want to view life as an optimisation problem and to apply techniques from data science to the study of wellbeing in the form of a usable web app. This can be achieved by making data-driven calculations on schedules and events to assess their quantitative impact on "wellbeing". Fundamentally the approach is to view life as a game of resource allocation with time being the sole, finite resource that is continually traded for some time of value. In this way the app can make recommendations on what to do and how to act, and work towards predicting and avoiding negative outcomes.
 
