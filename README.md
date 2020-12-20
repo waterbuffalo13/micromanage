@@ -81,10 +81,6 @@ The virtue system is a series of meta-data collected that reflect a given ideal.
 
 My goal is to support the end users and to produce lasting value. To enrich peoples lives with new hobbies, lifestyles and ways of overcoming problems that they had not  previously considered. To answer definitively if your goal should be to work compulsively with the promise of a luxurious lifestyle, or to laze around on a field in a developing country,  or to tour the world in a van like some dried-up hippy. To understand how other users have gotten there and to provide the tools to get there. To reinforce good habits and promote good behaviour. To promote efficient resource-usage (e.g. time, money etc) and to spend it in ways you had not previously considered. To work to solve deeply embedded problems like mental health, debt and bad behaviour through multiple behavioural streams. To act as a companion in times of great difficulty and to provide fresh, new perspectives and call to actions. To increase collective commitment to rational self-interest.
 
-Contributors:
- 1. Patrick Fernandes
- 
-Want to join the project? Feel free to hit me up on waterbuffalo13@tutanota.com
 
 >Who am I and what do I want? And given all the uncertainity that is inherent in life how should I act? With what goal? And how can I navigate all the decisions yet to come? How does the life I want even look like? And how do I get there? Is it possible to systematise a life strategy? To understand and realize potential and overcome the tragedy of opportunity cost? 
 
