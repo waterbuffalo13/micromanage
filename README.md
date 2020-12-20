@@ -16,18 +16,26 @@ The goal of this application is to understand more deeply what the best possible
 
 # The Approach 
 
-I need to create an application that provides a lot of utility and is enjoyable to use for the end-user so that people have a reason to contribute to the data source.
-
-- To-do list: Set out some goals for the day and tick them off as you go along.
-- Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
+I need to build out lots of utilities that people can use every day such as:
+- To-do list: 
+-- Set out some goals (name, importance, urgency)
+-- Tick them off
+-- View as tree-like graph and draw associations
 - Scheduler: Plan out your day and see visually how you are spending it. Also do fancy things like generate suggested schedules.
 - Journal: Record important events or achievements. Write and save notes about your day or any thoughts you have and view them at any time.
+- Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
+-- Add a habit
+-- Set habit done
 - Mood-tracker: How does your mood fluctuate throughout your day and what should you avoid/do more.
 - Diet Planner: Keep track of your calories. Useful for people trying to lose/gain weight or be healthier.
 - Tree-based Planner: Maybe even create recommended plans for days. Good for planning multiple outcomes (promotions/redundancies, divorce/marriage, kids/no-kids, employment/unemployment etc )
 - Financial Planning: I really want to buy a house but when will I be able to based on my current finances? What if I make adjustments? Maybe I'm overdue for a holiday? Can I afford it?
 - Health & Fitness Planning: Would you like to know when exactly you'd get that six-pack/run a marathon/lift your bodyweight? even if sedentary stil useful.
 ##Analytics
+- Graphs on 
+-- Activity Breakdown
+-- Mood throughout day
+-- Mood Distribution
 - Recommendation: Feeling bored? Here are some interesting activities that you might like! Feeling anxious? Tell me about it on this page. Feeling the existential angst? Hey I've booked a holiday for you and the family in Switzerland. No need to thank me man. And great work on that presentation you did at work! It was awesome!
 
 And this in turn will support the analytical function:
