@@ -16,6 +16,7 @@ The goal of this application is to understand more deeply what the best possible
 
 # The 2-Stage Approach 
 The plan is to the develop the Utilities in a sustainable fashion. Then build out the supporting analytical functions.
+Pages: Login, Central Dashboard, Personal Information, Projections
 
 Authentication 
 - [ ] Set up user authentication
