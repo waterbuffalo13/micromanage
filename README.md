@@ -23,6 +23,7 @@ Authentication
 To-do list: 
 - [ ] Add/Remove a goal and view as graph
 - [ ] Define and visualise relationships as tree-like graph
+
 Scheduler: Plan out your day and see visually how you are spending it. Also do fancy things like generate suggested schedules.
 - [ ] Journal: Record important events or achievements. Write and save notes about your day or any thoughts you have and view them at any time.
 - [ ] Habit-Tracking: You want a six-pack? That's cool mayn! How much do you bench? What?! What do you mean you don't go to the gym?
