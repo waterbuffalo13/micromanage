@@ -15,7 +15,7 @@ I have a hunch that people rely too much on "gut feeling" to justify how they sp
 The goal of this application is to understand more deeply what the best possible life for me consists of so that I can experience it for myself. 
 
 # The 2-Stage Approach 
-Build out the Utilities:
+Build out the Utilities in a clean, sustainable fashion.
 
 ### Central Dashboard
 Authentication 
