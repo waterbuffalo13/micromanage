@@ -8,8 +8,7 @@
 https://i.stack.imgur.com/j7BwD.png
 When playing a game of chess with 100+ billion different outcomes how do you categorically state which moves are better than others?  And given the strategies that have emerged from the frontiers of computational thought in the mid-century, would it be possible to apply them to the game of human decision making? Out of all the choices I have to spend my time that are possible for me to do right now, how do I know which ones will lead to the best outcome for me? 
 
-This application consists of two parts, utilities (useful applets) and analytics.
-
+This application consists of two parts, utilities and analytics. 
 # The Vision
 
 People rely too much on "gut feeling" to justify how they make choices and how to spend their time. This methodology is flawed because of the limitations of individual human awareness and the cognitive biases towards familiarity and self-indulgence. What activities does the perfect schedule for me consist of, truly? What does the *single* best schedule out of all the possible configurations look like and how different is it from the one I am currently experiencing? And the single best life, how does that feel like? How does it *feel* like where all activities is optimised around a *single* factor? And what if I could draw from the collective experience of large groups to form the basis of answering this question? We as humans never consider the humongous build-up of opportunity cost and the waste of potential that happens when an entire civilisation chooses to lives by an inefficient methodology.
