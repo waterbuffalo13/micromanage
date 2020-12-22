@@ -6,7 +6,7 @@
 # Prelude
 
 https://i.stack.imgur.com/j7BwD.png
-When playing a game of chess with 100+ billion different outcomes how do you categorically state what are the best moves to take to win the game?  And given the strategies that have emerged from AI from the mid-century would it be possible to apply this to the game of human decision making? Out of all the choices I have to spend my time that are possible for me to do right now, how do I know which ones will lead to the best outcome for me? 
+When playing a game of chess with 100+ billion different outcomes how do you categorically state which moves are better than others?  And given the strategies that have emerged from the frontiers of AI in the mid-century, would it be possible to apply them to the game of human decision making? Out of all the choices I have to spend my time that are possible for me to do right now, how do I know which ones will lead to the best outcome for me? 
 
 This application consists of two parts, utilities (useful applets) and analytics.
 
