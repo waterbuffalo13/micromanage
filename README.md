@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 
-The purpose of this project is to help me live a better life by living more carefully, and .
+The purpose of this project is to help me live a better life by being more deliberate in how I spend my time.
 
   * Organisation and Planning
     *  Plan out your day with a to-do list and gantt 
@@ -10,18 +10,17 @@ The purpose of this project is to help me live a better life by living more care
     *  Monitor your habits, emotions and dietary information.
   
   * Operations
-    *  Relevant jobs (06:00 -> beautifulsoup/selenium scraper on indeed)
     *  Latest News (06:00 -> newsfetch -> filter and process -> write text to block)
-    *  Friends 
+    *  Relevant jobs (06:00 -> selenium indeed)
+    *  Make new friends (Idc maybe a friend making app or something) 
   
   * Entertainment and Relationship Management
-    *  Plan out Experiences (Holidays / Social / Movies / ) 
-    *  Suggest Hobbies
-    *  
+    *  Book and schedule events and holidays
+    *  Suggest new Hobbies (outdoors/
 
   * Interesting questions
-    * How do I spend my time (working vs weekend)?
-    * How should I spend my time after work and on the weekends? (old/new hobby ratio)
+    * How *do* I spend my time after work and on the weekends?
+    * How *should* I spend my time after work and on the weekends? 
     * If I were to be unemployed what should I do?
-    * 
+    * How would life look like if I was just to live to optimise for my moods?
 
