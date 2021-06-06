@@ -24,3 +24,4 @@ The purpose of this project is to help me live a better life by being more delib
     * If I were to be unemployed what should I do?
     * How would life look like if I was just to live to optimise for my moods?
 
+The wider goal is to find out the precise composition of what the optimal life expressed as a sequence of instructions of what activities to perform and when to perform them.
