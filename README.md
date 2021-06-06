@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 
-The purpose of this project is to help me live a better life.
+The purpose of this project is to help me live a better life by living more carefully, and .
 
   * Organisation and Planning
     *  Plan out your day with a to-do list and gantt 
@@ -22,5 +22,6 @@ The purpose of this project is to help me live a better life.
   * Interesting questions
     * How do I spend my time (working vs weekend)?
     * How should I spend my time after work and on the weekends? (old/new hobby ratio)
-    * If I were to win the lottery, what should I do?
+    * If I were to be unemployed what should I do?
+    * 
 
