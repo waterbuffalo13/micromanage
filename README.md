@@ -28,11 +28,9 @@ Micromanagement is a centralised collection of time-management tools that can be
 
 What do people want?
 1. Character Development
-   * Improving Mental Health
-      * Therapy 
-      * Pills
-      * Exercise
-   * Developing a 
-3. Significance (friends, family, societial)
+   * Fixing negative thoughts
+   * Developing a more resilient mindset 
+   * Cultivating optimism. 
+2. Significance (friends, family, societial)
 4. Security and Independence (money, freedom, )
 5. Pleasure (food, entertainment)
