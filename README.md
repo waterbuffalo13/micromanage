@@ -2,22 +2,22 @@
 
 ![alt text](https://github.com/waterbuffalo13/Waterbuffalo-Micromanagement/blob/master/screenshot-gif.gif)
 
-The purpose of this project is to help people live a better life by being more deliberate in how I spend my time.
+The purpose of this project is to help people live a better life by providing analytics, prescriptive recommendations and a host of useful tools such as job and news scraper.
 
   * Organisation and Planning
     *  Plan out your day with a to-do list and gantt 
     *  Write down long term goals and plans, and record achievements
     *  Maintain a journal of events, thoughts and moods for reflection.
     *  Create habits and monitor how well you adhere to them
-    *  Store personal information like weight, diet and exercise project.
-  
+    *  Store personal information like weight, diet and exercise project. 
+    
   * Operations
     *  Latest News (06:00 -> newsfetch -> filter and process -> write text to block)
-    *  Relevant jobs (06:00 -> selenium indeed -> "data analyst", "bi developer")
+    *  Relevant jobs (06:00 -> selenium indeed -> "data analyst", "games developer", "bi developer", "playwright")
     *  Make new friends (Idc maybe a friend making app or something) 
   
   * Entertainment and Relationship Management
-    *  How often should I go on a holiday? And where should I go? With whom?
+    *  How often should I go on a holiday? And where should I go? With whom? For how long?
     *  How often should I try new hobbies?
     *  
 
@@ -27,4 +27,8 @@ The purpose of this project is to help people live a better life by being more d
     * If I were to be unemployed what should I do? When should I wake up? What should I do with my day.
     * How would life look like if I was just to live to optimise for my moods?
 
-The wider goal is for this application to understand and promote rational behaviour.
+What do people want?
+1. Character Development (reducing neuroticism, building optimism, gaining confidence)
+2. Interpersonal significance (friends, family, societial)
+3. Security and Independence (money, fame?)
+4. Pleasure (food, entertainment)
