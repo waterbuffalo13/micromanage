@@ -7,7 +7,9 @@ The purpose of this project is to help me live a better life by being more delib
   * Organisation and Planning
     *  Plan out your day with a to-do list and gantt 
     *  Write down long term goals and plans, and record achievements
-    *  Monitor your habits, emotions and dietary information.
+    *  Maintain a journal of events, thoughts and moods for reflection.
+    *  Create habits and monitor how well you adhere to them
+    *  Store personal information like weight, diet and exercise project.
   
   * Operations
     *  Latest News (06:00 -> newsfetch -> filter and process -> write text to block)
@@ -24,4 +26,4 @@ The purpose of this project is to help me live a better life by being more delib
     * If I were to be unemployed what should I do?
     * How would life look like if I was just to live to optimise for my moods?
 
-The wider goal is to find out the precise composition of what the optimal life expressed as a sequence of instructions of what activities to perform and when to perform them.
+The wider goal is for this application to understand and promote rational behaviour.
