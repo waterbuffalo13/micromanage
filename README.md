@@ -29,6 +29,6 @@ The purpose of this project is to help people live a better life by providing an
 
 What do people want?
 1. Character Development (reducing neuroticism, building optimism, gaining confidence)
-2. Interpersonal significance (friends, family, societial)
-3. Security and Independence (money, fame?)
+2. Significance (friends, family, societial)
+3. Security and Independence (money, freedom, )
 4. Pleasure (food, entertainment)
