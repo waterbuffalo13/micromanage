@@ -24,14 +24,6 @@ Micromanagement is a centralised collection of time-management tools that can be
   * Analytics
     * How *do* I spend my time after work and on the weekends?
     * How *should* I spend my time after work and on the weekends? 
-    * If I were to be unemployed what should I do? When should I wake up? What should I do with my day.
     * How would life look like if I was just to live to optimise for my moods?
 
 What do people want?
-1. Character Development
-   * Fixing negative thoughts
-   * Developing a more resilient mindset 
-   * Cultivating optimism. 
-2. Significance (friends, family, societial)
-4. Security and Independence (money, freedom, )
-5. Pleasure (food, entertainment)
