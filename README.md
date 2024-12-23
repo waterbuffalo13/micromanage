@@ -26,4 +26,4 @@ Micromanagement is a centralised collection of time-management tools that can be
     * How *should* I spend my time after work and on the weekends? 
     * How would life look like if I was just to live to optimise for my moods?
 
-What do people want?
+What do people want
